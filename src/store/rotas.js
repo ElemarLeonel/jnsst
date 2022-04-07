@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Home from '../pages/Home';
 import Requisicoes from '../pages/Requisicoes';
@@ -9,12 +9,12 @@ const Rotas = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path='/' component={Home} exact />
-                <Route path='/requisicoes' component={Requisicoes} />
-                <Route path='/cat' component={Cat} />
+                <Route path='/' element={<Home />} exact />
+                <Route path='/requisicoes' element={<Requisicoes />} />
+                <Route path='/cat' element={<Cat />} />
             </Routes>
         </BrowserRouter>
-    )
+    );
 }
 
 export default Rotas;

@@ -1,8 +1,10 @@
 import React from 'react';
-import Routes from './store/rotas';
+import Rotas from './store/rotas';
 
-export default function App() {
+function App() {
   return (
-    <Routes />
+    <Rotas />
   );
 }
+
+export default App;
