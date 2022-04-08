@@ -7,14 +7,13 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
-import MenuItem from '@mui/material/MenuItem';
 import Avatar from '@mui/material/Avatar';
-import LogotipoJN from '../../assets/logotipojn.png';
-import { useStyles } from './styles';
-import { makeStyles } from '@mui/material';
+import Button from '@mui/material/Button';
+//import Tooltip from '@mui/material/Tooltip';
+import MenuItem from '@mui/material/MenuItem';
+import Logo from '../../assets/logotipojn.png';
 
-const pages = ['Home', 'Recursos', 'Equipe', 'Dados', 'Contato'];
+const pages = ['Products', 'Pricing', 'Blog'];
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -28,7 +27,7 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="static" sx={{bgcolor: 'secondary.main'}}>
+    <AppBar position="static" sx={{ bgcolor: 'success.main' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -37,7 +36,7 @@ const Navbar = () => {
             component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
           >
-            <MenuIcon />
+            <Avatar src={Logo} width="48" height="48" />
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -76,17 +75,14 @@ const Navbar = () => {
               ))}
             </Menu>
           </Box>
-
           <Typography
             variant="h6"
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
           >
-            <Avatar src={LogotipoJN} alt="Logo da JN" 
-            sx={{ width: 32, height: 32 }}/>
+            <Avatar src={Logo} width="48" height="48" />
           </Typography>
-
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
@@ -98,10 +94,10 @@ const Navbar = () => {
               </Button>
             ))}
           </Box>
-
         </Toolbar>
       </Container>
     </AppBar>
   );
 };
 export default Navbar;
+
