@@ -13,7 +13,7 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import Logo from '../../assets/logotipojn.png';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = ['Recursos', 'Dados', 'Equipe', 'Contato'];
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -27,7 +27,7 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="static" sx={{ bgcolor: 'success.main' }}>
+    <AppBar position="fixed" color="primary">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -46,7 +46,8 @@ const Navbar = () => {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
+              color="secondary"
+              sx={{ marginLeft: "auto" }}
             >
               <MenuIcon />
             </IconButton>
@@ -66,11 +67,10 @@ const Navbar = () => {
               onClose={handleCloseNavMenu}
               sx={{
                 display: { xs: 'block', md: 'none' },
-              }}
-            >
+              }}>
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography textAlign="center" color="secondary">{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -79,16 +79,17 @@ const Navbar = () => {
             variant="h6"
             noWrap
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-          >
+            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <Avatar src={Logo} width="48" height="48" />
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, 
+          justifyContent: "flex-end" }}>
             {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, display: 'block', fontWeight: 700}}
+                color="secondary"
               >
                 {page}
               </Button>
