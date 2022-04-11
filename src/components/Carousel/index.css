@@ -26,7 +26,6 @@
 
 @media(min-width: 1200px){
     .right-arrow, .left-arrow{
-        
         color: #2E7D32;
     }
 }
@@ -37,4 +36,18 @@
 
 .left-arrow{
     left: 32px; 
+}
+
+.title-carousel, .description-carousel{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.title-carousel{   
+    top: 80%;
+}
+
+.description-carousel{
+    top: 85%;
 }

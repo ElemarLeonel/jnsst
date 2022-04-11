@@ -29,8 +29,12 @@ const Carousel = ({ slides }) => {
             return (
                 <div className={index === current ? 'slide ativo' : 'slide'} key={index}>
                     {index === current && (
+                        <>
                         <img src={slide.image} alt="Imagens dos nossos treinamentos" 
                         className="image-carousel"/>
+                        <h4 className="title-carousel" color="primary">{slide.title}</h4>
+                        <p className="description-carousel" color="primary">{slide.description}</p>
+                        </>
                     )}
                 </div>
             ) 
