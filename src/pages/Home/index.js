@@ -1,13 +1,12 @@
 import React from "react";
 import Navbar from '../../components/Navbar';
-import Carousel from '../../components/Carousel';
-import {SliderData} from '../../components/Carousel/sliderdata';
+import Carrossel from '../../components/Carrossel';
 
 const Home = () =>{
     return (
         <>
             <Navbar />
-            <Carousel slides={SliderData}/>
+            <Carrossel/>
         </>
     )
 }
