@@ -2,6 +2,7 @@ import { Carousel } from 'react-carousel-minimal';
 import Image1 from '../../assets/imgs-carousel/acao_abril_verde_castilho.jpg';
 import Image2 from '../../assets/imgs-carousel/curso_empilhadeira_cairu.jpeg';
 import Image3 from '../../assets/imgs-carousel/curso_primeirossocorros_piarara.jpg';
+import './index.css';
 
 function Carrossel() {
  const data = [
@@ -28,18 +29,15 @@ function Carrossel() {
     fontWeight: 'bold',
   }
   return (
-    <div className="carousel">
+    <section className="carousel">
       <div className="carousel-subitem" style={{ textAlign: "center" }}>
         {/* <h2>React Carousel Minimal</h2>
         <p>Easy to use, responsive and customizable carousel component for React Projects.</p> */}
-        <div style={{
-          padding: "0 20px"
-        }}>
           <Carousel
             data={data}
-            time={3000}
-            width="1200px"
-            height="600px"
+            time={4000}
+            width="auto"
+            height="1000px"
             captionStyle={captionStyle}
             radius="5px"
             slideNumber={false}
@@ -54,14 +52,13 @@ function Carrossel() {
             thumbnails={false}
             // thumbnailWidth="100px"
             style={{
-              display: "flex",
-              justifyContent: "center",
-              margin: "100px auto",
+              // display: "flex",
+              // justifyContent: "center",
+              // margin: "100px",
             }}
           />
-        </div>
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -1,0 +1,12 @@
+:root{
+    --cor-texto: #2E7D32;
+    --cor-fundo: #F5F5F5;
+}
+
+.main-box{
+    background-color: var(--cor-fundo);
+}
+
+.text-color{
+    color: var(--cor-texto);
+}

@@ -27,7 +27,7 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="fixed" color="primary">
+    <AppBar color="primary">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -47,7 +47,6 @@ const Navbar = () => {
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
               color="secondary"
-              sx={{ marginLeft: "auto" }}
             >
               <MenuIcon />
             </IconButton>
