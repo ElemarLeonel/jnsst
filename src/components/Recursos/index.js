@@ -19,7 +19,7 @@ export default function Recursos() {
         <Box className="main-box">
             <Container maxWidth="lg">
                 <Typography variant="h4" component="div" textAlign="center"
-                    sx={{ padding: '20px' }} className="text-color">
+                    sx={{ paddingTop: '50px' }} className="text-color">
                     Recursos
                 </Typography>
                 <Box sx={{
