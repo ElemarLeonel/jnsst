@@ -12,14 +12,13 @@ import MonitorHeartIcon from '@mui/icons-material/MonitorHeart';
 import SendIcon from '@mui/icons-material/Send';
 import FilePresentIcon from '@mui/icons-material/FilePresent';
 
-import './index.css';
 
 export default function Recursos() {
     return (
-        <Box className="main-box">
+        <Box sx={{ backgroundColor: '#F5F5F5', paddingBottom: "2.5rem" }}>
             <Container maxWidth="lg">
                 <Typography variant="h4" component="div" textAlign="center"
-                    sx={{ paddingTop: '50px' }} className="text-color">
+                    sx={{ paddingTop: '50px' }} color="secondary">
                     Recursos
                 </Typography>
                 <Box sx={{
@@ -40,13 +39,13 @@ export default function Recursos() {
                     <Card variant="outlined" sx={{ width: '100rem' }}>
                         <CardContent>
                             <Typography gutterBottom textAlign="center">
-                                <MedicalServicesIcon sx={{ fontSize: 50 }} className="text-color"/>
+                                <MedicalServicesIcon sx={{ fontSize: 50 }} color="secondary" />
                             </Typography>
                             <Typography variant="h5" component="div" sx={{ marginBottom: '10px' }}
-                                textAlign="center" className="text-color">
+                                textAlign="center" color="secondary">
                                 Segurança e Medicina do Trabalho
                             </Typography>
-                            <Typography variant="body1" className="text-color">
+                            <Typography variant="body1" color="secondary">
                                 A JN oferece <b>assessoria completa</b> em segurança e medicina do trabalho, com programas
                                 específicos e abrangentes para a aplicação das 
                                 <b><abbr title="Normas Regulamentadoras"> NRs </abbr></b> exigidas pelo
@@ -58,13 +57,13 @@ export default function Recursos() {
                     <Card variant="outlined" sx={{ width: '100rem' }}>
                         <CardContent>
                             <Typography gutterBottom textAlign="center">
-                                <SettingsApplicationsIcon sx={{ fontSize: 50 }} className="text-color"/>
+                                <SettingsApplicationsIcon sx={{ fontSize: 50 }} color="secondary"/>
                             </Typography>
                             <Typography variant="h5" component="div" sx={{ marginBottom: '10px' }}
-                                textAlign="center" className="text-color">
+                                textAlign="center" color="secondary">
                                 Avaliações dos Riscos Ambientais
                             </Typography>
-                            <Typography variant="body1" className="text-color">
+                            <Typography variant="body1" color="secondary">
                                 A JN oferece <b>serviços especializados</b> para medições, visando avaliar as condições do ambiente de
                                 trabalho em relação às características fisiológicas dos trabalhadores. O objetivo é 
                                 <b> garantir</b> que as empresas atuem em conformidade com os níveis permitidos nas 
@@ -76,13 +75,13 @@ export default function Recursos() {
                     <Card variant="outlined" sx={{ width: '100rem' }}>
                         <CardContent>
                             <Typography gutterBottom textAlign="center">
-                                <CastForEducationIcon sx={{ fontSize: 50 }} className="text-color"/>
+                                <CastForEducationIcon sx={{ fontSize: 50 }} color="secondary"/>
                             </Typography>
                             <Typography variant="h5" component="div" sx={{ marginBottom: '10px' }}
-                                textAlign="center" className="text-color">
+                                textAlign="center" color="secondary">
                                 Treinamentos
                             </Typography>
-                            <Typography variant="body1" className="text-color">
+                            <Typography variant="body1" color="secondary">
                                 Uma das principais ferramentas em prevenção de acidentes e doenças relacionadas ao trabalho é o
                                 <b> treinamento</b>. A JN ciente disso, <b>prepara e ministra</b> treinamentos
                                 personalizados para cada empresa, considerando o seu <b>ambiente ocupacional</b> e os 
@@ -110,13 +109,13 @@ export default function Recursos() {
                     <Card variant="outlined" sx={{ width: '100rem' }}>
                         <CardContent>
                             <Typography gutterBottom textAlign="center">
-                                <MonitorHeartIcon sx={{ fontSize: 50 }} className="text-color"/>
+                                <MonitorHeartIcon sx={{ fontSize: 50 }} color="secondary"/>
                             </Typography>
                             <Typography variant="h5" component="div" sx={{ marginBottom: '10px' }}
-                                textAlign="center" className="text-color">
+                                textAlign="center" color="secondary">
                                 Exames Ocupacionais
                             </Typography>
-                            <Typography variant="body1" className="text-color">
+                            <Typography variant="body1" color="secondary">
                                 A JN possui <b>consultórios equipados</b> e uma <b>infraestrutura totalmente apropriada</b> para realização de
                                 exames médicos e ocupacionais, oferecendo aos seus clientes uma completa avaliação biológica,
                                 visando <b>promover</b> a saúde dos trabalhadores no ambiente de trabalho.
@@ -127,13 +126,13 @@ export default function Recursos() {
                     <Card variant="outlined" sx={{ width: '100rem' }}>
                         <CardContent>
                             <Typography gutterBottom textAlign="center">
-                                <SendIcon sx={{ fontSize: 50 }} className="text-color"/>
+                                <SendIcon sx={{ fontSize: 50 }} color="secondary" />
                             </Typography>
                             <Typography variant="h5" component="div" sx={{ marginBottom: '10px' }}
-                                textAlign="center" className="text-color">
+                                textAlign="center" color="secondary">
                                 ESocial
                             </Typography>
-                            <Typography variant="body1" className="text-color">
+                            <Typography variant="body1" color="secondary">
                                 Possuímos sistema informatizado 100% em nuvem, que já está preparado para envio dos eventos
                                 referentes à <b>Comunicado de Acidente de Trabalho (S-2210)</b>, <b>Monitoramento da Saúde do
                                 Trabalhador (S-2220)</b> e <b>Condições Ambientais (S-2240)</b>.
@@ -144,13 +143,13 @@ export default function Recursos() {
                     <Card variant="outlined" sx={{ width: '100rem' }}>
                         <CardContent>
                             <Typography gutterBottom textAlign="center">
-                                <FilePresentIcon sx={{ fontSize: 50 }} className="text-color"/>
+                                <FilePresentIcon sx={{ fontSize: 50 }} color="secondary"/>
                             </Typography>
                             <Typography variant="h5" component="div" sx={{ marginBottom: '10px' }}
-                                textAlign="center" className="text-color">
+                                textAlign="center" color="secondary">
                                 PGR/GRO
                             </Typography>
-                            <Typography variant="body1" className="text-color"> 
+                            <Typography variant="body1" color="secondary"> 
                                 O <b><abbr title="Programa de Gerenciamento de Riscos"> PGR </abbr></b> 
                                 e o <b><abbr title="Gerenciamento de Riscos Ocupacionais"> GRO </abbr></b>
                                 representa uma evolução do <b><abbr title="Programa de Prevenção de Riscos Ambientais"> PPRA </abbr></b> 

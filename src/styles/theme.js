@@ -8,14 +8,12 @@ const textColor = grey[900];
 const Theme = createTheme({
     palette: {
         primary:{
+            light: textColor,
             main: primaryColor
         },
         secondary:{
             main: secondaryColor
         },
-        success: {
-            main: textColor
-        }
     }
 });
 

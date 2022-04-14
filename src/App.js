@@ -2,7 +2,7 @@ import React from 'react';
 import Rotas from './store/rotas';
 import { CssBaseline } from '@mui/material';
 
-function App() {
+export default function App() {
 
   return (
       <>
@@ -11,5 +11,3 @@ function App() {
       </>
   );
 }
-
-export default App;

@@ -4,7 +4,7 @@ import Image2 from '../../assets/imgs-carousel/curso_empilhadeira_cairu.jpeg';
 import Image3 from '../../assets/imgs-carousel/curso_primeirossocorros_piarara.jpg';
 import './index.css';
 
-function Carrossel() {
+export default function Carrossel() {
  const data = [
     {
       image: Image1,
@@ -61,5 +61,3 @@ function Carrossel() {
     </section>
   );
 }
-
-export default Carrossel;

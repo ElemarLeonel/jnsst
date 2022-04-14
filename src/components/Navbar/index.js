@@ -15,7 +15,7 @@ import Logo from '../../assets/logotipojn.png';
 
 const pages = ['Recursos', 'Dados', 'Equipe', 'Contato'];
 
-const Navbar = () => {
+export default function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -98,6 +98,5 @@ const Navbar = () => {
       </Container>
     </AppBar>
   );
-};
-export default Navbar;
+}
 
