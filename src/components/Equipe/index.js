@@ -195,7 +195,7 @@ export default function Equipe() {
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div" color="secondary">
-                                Odair Costa
+                                Odair Calisto
                             </Typography>
                             <Typography variant="body2" color="secondary">
                                Amet eiusmod consequat nulla est est duis est cupidatat. 
