@@ -11,9 +11,10 @@ import Typography from '@mui/material/Typography';
 import ImagemCleiso from '../../assets/team/cleiso.jpg';
 import ImagemDener from '../../assets/team/dener.jpg';
 import ImagemElemar from '../../assets/team/elemar.jpg';
-import ImagemJonathan from '../../assets/team/jonathan.jpg';
+// import ImagemJonathan from '../../assets/team/jonathan.jpg';
 import ImagemMarcelia from '../../assets/team/marcelia.jpg';
 import ImagemOdair from '../../assets/team/odair.jpg';
+import ImagemMember1 from '../../assets/team/member-1.png'
 
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -138,12 +139,12 @@ export default function Equipe() {
                         <CardMedia
                             component="img"
                             height="300"
-                            image={ImagemJonathan}
-                            alt="Foto do Jonathan"
+                            image={ImagemMember1}
+                            alt="Foto da Flávia Medeiros"
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div" color="secondary">
-                                Jonathan Alves
+                                Flávia Medeiros
                             </Typography>
                             <Typography variant="body2" color="secondary">
                                Amet eiusmod consequat nulla est est duis est cupidatat. 
