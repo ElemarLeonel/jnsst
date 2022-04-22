@@ -1,0 +1,16 @@
+:root{
+    --cor-fundo: #FFFFFF;
+    --cor-texto: #2E7D32;
+}
+
+*{
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+.main-box{
+    background-color: var(--cor-fundo);
+    padding-bottom: 2rem;
+    text-align: center;
+}

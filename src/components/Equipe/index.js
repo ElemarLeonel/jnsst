@@ -1,37 +1,36 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+
+import {Box, 
+        Container, 
+        Card, 
+        CardActions,
+        CardContent, 
+        CardMedia, 
+        Button, 
+        Typography} 
+        from '@mui/material';
+
+import './index.css';
 
 import ImagemCleiso from '../../assets/team/cleiso.jpg';
 import ImagemDener from '../../assets/team/dener.jpg';
 import ImagemElemar from '../../assets/team/elemar.jpg';
-// import ImagemJonathan from '../../assets/team/jonathan.jpg';
-import ImagemMarcelia from '../../assets/team/marcelia.jpg';
 import ImagemOdair from '../../assets/team/odair.jpg';
-import ImagemMember1 from '../../assets/team/member-1.png'
+import ImagemFlavia from '../../assets/team/flavia.jpeg';
+import ImagemMember1 from '../../assets/team/member-1.png';
+import ImagemMember2 from '../../assets/team/member-2.png';
 
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 
 export default function Equipe() {
     return (
-        <Box sx={{ backgroundColor: '#2E7D32' }}>
+        <Box className="main-box">
             <Container maxWidth="lg">
-                <Typography variant="h4" component="div" textAlign="center"
-                    sx={{ paddingTop: '50px', color: "#F5F5F5" }}>
+                <Typography variant="h4" component="div" className="title-team">
                     Equipe
                 </Typography>
-                <Box sx={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    justifyContent: 'center',
-                    gap: 10,
+                <Box className="box-row" sx={{
                     flexWrap: {
                         xs: 'wrap',
                         sm: 'nowrap',
@@ -39,9 +38,10 @@ export default function Equipe() {
                         lg: 'nowrap',
                         xl: 'nowrap'
                     },
-                    marginTop: '50px'
+                    gap: 5
                 }}>
-                    <Card variant="outlined" sx={{ boxShadow: 2 }}>
+                    <Card variant="outlined" className="cards"
+                        sx={{boxShadow: 2}}>
                         <CardMedia
                             component="img"
                             height="300"
@@ -61,13 +61,14 @@ export default function Equipe() {
                                laboris aliquip do.
                             </Typography>
                         </CardContent>
-                        <CardActions>
+                        <CardActions className="buttons-card">
                             <Button size="medium" variant="outlined" color="secondary" startIcon={<InstagramIcon />}>Instagram</Button>
                             <Button size="medium" variant="outlined" color="secondary" startIcon={<FacebookIcon />}>Facebook</Button>
                         </CardActions>
                     </Card>
 
-                    <Card variant="outlined" sx={{ boxShadow: 2 }}>
+                    <Card variant="outlined" className="cards" 
+                    sx={{ boxShadow: 2 }}>
                         <CardMedia
                             component="img"
                             height="300"
@@ -87,13 +88,14 @@ export default function Equipe() {
                                laboris aliquip do.
                             </Typography>
                         </CardContent>
-                        <CardActions>
+                        <CardActions className="buttons-card">
                             <Button size="medium" variant="outlined" color="secondary" startIcon={<InstagramIcon />}>Instagram</Button>
                             <Button size="medium" variant="outlined" color="secondary" startIcon={<FacebookIcon />}>Facebook</Button>
                         </CardActions>
                     </Card>
 
-                    <Card variant="outlined" sx={{ boxShadow: 2 }}>
+                    <Card variant="outlined" className="cards" 
+                    sx={{ boxShadow: 2 }}>
                         <CardMedia
                             component="img"
                             height="300"
@@ -113,19 +115,14 @@ export default function Equipe() {
                                laboris aliquip do.
                             </Typography>
                         </CardContent>
-                        <CardActions>
+                        <CardActions className="buttons-card">
                             <Button size="medium" variant="outlined" color="secondary" startIcon={<InstagramIcon />}>Instagram</Button>
                             <Button size="medium" variant="outlined" color="secondary" startIcon={<FacebookIcon />}>Facebook</Button>
                         </CardActions>
                     </Card>
-
                 </Box>
 
-                <Box sx={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    justifyContent: 'center',
-                    gap: 10,
+                <Box className="box-row" sx={{
                     flexWrap: {
                         xs: 'wrap',
                         sm: 'nowrap',
@@ -133,13 +130,14 @@ export default function Equipe() {
                         lg: 'nowrap',
                         xl: 'nowrap'
                     },
-                    marginTop: '50px'
+                    gap: 5
                 }}>
-                    <Card variant="outlined" sx={{ boxShadow: 2 }}>
-                        <CardMedia
+                    <Card variant="outlined" className="cards" 
+                    sx={{ boxShadow: 2 }}>
+                        <CardMedia className="teste"
                             component="img"
                             height="300"
-                            image={ImagemMember1}
+                            image={ImagemFlavia}
                             alt="Foto da Flávia Medeiros"
                         />
                         <CardContent>
@@ -155,22 +153,23 @@ export default function Equipe() {
                                laboris aliquip do.
                             </Typography>
                         </CardContent>
-                        <CardActions>
+                        <CardActions className="buttons-card">
                             <Button size="medium" variant="outlined" color="secondary" startIcon={<InstagramIcon />}>Instagram</Button>
                             <Button size="medium" variant="outlined" color="secondary" startIcon={<FacebookIcon />}>Facebook</Button>
                         </CardActions>
                     </Card>
 
-                    <Card variant="outlined" sx={{ boxShadow: 2 }}>
+                    <Card variant="outlined" className="cards" 
+                    sx={{ boxShadow: 2 }}>
                         <CardMedia
                             component="img"
                             height="300"
-                            image={ImagemMarcelia}
-                            alt="Foto do Marcélia"
+                            image={ImagemMember1}
+                            alt="Foto da Sônia Lagácio"
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div" color="secondary">
-                                Marcélia Kalke
+                                Sônia Lagácio
                             </Typography>
                             <Typography variant="body2" color="secondary">
                                Amet eiusmod consequat nulla est est duis est cupidatat. 
@@ -181,13 +180,14 @@ export default function Equipe() {
                                laboris aliquip do.
                             </Typography>
                         </CardContent>
-                        <CardActions>
+                        <CardActions className="buttons-card">
                             <Button size="medium" variant="outlined" color="secondary" startIcon={<InstagramIcon />}>Instagram</Button>
                             <Button size="medium" variant="outlined" color="secondary" startIcon={<FacebookIcon />}>Facebook</Button>
                         </CardActions>
                     </Card>
 
-                    <Card variant="outlined" sx={{ boxShadow: 2 }}>
+                    <Card variant="outlined" className="cards" 
+                    sx={{ boxShadow: 2 }}>
                         <CardMedia
                             component="img"
                             height="300"
@@ -207,15 +207,169 @@ export default function Equipe() {
                                laboris aliquip do.
                             </Typography>
                         </CardContent>
-                        <CardActions>
+                        <CardActions className="buttons-card">
+                            <Button size="medium" variant="outlined" color="secondary" startIcon={<InstagramIcon />}>Instagram</Button>
+                            <Button size="medium" variant="outlined" color="secondary" startIcon={<FacebookIcon />}>Facebook</Button>
+                        </CardActions>
+                    </Card>
+                </Box>
+
+                <Box className="box-row" sx={{
+                    flexWrap: {
+                        xs: 'wrap',
+                        sm: 'nowrap',
+                        md: 'nowrap',
+                        lg: 'nowrap',
+                        xl: 'nowrap'
+                    },
+                    gap: 5
+                }}>
+                    <Card variant="outlined" className="cards" 
+                    sx={{ boxShadow: 2 }}>
+                        <CardMedia
+                            component="img"
+                            height="300"
+                            image={ImagemMember1}
+                            alt="Foto da Maria Márcia"
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="div" color="secondary">
+                                Maria Márcia
+                            </Typography>
+                            <Typography variant="body2" color="secondary">
+                               Amet eiusmod consequat nulla est est duis est cupidatat. 
+                               Minim aliqua commodo proident aute ut elit aliquip esse aliqua 
+                               aliqua quis adipisicing qui occaecat. Officia ad nulla sit sunt
+                               nisi elit magna ex minim cupidatat. Labore tempor aute labore 
+                               cillum reprehenderit. Laboris deserunt aute do minim non sit 
+                               laboris aliquip do.
+                            </Typography>
+                        </CardContent>
+                        <CardActions className="buttons-card">
                             <Button size="medium" variant="outlined" color="secondary" startIcon={<InstagramIcon />}>Instagram</Button>
                             <Button size="medium" variant="outlined" color="secondary" startIcon={<FacebookIcon />}>Facebook</Button>
                         </CardActions>
                     </Card>
 
+                    <Card variant="outlined" className="cards" 
+                    sx={{ boxShadow: 2 }}>
+                        <CardMedia
+                            component="img"
+                            height="300"
+                            image={ImagemMember1}
+                            alt="Foto da Edileusa Lagácio"
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="div" color="secondary">
+                                Edileusa Lagácio
+                            </Typography>
+                            <Typography variant="body2" color="secondary">
+                               Amet eiusmod consequat nulla est est duis est cupidatat. 
+                               Minim aliqua commodo proident aute ut elit aliquip esse aliqua 
+                               aliqua quis adipisicing qui occaecat. Officia ad nulla sit sunt
+                               nisi elit magna ex minim cupidatat. Labore tempor aute labore 
+                               cillum reprehenderit. Laboris deserunt aute do minim non sit 
+                               laboris aliquip do.
+                            </Typography>
+                        </CardContent>
+                        <CardActions className="buttons-card">
+                            <Button size="medium" variant="outlined" color="secondary" startIcon={<InstagramIcon />}>Instagram</Button>
+                            <Button size="medium" variant="outlined" color="secondary" startIcon={<FacebookIcon />}>Facebook</Button>
+                        </CardActions>
+                    </Card>
+
+                    <Card variant="outlined" className="cards" 
+                    sx={{ boxShadow: 2 }}>
+                        <CardMedia
+                            component="img"
+                            height="300"
+                            image={ImagemMember2}
+                            alt="Foto do Jardel Gomes"
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="div" color="secondary">
+                                Jardel Gomes
+                            </Typography>
+                            <Typography variant="body2" color="secondary">
+                               Amet eiusmod consequat nulla est est duis est cupidatat. 
+                               Minim aliqua commodo proident aute ut elit aliquip esse aliqua 
+                               aliqua quis adipisicing qui occaecat. Officia ad nulla sit sunt
+                               nisi elit magna ex minim cupidatat. Labore tempor aute labore 
+                               cillum reprehenderit. Laboris deserunt aute do minim non sit 
+                               laboris aliquip do.
+                            </Typography>
+                        </CardContent>
+                        <CardActions className="buttons-card">
+                            <Button size="medium" variant="outlined" color="secondary" startIcon={<InstagramIcon />}>Instagram</Button>
+                            <Button size="medium" variant="outlined" color="secondary" startIcon={<FacebookIcon />}>Facebook</Button>
+                        </CardActions>
+                    </Card>
                 </Box>
 
+                <Box className="box-row" sx={{
+                    flexWrap: {
+                        xs: 'wrap',
+                        sm: 'nowrap',
+                        md: 'nowrap',
+                        lg: 'nowrap',
+                        xl: 'nowrap'
+                    },
+                    gap: 5
+                }}>
+                    <Card variant="outlined" className="cards" 
+                    sx={{ boxShadow: 2 }}>
+                        <CardMedia
+                            component="img"
+                            height="300"
+                            image={ImagemMember1}
+                            alt="Foto da Ana Paula"
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="div" color="secondary">
+                                Ana Paula
+                            </Typography>
+                            <Typography variant="body2" color="secondary">
+                               Amet eiusmod consequat nulla est est duis est cupidatat. 
+                               Minim aliqua commodo proident aute ut elit aliquip esse aliqua 
+                               aliqua quis adipisicing qui occaecat. Officia ad nulla sit sunt
+                               nisi elit magna ex minim cupidatat. Labore tempor aute labore 
+                               cillum reprehenderit. Laboris deserunt aute do minim non sit 
+                               laboris aliquip do.
+                            </Typography>
+                        </CardContent>
+                        <CardActions className="buttons-card">
+                            <Button size="medium" variant="outlined" color="secondary" startIcon={<InstagramIcon />}>Instagram</Button>
+                            <Button size="medium" variant="outlined" color="secondary" startIcon={<FacebookIcon />}>Facebook</Button>
+                        </CardActions>
+                    </Card>
 
+                    <Card variant="outlined" className="cards" 
+                    sx={{ boxShadow: 2 }}>
+                        <CardMedia
+                            component="img"
+                            height="300"
+                            image={ImagemMember1}
+                            alt="Foto da Antônio Gomes"
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="div" color="secondary">
+                                Dr. Antônio Gomes
+                            </Typography>
+                            <Typography variant="body2" color="secondary">
+                               Amet eiusmod consequat nulla est est duis est cupidatat. 
+                               Minim aliqua commodo proident aute ut elit aliquip esse aliqua 
+                               aliqua quis adipisicing qui occaecat. Officia ad nulla sit sunt
+                               nisi elit magna ex minim cupidatat. Labore tempor aute labore 
+                               cillum reprehenderit. Laboris deserunt aute do minim non sit 
+                               laboris aliquip do.
+                            </Typography>
+                        </CardContent>
+                        <CardActions className="buttons-card">
+                            <Button size="medium" variant="outlined" color="secondary" startIcon={<InstagramIcon />}>Instagram</Button>
+                            <Button size="medium" variant="outlined" color="secondary" startIcon={<FacebookIcon />}>Facebook</Button>
+                        </CardActions>
+                    </Card>
+                </Box>
             </Container>
         </Box>
     );

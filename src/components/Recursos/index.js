@@ -1,9 +1,9 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
+import {Box,
+        Container, 
+        Card, 
+        CardContent,
+        Typography} from '@mui/material';
 
 import MedicalServicesIcon from '@mui/icons-material/MedicalServices';
 import SettingsApplicationsIcon from '@mui/icons-material/SettingsApplications';
