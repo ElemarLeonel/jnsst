@@ -1,5 +1,5 @@
 :root{
-    --cor-fundo: #FFFFFF;
+    --cor-fundo: #D3D3D3;
     --cor-texto: #2E7D32;
 }
 
@@ -11,11 +11,5 @@
 
 .box-main{
     background-color: var(--cor-fundo);
-    padding-bottom: 2rem;
-    text-align: center;
-}
-
-.title-text-contact{
-    text-align: center;
-    padding-top: 50px;
+    padding-bottom: 2.5rem;
 }

@@ -1,9 +1,10 @@
-import * as React from 'react';
+import React from 'react';
 import {Box,
         Container, 
         Card, 
         CardContent,
         Typography} from '@mui/material';
+import './index.css';
 
 import MedicalServicesIcon from '@mui/icons-material/MedicalServices';
 import SettingsApplicationsIcon from '@mui/icons-material/SettingsApplications';
@@ -15,7 +16,7 @@ import FilePresentIcon from '@mui/icons-material/FilePresent';
 
 export default function Recursos() {
     return (
-        <Box sx={{ backgroundColor: '#F5F5F5', paddingBottom: "2.5rem" }}>
+        <Box className="box-main" component="section">
             <Container maxWidth="lg">
                 <Typography variant="h4" component="div" textAlign="center"
                     sx={{ paddingTop: '50px' }} color="secondary">

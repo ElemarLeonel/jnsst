@@ -28,7 +28,7 @@ export default function Navbar() {
   };
 
   return (
-    <AppBar color="primary">
+    <AppBar color="primary" component="nav">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography

@@ -10,14 +10,14 @@
 }
 
 .main-box{
-    background-color: var(--cor-fundo);
+    background-color: var(--cor-texto);
     padding-bottom: 2rem;
     text-align: center;
 }
 
 .title-team{
     padding-top: 50px;
-    color: var(--cor-texto);
+    color: var(--cor-fundo);
 }
 
 .box-row{

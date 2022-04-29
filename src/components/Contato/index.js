@@ -4,8 +4,11 @@ import './index.css';
 
 export default function Contato(){
     return(
-        <Box className="main-box">
-            <Typography variant="h4">Entre em contato</Typography>
+        <Box className="box-main" component="section">
+            <Typography variant="h4" component="div" className="title-text-contact" color="secondary">Entre em contato</Typography>
+            <Box>
+
+            </Box>
         </Box>
     )
 }

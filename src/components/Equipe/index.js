@@ -9,7 +9,6 @@ import {Box,
         Button, 
         Typography} 
         from '@mui/material';
-
 import './index.css';
 
 import ImagemCleiso from '../../assets/team/cleiso.jpg';
@@ -25,7 +24,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 
 export default function Equipe() {
     return (
-        <Box className="main-box">
+        <Box className="main-box" component="section">
             <Container maxWidth="lg">
                 <Typography variant="h4" component="div" className="title-team">
                     Equipe
