@@ -12,6 +12,10 @@ import {AppBar,
         MenuItem}
         from '@mui/material';
 
+// import AnchorLink from "react-anchor-link-smooth-scroll";
+
+import './index.css';
+
 import Logo from '../../assets/logotipojn.png';
 
 const pages = ['Recursos', 'Dados', 'Equipe', 'Contato'];
@@ -31,12 +35,8 @@ export default function Navbar() {
     <AppBar color="primary" component="nav">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-          >
+          <Typography variant="h6" noWrap component="div"
+            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}>
             <Avatar src={Logo} width="48" height="48" />
           </Typography>
 
@@ -69,9 +69,9 @@ export default function Navbar() {
                 display: { xs: 'block', md: 'none' },
               }}>
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center" color="secondary">{page}</Typography>
-                </MenuItem>
+                  <MenuItem key={page} onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center" color="secondary">{page}</Typography>
+                  </MenuItem>
               ))}
             </Menu>
           </Box>
@@ -85,12 +85,9 @@ export default function Navbar() {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, 
           justifyContent: "flex-end" }}>
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
+              <Button key={page} onClick={handleCloseNavMenu}
                 sx={{ my: 2, display: 'block', fontWeight: 700}}
-                color="secondary"
-              >
+                color="secondary">
                 {page}
               </Button>
             ))}

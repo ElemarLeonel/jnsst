@@ -1,0 +1,21 @@
+*{
+ margin: 0; 
+ padding: 0; 
+ box-sizing: border-box;
+ font-family: 'Roboto', sans-serif; 
+}
+
+.social-media{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10;
+    padding: 2rem;
+}
+
+.other-links{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

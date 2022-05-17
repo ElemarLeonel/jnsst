@@ -7,15 +7,19 @@ export default function Contato() {
         <Box className="box-main" component="section">
             <Container maxWidth="lg" className="main-container">
                 <Box className="title-and-subtitle" component="section">
-                    <Typography variant="h4" component="div"
+                    <Typography variant="h4_title" component="div"
                         className="title-text-contact" color="secondary">
                         Entre em contato
                     </Typography>
                     <Typography variant="h6" component="p"
                         className="subtitle-text-contact" color="secondary">
                         Para mais informações e tirar suas dúvidas, nos envie um email
-                        sobre qual é o seu questionamento e em breve entraremos em contato
-                        com você!
+                        sobre o seu questionamento e em breve entraremos em contato
+                        com você. Nossos canais de atendimento estão abaixo:
+                    </Typography>
+                    <Typography variant="p_subtitles" component="p"
+                        className="subtitle-text-contact" color="secondary">
+                        Telefone Recepção: (69) 3451-8182 (Fixo) e (69) 98400-8182 (WhatsApp)
                     </Typography>
                 </Box>
                 <Box component="section" className="main-contact">

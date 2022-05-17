@@ -13,7 +13,19 @@ const Theme = createTheme({
         },
         secondary:{
             main: secondaryColor
+        }
+    },
+    typography: {
+        h4_title:{
+            lineHeight: 1.5,
+            fontSize: 30,
+            fontWeight: 700
         },
+        p_subtitles: {
+            lineHeight: 1.5,
+            fontSize: 16,
+            fontWeight: 700
+        }  
     }
 });
 

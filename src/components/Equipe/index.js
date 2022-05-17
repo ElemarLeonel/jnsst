@@ -26,7 +26,7 @@ export default function Equipe() {
     return (
         <Box className="main-box" component="section">
             <Container maxWidth="lg">
-                <Typography variant="h4" component="div" className="title-team">
+                <Typography variant="h4_title" component="div" className="title-team">
                     Equipe
                 </Typography>
                 <Box className="box-row" sx={{

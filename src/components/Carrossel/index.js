@@ -54,7 +54,7 @@ export default function Carrossel() {
             style={{
               // display: "flex",
               // justifyContent: "center",
-              // margin: "100px",
+              marginTop: "60px",
             }}
           />
       </div>
