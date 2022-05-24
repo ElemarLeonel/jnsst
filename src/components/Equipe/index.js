@@ -24,7 +24,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 
 export default function Equipe() {
     return (
-        <Box className="main-box" component="section">
+        <Box className="main-box" component="section" id="team">
             <Container maxWidth="lg">
                 <Typography variant="h4_title" component="div" className="title-team">
                     Equipe

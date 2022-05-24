@@ -1,10 +1,15 @@
 import React from "react";
-import './styles';
+import { ThemeProvider } from "@mui/material";
+import theme from '../../styles/theme';
 
-const Cat = () =>{
-    return (
-        <h1>Página da CAT</h1>
+import FormCAT from "../../components/FormCAT";
+import Navbar from "../../components/Navbar";
+
+export default function Cat(){
+    return(
+        <ThemeProvider theme={theme}>
+            <Navbar />
+            <FormCAT />
+        </ThemeProvider>
     )
 }
-
-export default Cat;

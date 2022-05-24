@@ -4,7 +4,7 @@ import './index.css';
 
 export default function Contato() {
     return (
-        <Box className="box-main" component="section">
+        <Box className="box-main" component="section" id="contact">
             <Container maxWidth="lg" className="main-container">
                 <Box className="title-and-subtitle" component="section">
                     <Typography variant="h4_title" component="div"

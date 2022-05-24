@@ -12,13 +12,14 @@ import theme from '../../styles/theme';
 
 const Home = () =>{
     return (
+
         <ThemeProvider theme={theme}>
             <Navbar />
-            <Carrossel/>
-            <Recursos />
+            <Carrossel />
+            <Recursos/>
             <Equipe />
             <Contato />
-            <Rodape />
+            <Rodape/>
         </ThemeProvider>
     )
 }

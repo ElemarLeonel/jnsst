@@ -16,7 +16,7 @@ import FilePresentIcon from '@mui/icons-material/FilePresent';
 
 export default function Recursos() {
     return (
-        <Box className="box-main" component="section">
+        <Box className="box-main" component="section" id="features">
             <Container maxWidth="lg">
                 <Typography variant="h4" component="div" textAlign="center"
                     sx={{ paddingTop: '50px' }} color="secondary">
