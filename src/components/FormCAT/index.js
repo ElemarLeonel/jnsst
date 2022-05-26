@@ -3,9 +3,17 @@ import * as React from 'react';
 import {
     Box,
     Typography,
-    FormControl,
     TextField,
+    InputAdornment,
 } from '@mui/material';
+
+import InputArquivo from '../InputArquivo/index.js';
+
+import EmailIcon from '@mui/icons-material/Email';
+import CallIcon from '@mui/icons-material/Call';
+import NumbersIcon from '@mui/icons-material/Numbers';
+import BusinessIcon from '@mui/icons-material/Business';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 import './index.css';
 
@@ -19,18 +27,70 @@ export default function FormCAT() {
                     Formulário da CAT
                 </Typography>
             </Box>
-            <FormControl className="form-cat" component="section">
+            <Box className="subtitle-cat">
+                <Typography variant="h6" component="h6" color="secondary">
+                    Dados da Empresa
+                </Typography>
+            </Box>
+            <Box className="form-cat" component="form">
+
                 <TextField id="emailEmpresa" label="Email"
-                    variant="outlined" color="secondary" required={true} />
+                    variant="outlined" color="secondary" required={true}
+                    className="dados-empresa"
+                    InputProps={{
+                        startAdornment: (
+                            <InputAdornment position="start">
+                                <EmailIcon />
+                            </InputAdornment>
+                        ),
+                    }} />
+
                 <TextField id="telefoneEmpresa" label="Telefone"
-                    variant="outlined" color="secondary" required={true} />
+                    variant="outlined" color="secondary" required={true}
+                    className="dados-empresa"
+                    InputProps={{
+                        startAdornment: (
+                            <InputAdornment position="start">
+                                <CallIcon />
+                            </InputAdornment>
+                        ),
+                    }} />
+
                 <TextField id="CNPJouCAEPF" label="CNPJ / CAEPF"
-                    variant="outlined" color="secondary" required={true} />
+                    variant="outlined" color="secondary" required={true}
+                    className="dados-empresa"
+                    InputProps={{
+                        startAdornment: (
+                            <InputAdornment position="start">
+                                <NumbersIcon />
+                            </InputAdornment>
+                        ),
+                    }} />
+
                 <TextField id="razaoSocial" label="Razão Social ou Nome Fazenda"
-                    variant="outlined" color="secondary" required={true} />
-                <TextField id="razaoSocial" label="Teste"
-                    variant="outlined" color="secondary" required={true} />
-            </FormControl>
+                    variant="outlined" color="secondary" required={true}
+                    className="dados-empresa"
+                    InputProps={{
+                        startAdornment: (
+                            <InputAdornment position="start">
+                                <BusinessIcon />
+                            </InputAdornment>
+                        ),
+                    }} />
+
+                <TextField id="nomeCompletoColaborador"
+                    label="Nome Completo"
+                    variant="outlined" color="secondary" required={true}
+                    className="dados-empresa"
+                    InputProps={{
+                        startAdornment: (
+                            <InputAdornment position="start">
+                                <AccountCircleIcon />
+                            </InputAdornment>
+                        ),
+                    }} />
+                {/* <InputArquivo /> */}
+            </Box>
         </Box>
     )
 }
