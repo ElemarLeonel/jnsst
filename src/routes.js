@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Home from '../pages/Home';
-import Requisicoes from '../pages/Requisicoes';
-import Cat from '../pages/Cat';
+import Home from './pages/Home'
+import Requisicoes from './pages/Requisicoes';
+import Cat from './pages/Cat';
 
 const Rotas = () => {
     return (
