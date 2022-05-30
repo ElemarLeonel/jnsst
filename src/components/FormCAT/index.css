@@ -26,13 +26,17 @@
     flex-flow: row wrap;
     justify-content: space-evenly;
     align-items: center;
-    margin: 2vh 2vw;
+    margin: 5vh 2vw;
     gap: 20px;
 }
 
-.dados-empresa {
+.dados-empresa, 
+.dados-atestado-medico,
+.dados-medico,
+.dados-acidente {
     flex: 1 1 auto;
-    align-self: center;
+    /* align-self: center; */
+    margin-top: 2vh;
 }
 
 @media (max-width: 576px) {
@@ -45,7 +49,10 @@
         gap: 20px;
     }
 
-    .dados-empresa {
+    .dados-empresa,
+    .dados-atestado-medico,
+    .dados-medico,
+    .dados-acidente {
         align-self: stretch;
     }
 }
