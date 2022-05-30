@@ -14,7 +14,6 @@
     "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-carousel-minimal": "^1.4.1",
     "react-dom": "^18.0.0",
-    "react-mui-fileuploader": "^0.2.0",
     "react-router-dom": "^6.3.0",
     "react-router-hash-link": "^2.4.3",
     "react-scripts": "5.0.0",

@@ -5,15 +5,16 @@ import {
     Typography,
     TextField,
     InputAdornment,
+    Input, 
+    IconButton
 } from '@mui/material';
-
-import InputArquivo from '../InputArquivo/index.js';
 
 import EmailIcon from '@mui/icons-material/Email';
 import CallIcon from '@mui/icons-material/Call';
 import NumbersIcon from '@mui/icons-material/Numbers';
 import BusinessIcon from '@mui/icons-material/Business';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import ArticleIcon from '@mui/icons-material/Article';
 
 import './index.css';
 
@@ -89,7 +90,16 @@ export default function FormCAT() {
                             </InputAdornment>
                         ),
                     }} />
-                {/* <InputArquivo /> */}
+
+                <label htmlFor="icon-button-file" className="dados-empresa">
+                    <Input accept="image/*" id="icon-button-file" type="file" 
+                    color="secondary"/> 
+                    <IconButton color="secondary" 
+                    aria-label="upload picture" 
+                    component="span">
+                        <ArticleIcon />
+                    </IconButton>
+                </label>
             </Box>
         </Box>
     )
