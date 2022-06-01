@@ -37,12 +37,17 @@ import { TimePicker } from '@mui/lab';
 export default function FormCAT() {
     const [selectedPhone, setSelectedPhone] = React.useState();
     const [selectedCPF, setSelectedCPF] = React.useState();
-    const [selectedDateMedicalCertificate, setSelectedDateMedicalCertificate] = 
-    React.useState();
+    const [selectedDateMedicalCertificate, setSelectedDateMedicalCertificate] =
+        React.useState();
     const [selectedServiceTime, setSelectedServiceTime] = React.useState();
-    const [selectedDateOfAccident, setSelectedDateOfAccident] = 
-    React.useState();
+    const [selectedDateOfAccident, setSelectedDateOfAccident] =
+        React.useState();
     const [selectedTimeOfAccident, setSelectedTimeOfAccident] = React.useState();
+    const [selectedTimeBeforeOfAccident, setSelectedTimeBeforeOfAccident] =
+        React.useState();
+
+    const [selectedCNPJ, setSelectedCNPJ] = React.useState();
+
 
     return (
         <LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -74,6 +79,7 @@ export default function FormCAT() {
                             ),
                         }} />
 
+
                     <InputMask
                         mask="(99) 99999-9999"
                         value={selectedPhone}
@@ -93,17 +99,26 @@ export default function FormCAT() {
                             }} />
                     </InputMask>
 
-                    <TextField id="CNPJouCAEPF" label="CNPJ / CAEPF"
-                        variant="outlined" color="secondary" required={true}
-                        className="dados-empresa"
-                        name="CNPJouCAEPF"
-                        InputProps={{
-                            startAdornment: (
-                                <InputAdornment position="start">
-                                    <NumbersIcon />
-                                </InputAdornment>
-                            ),
-                        }} />
+
+                    <InputMask
+                        mask="99.999.999/9999-99"
+                        value={selectedCNPJ}
+                        disabled={false}
+                        maskChar=" "
+                        onChange={(e) => setSelectedCNPJ(e.target.value)}>
+                        <TextField id="CNPJouCAEPF" label="CNPJ ou CAEPF"
+                            variant="outlined" color="secondary" required={true}
+                            className="dados-empresa"
+                            name="CNPJouCAEPF"
+                            InputProps={{
+                                startAdornment: (
+                                    <InputAdornment position="start">
+                                        <NumbersIcon />
+                                    </InputAdornment>
+                                ),
+                            }} />
+                    </InputMask>
+
 
                     <TextField id="razaoSocial" label="Razão Social ou Nome Fazenda"
                         variant="outlined" color="secondary" required={true}
@@ -116,6 +131,7 @@ export default function FormCAT() {
                                 </InputAdornment>
                             ),
                         }} />
+
 
                     <TextField id="nomeCompletoColaborador"
                         label="Nome Completo do Colaborador"
@@ -130,6 +146,7 @@ export default function FormCAT() {
                             ),
                         }} />
 
+
                     <label htmlFor="icon-button-file" className="dados-empresa">
                         <Input accept="image/*" id="icon-button-file" type="file"
                             color="secondary" name="uploadFichaRegistro" />
@@ -139,6 +156,8 @@ export default function FormCAT() {
                             <ArticleIcon />
                         </IconButton>
                     </label>
+
+
                 </Box>
 
                 <Box className="subtitle-cat">
@@ -148,6 +167,7 @@ export default function FormCAT() {
                 </Box>
 
                 <Box className="form-cat">
+
 
                     <DatePicker
                         label="Data do Atestado Médico"
@@ -165,6 +185,7 @@ export default function FormCAT() {
                             setSelectedDateMedicalCertificate(newValue)
                         }}>
                     </DatePicker>
+
 
                     <TextField id="cidAtestadoMedico"
                         label="CID"
@@ -192,8 +213,7 @@ export default function FormCAT() {
                         renderInput={(props) =>
                             <TextField {...props} color="secondary"
                                 required={true} />
-                        }
-                    >
+                        }>
                     </TimePicker>
 
 
@@ -211,10 +231,11 @@ export default function FormCAT() {
                         }} />
 
 
-                    <FormControlLabel control={
-                        <Switch color="secondary" name="houveInternacao"
-                            id="houveInternacao" />
-                    }
+                    <FormControlLabel
+                        control={
+                            <Switch color="secondary" name="houveInternacao"
+                                id="houveInternacao" />
+                        }
                         label="Houve internação?" color="secondary"
                         className="dados-atestado-medico">
                     </FormControlLabel>
@@ -239,6 +260,7 @@ export default function FormCAT() {
                 </Box>
 
                 <Box className="form-cat">
+
 
                     <TextField id="nomeMedico"
                         label="Nome do Médico"
@@ -267,6 +289,7 @@ export default function FormCAT() {
                             ),
                         }} />
 
+
                     <InputMask mask="999.999.999-99"
                         value={selectedCPF}
                         disabled={false}
@@ -287,6 +310,7 @@ export default function FormCAT() {
                                 ),
                             }} />
                     </InputMask>
+
                 </Box>
 
                 <Box className="subtitle-cat">
@@ -297,10 +321,12 @@ export default function FormCAT() {
 
                 <Box className="form-cat">
 
+
                     <DatePicker
                         id="dataAcidente"
                         value={selectedDateOfAccident}
                         mask="dd/MM/yyyy"
+                        inputFormat="dd/MM/yyyy"
                         label="Data do Acidente"
                         className="dados-acidente"
                         name="dataAcidente"
@@ -313,7 +339,9 @@ export default function FormCAT() {
                         }}>
                     </DatePicker>
 
-                    <TimePicker id="horaAcidente"
+
+                    <TimePicker
+                        id="horaAcidente"
                         label="Hora do Acidente"
                         value={selectedTimeOfAccident}
                         mask="99:99"
@@ -328,12 +356,14 @@ export default function FormCAT() {
                         }}>
                     </TimePicker>
 
-                    <InputMask mask="99:99"
-                        value={selectedTimeOfAccident}
+
+                    <InputMask
+                        mask="99:99"
+                        value={selectedTimeBeforeOfAccident}
                         disabled={false}
                         maskChar=" "
                         onChange={(newValue) => {
-                            setSelectedTimeOfAccident(newValue.target.value)
+                            setSelectedTimeBeforeOfAccident(newValue.target.value)
                         }}>
                         <TextField id="quantidadeHorasTrabalhadasAcidente"
                             label="Quant. de Horas Trab. Antes do Acidente"
@@ -350,19 +380,21 @@ export default function FormCAT() {
                     </InputMask>
 
 
-                    <FormControlLabel control={
-                        <Switch color="secondary" id="policiaComunicada"
-                            name="policiaComunicada" />
-                    }
+                    <FormControlLabel
+                        control={
+                            <Switch color="secondary" id="policiaComunicada"
+                                name="policiaComunicada" />
+                        }
                         label="A polícia foi comunicada?" color="secondary"
                         className="dados-acidente">
                     </FormControlLabel>
 
 
-                    <FormControlLabel control={
-                        <Switch color="secondary" id="houveObito"
-                            name="houveObito" />
-                    }
+                    <FormControlLabel
+                        control={
+                            <Switch color="secondary" id="houveObito"
+                                name="houveObito" />
+                        }
                         label="Houve óbito?" color="secondary"
                         className="dados-acidente">
                     </FormControlLabel>
