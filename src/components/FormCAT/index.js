@@ -1,5 +1,6 @@
 import * as React from 'react';
 
+// Importing Main Components
 import {
     Box,
     Typography,
@@ -8,15 +9,23 @@ import {
     Input,
     IconButton,
     FormControlLabel,
-    Switch
+    Switch,
+    FormControl,
+    InputLabel,
+    Select,
+    MenuItem
 } from '@mui/material';
 
+// Importing Date Pickers and Time Pickers
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import DatePicker from '@mui/lab/DatePicker';
+import { TimePicker } from '@mui/lab';
 
+// Import with Mask Objects
 import InputMask from "react-input-mask";
 
+// Import Icons
 import EmailIcon from '@mui/icons-material/Email';
 import CallIcon from '@mui/icons-material/Call';
 import NumbersIcon from '@mui/icons-material/Numbers';
@@ -30,9 +39,8 @@ import DateRangeIcon from '@mui/icons-material/DateRange';
 import BadgeIcon from '@mui/icons-material/Badge';
 import MedicalInformationIcon from '@mui/icons-material/MedicalInformation';
 
+// Importing Main Styles File
 import './index.css';
-import { TimePicker } from '@mui/lab';
-
 
 export default function FormCAT() {
     const [selectedPhone, setSelectedPhone] = React.useState();
@@ -45,9 +53,7 @@ export default function FormCAT() {
     const [selectedTimeOfAccident, setSelectedTimeOfAccident] = React.useState();
     const [selectedTimeBeforeOfAccident, setSelectedTimeBeforeOfAccident] =
         React.useState();
-
     const [selectedCNPJ, setSelectedCNPJ] = React.useState();
-
 
     return (
         <LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -398,6 +404,24 @@ export default function FormCAT() {
                         label="Houve óbito?" color="secondary"
                         className="dados-acidente">
                     </FormControlLabel>
+
+                    <FormControl fullWidth color="secondary">
+                        <InputLabel id="demo-simple-select-label"
+                            color="secondary">Tipo do Ambiente</InputLabel>
+                        <Select
+                            labelId="demo-simple-select-label"
+                            id="demo-simple-select"
+                            color="secondary"
+                            label="Tipo do Ambiente"
+                        >
+                            <MenuItem value={1}>Estabelecimento do Empregador</MenuItem>
+                            <MenuItem value={2}>Estabelecimento de Terceiros</MenuItem>
+                            <MenuItem value={3}>Via Pública</MenuItem>
+                            <MenuItem value={4}>Área Rural</MenuItem>
+                            <MenuItem value={5}>Embarcação</MenuItem>
+                            <MenuItem value={6}>Outros</MenuItem>
+                        </Select>
+                    </FormControl>
 
                 </Box>
             </Box>
