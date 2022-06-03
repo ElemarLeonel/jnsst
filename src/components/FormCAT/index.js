@@ -38,6 +38,9 @@ import DescriptionIcon from '@mui/icons-material/Description';
 import DateRangeIcon from '@mui/icons-material/DateRange';
 import BadgeIcon from '@mui/icons-material/Badge';
 import MedicalInformationIcon from '@mui/icons-material/MedicalInformation';
+import LocationCityIcon from '@mui/icons-material/LocationCity';
+import AddRoadIcon from '@mui/icons-material/AddRoad';
+import HomeIcon from '@mui/icons-material/Home';
 
 // Importing Main Styles File
 import './index.css';
@@ -54,6 +57,7 @@ export default function FormCAT() {
     const [selectedTimeBeforeOfAccident, setSelectedTimeBeforeOfAccident] =
         React.useState();
     const [selectedCNPJ, setSelectedCNPJ] = React.useState();
+    const [selectedCEP, setSelectedCEP] = React.useState();
 
     return (
         <LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -62,7 +66,7 @@ export default function FormCAT() {
                 <Box className="title-cat">
                     <Typography variant="h5" component="h5" color="secondary"
                         fontWeight="bold">
-                        Formulário da CAT
+                        Formulário da CAT - Evento S-2210
                     </Typography>
                 </Box>
 
@@ -405,12 +409,12 @@ export default function FormCAT() {
                         className="dados-acidente">
                     </FormControlLabel>
 
-                    <FormControl fullWidth color="secondary">
-                        <InputLabel id="demo-simple-select-label"
+                    <FormControl fullWidth color="secondary" required={true}>
+                        <InputLabel id="tipoAmbiente"
                             color="secondary">Tipo do Ambiente</InputLabel>
                         <Select
-                            labelId="demo-simple-select-label"
-                            id="demo-simple-select"
+                            labelId="TipoAmbiente"
+                            id="tipoAmbiente"
                             color="secondary"
                             label="Tipo do Ambiente"
                         >
@@ -422,6 +426,105 @@ export default function FormCAT() {
                             <MenuItem value={6}>Outros</MenuItem>
                         </Select>
                     </FormControl>
+
+
+                    <TextField id="localAcidente"
+                        fullWidth
+                        label="Local do Acidente"
+                        variant="outlined" color="secondary" required={true}
+                        className="dados-acidente"
+                        name="localAcidente"
+                        InputProps={{
+                            startAdornment: (
+                                <InputAdornment position="start">
+                                    <DescriptionIcon />
+                                </InputAdornment>
+                            ),
+                        }}
+                    />
+
+
+                    <InputMask
+                        mask="99999-999"
+                        value={selectedCEP}
+                        disabled={false}
+                        maskChar=" "
+                        onChange={(newValue) => {
+                            setSelectedCEP(newValue.target.value)
+                        }}>
+                        <TextField id="cepCidade"
+                            label="CEP"
+                            color="secondary" required={true}
+                            className="dados-acidente"
+                            name="cepCidade"
+                            InputProps={{
+                                startAdornment: (
+                                    <InputAdornment position="start">
+                                        <NumbersIcon />
+                                    </InputAdornment>
+                                ),
+                            }}
+                        />
+                    </InputMask>
+
+
+                    <TextField id="logradouroAcidente"
+                        label="Logradouro (Endereço)"
+                        variant="outlined" color="secondary" required={true}
+                        className="dados-acidente"
+                        name="logradouroAcidente"
+                        InputProps={{
+                            startAdornment: (
+                                <InputAdornment position="start">
+                                    <AddRoadIcon />
+                                </InputAdornment>
+                            ),
+                        }}
+                    />
+
+
+                    <TextField id="numeroRuaAcidente"
+                        label="Número"
+                        variant="outlined" color="secondary" required={true}
+                        className="dados-acidente"
+                        name="numeroRuaAcidente"
+                        InputProps={{
+                            startAdornment: (
+                                <InputAdornment position="start">
+                                    <NumbersIcon />
+                                </InputAdornment>
+                            ),
+                        }}
+                    />
+
+
+                    <TextField id="bairroAcidente"
+                        label="Bairro"
+                        variant="outlined" color="secondary" required={true}
+                        className="dados-acidente"
+                        name="bairroAcidente"
+                        InputProps={{
+                            startAdornment: (
+                                <InputAdornment position="start">
+                                    <HomeIcon />
+                                </InputAdornment>
+                            ),
+                        }}
+                    />
+
+                    <TextField id="cidadeAcidente"
+                        label="Cidade"
+                        variant="outlined" color="secondary" required={true}
+                        className="dados-acidente"
+                        name="cidadeAcidente"
+                        InputProps={{
+                            startAdornment: (
+                                <InputAdornment position="start">
+                                    <LocationCityIcon />
+                                </InputAdornment>
+                            ),
+                        }}
+                    />
 
                 </Box>
             </Box>
