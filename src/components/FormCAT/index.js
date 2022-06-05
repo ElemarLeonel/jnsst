@@ -47,6 +47,8 @@ import './index.css';
 
 export default function FormCAT() {
     const [selectedPhone, setSelectedPhone] = React.useState();
+    const [selectedCNPJ, setSelectedCNPJ] = React.useState();
+    const [selectedTypeCNPJ, setSelectedTypeCNPJ] = React.useState();
     const [selectedCPF, setSelectedCPF] = React.useState();
     const [selectedDateMedicalCertificate, setSelectedDateMedicalCertificate] =
         React.useState();
@@ -56,8 +58,15 @@ export default function FormCAT() {
     const [selectedTimeOfAccident, setSelectedTimeOfAccident] = React.useState();
     const [selectedTimeBeforeOfAccident, setSelectedTimeBeforeOfAccident] =
         React.useState();
-    const [selectedCNPJ, setSelectedCNPJ] = React.useState();
     const [selectedCEP, setSelectedCEP] = React.useState();
+
+    let setFormatCNPJMask = React.useState();
+
+    if(selectedTypeCNPJ === 1){
+        setFormatCNPJMask = "99.999.999/9999-99";
+    } else if (selectedTypeCNPJ === 2){
+        setFormatCNPJMask = "999.999.999/999-99";
+    }
 
     return (
         <LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -109,9 +118,24 @@ export default function FormCAT() {
                             }} />
                     </InputMask>
 
+                    <FormControl fullWidth color="secondary" required={true}>
+                        <InputLabel id="tipoPessoa"
+                            color="secondary">Tipo (CNPJ ou CAEPF)</InputLabel>
+                        <Select
+                            value={selectedTypeCNPJ}
+                            labelId="tipoPessoa"
+                            id="tipoPessoa"
+                            color="secondary"
+                            label="Tipo (CNPJ ou CAEPF)"
+                            onChange={(e) => setSelectedTypeCNPJ(e.target.value)}
+                        >
+                            <MenuItem value={1}>CNPJ</MenuItem>
+                            <MenuItem value={2}>CAEPF</MenuItem>
+                        </Select>
+                    </FormControl>
 
                     <InputMask
-                        mask="99.999.999/9999-99"
+                        mask={setFormatCNPJMask}
                         value={selectedCNPJ}
                         disabled={false}
                         maskChar=" "
