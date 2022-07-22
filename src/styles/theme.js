@@ -18,7 +18,7 @@ const Theme = createTheme({
     typography: {
         h4_title:{
             lineHeight: 1.5,
-            fontSize: 30,
+            fontSize: 28,
             fontWeight: 700
         },
         p_subtitles: {

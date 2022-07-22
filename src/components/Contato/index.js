@@ -7,9 +7,9 @@ export default function Contato() {
         <Box className="box-main" component="section" id="contact">
             <Container maxWidth="lg" className="main-container">
                 <Box className="title-and-subtitle" component="section">
-                    <Typography variant="h4_title" component="div"
+                    <Typography variant="h4_title" component="h4"
                         className="title-text-contact" color="secondary">
-                        Entre em contato
+                        ENTRE EM CONTATO
                     </Typography>
                     <Typography variant="h6" component="p"
                         className="subtitle-text-contact" color="secondary">

@@ -14,7 +14,7 @@ export default function Rodape() {
     return (
         <Box component="footer">
 
-            <Box className="social-media">
+            <Box className="social-media" color="secondary">
                 <Typography variant="h6" component="h6" color="secondary">
                     Acompanhe nossas redes sociais
                 </Typography>
@@ -28,8 +28,9 @@ export default function Rodape() {
             </Box>
 
             <Box className="other-links main-box" component="section">
-                <Typography variant="h5" component="h5" color="primary.main">
-                    Outros Links
+                <Typography variant="h4_title" component="h4" color="primary.main"
+                fontWeight="bold">
+                    OUTROS LINKS
                 </Typography>
             </Box>
 
@@ -37,16 +38,19 @@ export default function Rodape() {
                 <Box component="aside" className="address">
                     <Typography variant="h5" component="h5" 
                     color="primary.main">
-                        Nosso Endereço
+                        Quem Somos
                     </Typography>
                     <Typography variant="p" component="p" paragraph={true}
                     color="primary.main" noWrap={false}>
-                        Somos uma empresa séria, dedicada e comprometida com os
-                        nossos clientes e buscamos sempre dar o nosso melhor em 
-                        todos os nossos trabalhos.
+                        A JN foi criada no ano de 2013 para solucionar questões relacionadas
+                        a Segurança do Trabalho e Saúde Ocupacional com propósito de
+                        assessorar as empresas com dificuldade de atendimento aos requisitos
+                        de órgãos fiscalizadores, legislação trabalhista e previdenciária e que
+                        tenham interesse em melhorar seu gerenciamento neste segmento,
+                        consequentemente promovendo o bem estar de todas as partes envolvidas.
                     </Typography>
                     <Typography variant="h6" component="h6" paragraph={true}
-                    color="primary.main" fontWeight="bold">
+                    color="primary.main">
                         Endereço
                     </Typography>
                     <Typography variant="p" component="p" paragraph={true}
@@ -56,13 +60,16 @@ export default function Rodape() {
                     </Typography>
                 </Box>
 
-                <Box component="section" className="links">
+                <Box component="section" className="links main-box">
                     <Typography variant="h5" component="h5" color="primary">
-                        Downloads
+                        Downloads & Acessos
                     </Typography>
                     <ListItemButton component="a" href={FichaEPIComentada}
                     download={true}>
                         <ListItemText primary="Ficha de EPI Comentada"/>
+                    </ListItemButton>
+                    <ListItemButton component="a" href="https://bit.ly/cat-s-2210">
+                        <ListItemText primary="Formulário de Preenchimento da CAT (Cliente)"/>
                     </ListItemButton>
                 </Box>
             </Box>
@@ -71,7 +78,6 @@ export default function Rodape() {
                 <Typography component="p" variant="p" paragraph={true}
                 color="primary.main" fontWeight="bold">
                     Desenvolvido por Elemar Leonel © 2022.
-                    Todos os direitos reservados.
                 </Typography>
             </Box>
         </Box>

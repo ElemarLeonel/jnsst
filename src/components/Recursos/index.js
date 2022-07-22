@@ -18,9 +18,9 @@ export default function Recursos() {
     return (
         <Box className="box-main" component="section" id="features">
             <Container maxWidth="lg">
-                <Typography variant="h4" component="div" textAlign="center"
+                <Typography variant="h4_title" component="h4" textAlign="center"
                     sx={{ paddingTop: '50px' }} color="secondary">
-                    Recursos
+                    RECURSOS
                 </Typography>
                 <Box sx={{
                     display: 'flex',

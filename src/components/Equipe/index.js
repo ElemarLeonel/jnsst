@@ -95,13 +95,21 @@ const equipe = [
         alt_image: "###",
         instagram: "#",
         facebook: "#"
+    },
+    {
+        name: "Dr. Antônio Gomes",
+        description: "###",
+        image: ImagemMember2,
+        alt_image: "###",
+        instagram: "#",
+        facebook: "#"
     }
 ]
 
 export default function Equipe() {
     return (
     <Box className="team" component="section">
-        <Typography className="title-team" component="h1">Equipe</Typography>
+        <Typography className="title-team" variant="h4_title" component="h4">EQUIPE</Typography>
         <Box className="box-row">
         {equipe.map((item) => (
         <Card variant="outlined" className="cards"
