@@ -20,7 +20,7 @@ export default function Recursos() {
             <Container maxWidth="lg">
                 <Typography variant="h4_title" component="h4" textAlign="center"
                     sx={{ paddingTop: '50px' }} color="secondary">
-                    RECURSOS
+                    NOSSOS SERVIÇOS
                 </Typography>
                 <Box sx={{
                     display: 'flex',

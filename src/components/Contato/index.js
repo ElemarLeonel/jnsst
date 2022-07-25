@@ -32,9 +32,9 @@ export default function Contato() {
     function send(){
         const formData = new FormData();
         Object.keys(campos).forEach(key => formData.append(key, campos[key]));
-        axios.post("http://localhost:4000/email", formData, {
+        axios.post("http://localhost:5000/email", formData, {
             headers: {
-                "Content-Type": "application/json"
+                'Content-Type': 'application/json'
             }
         })
         .then(response => alert(response.data));
@@ -75,7 +75,7 @@ export default function Contato() {
                 </Box>
                 <Box component="form" className="main-contact" onSubmit={handleFormSubmit}>
                     <Box component="section" className="name-and-email">
-                        <TextField id="full-name" label="Nome completo" variant="outlined"
+                        <TextField id="fullname" label="Nome completo" variant="outlined"
                             fullWidth color="secondary" required onChange={handleInputChange}
                             name="fullname"/>
                         <TextField id="email" label="Email" variant="outlined"
