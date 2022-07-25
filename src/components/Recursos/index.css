@@ -1,5 +1,5 @@
 :root{
-    --cor-fundo: #D3D3D3;
+    --cor-fundo: #F5F5F5;
     --cor-texto: #2E7D32;
 }
 
@@ -13,4 +13,27 @@
 .box-main{
     background-color: var(--cor-fundo);
     padding-bottom: 2.5rem;
+}
+
+.servicos{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.item-servico{
+    flex-basis: 30%;
+    flex-grow: 1;
+}
+
+@media (max-width: 576px){
+    .servicos{
+        flex-wrap: wrap;
+    }
+    .item-servico{
+        flex-basis: 100%;
+    }
 }

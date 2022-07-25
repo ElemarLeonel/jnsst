@@ -54,7 +54,7 @@ export default function Rodape() {
                         Endereço
                     </Typography>
                     <Typography variant="p" component="p" paragraph={true}
-                    color="primary.main" noWrap={true}>
+                    color="primary.main" noWrap={false}>
                         Av. Presidente Dutra, nº 463, Sala 05, Bairro dos 
                         Pioneiros, Pimenta Bueno - RO.
                     </Typography>

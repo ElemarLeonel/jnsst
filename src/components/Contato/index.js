@@ -54,6 +54,8 @@ export default function Contato() {
                         sobre o seu questionamento e em breve entraremos em contato
                         com você. Nossos canais de atendimento estão abaixo:
                     </Typography>
+                </Box>
+                <Box className="contact-links">
                     <Typography variant="p_subtitles" component="p"
                         className="subtitle-text-contact" color="secondary">
                         Telefone Fixo Recepção: (69) 3451-8182

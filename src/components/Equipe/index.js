@@ -25,82 +25,82 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 
 const equipe = [
     {
-        name: "Flávia Medeiros",
-        description: "###",
-        image: ImagemFlavia,
-        alt_image: "###",
+        nome: "Flávia Medeiros",
+        descricao: "###",
+        imagem: ImagemFlavia,
+        alt_imagem: "###",
         instagram: "#",
         facebook: "#"
     },
     {
-        name: "Elemar Leonel",
-        description: "###",
-        image: ImagemElemar,
-        alt_image: "###",
+        nome: "Elemar Leonel",
+        descricao: "###",
+        imagem: ImagemElemar,
+        alt_imagem: "###",
         instagram: "#",
         facebook: "#"
     },
     {
-        name: "Odair Calisto",
-        description: "###",
-        image: ImagemOdair,
-        alt_image: "###",
+        nome: "Odair Calisto",
+        descricao: "###",
+        imagem: ImagemOdair,
+        alt_imagem: "###",
         instagram: "#",
         facebook: "#"
     },
     {
-        name: "Dener de Assis",
-        description: "###",
-        image: ImagemDener,
-        alt_image: "###",
+        nome: "Dener de Assis",
+        descricao: "###",
+        imagem: ImagemDener,
+        alt_imagem: "###",
         instagram: "#",
         facebook: "#"
     },
     {
-        name: "Cleiso Rafael",
-        description: "###",
-        image: ImagemCleiso,
-        alt_image: "###",
+        nome: "Cleiso Rafael",
+        descricao: "###",
+        imagem: ImagemCleiso,
+        alt_imagem: "###",
         instagram: "#",
         facebook: "#"
     },
     {
-        name: "Sônia Lagácio",
-        description: "###",
-        image: ImagemMember1,
-        alt_image: "###",
+        nome: "Sônia Lagácio",
+        descricao: "###",
+        imagem: ImagemMember1,
+        alt_imagem: "###",
         instagram: "#",
         facebook: "#"
     },
     {
-        name: "Maria Márcia",
-        description: "###",
-        image: ImagemMember2,
-        alt_image: "###",
+        nome: "Maria Márcia",
+        descricao: "###",
+        imagem: ImagemMember2,
+        alt_imagem: "###",
         instagram: "#",
         facebook: "#"
     },
     {
-        name: "Edileusa Lagácio",
-        description: "###",
-        image: ImagemMember1,
-        alt_image: "###",
+        nome: "Edileusa Lagácio",
+        descricao: "###",
+        imagem: ImagemMember1,
+        alt_imagem: "###",
         instagram: "#",
         facebook: "#"
     },
     {
-        name: "Elaine Souza",
-        description: "###",
-        image: ImagemMember2,
-        alt_image: "###",
+        nome: "Elaine Souza",
+        descricao: "###",
+        imagem: ImagemMember2,
+        alt_imagem: "###",
         instagram: "#",
         facebook: "#"
     },
     {
-        name: "Dr. Antônio Gomes",
-        description: "###",
-        image: ImagemMember2,
-        alt_image: "###",
+        nome: "Dr. Antônio Gomes",
+        descricao: "###",
+        imagem: ImagemMember2,
+        alt_imagem: "###",
         instagram: "#",
         facebook: "#"
     }
@@ -117,15 +117,15 @@ export default function Equipe() {
             <CardMedia
                 component="img"
                 height="300"
-                image={item.image}
+                image={item.imagem}
                 alt={item.alt_image}
             />
             <CardContent>
                 <Typography gutterBottom variant="h5" component="div" color="secondary">
-                    {item.name}
+                    {item.nome}
                 </Typography>
                 <Typography variant="body2" color="secondary">
-                    {item.description}
+                    {item.descricao}
                 </Typography>
             </CardContent>
             <CardActions className="buttons-card">
