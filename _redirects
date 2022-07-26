@@ -1,2 +1,2 @@
-cat.jnsst.com.br   /cat             
-/home              /
+# Redireciona do que o navegador solicita para o que servimos
+/cat            https://cat.jnsst.com.br
