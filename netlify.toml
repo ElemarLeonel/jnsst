@@ -2,5 +2,5 @@
 
 from = "/cat"
 to = "https://cat.jnsst.com.br"
-status = 200
+status = 301
 force = true
