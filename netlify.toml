@@ -1,6 +1,10 @@
 [[redirects]]
 
 from = "/cat"
+<<<<<<< HEAD
 to = "https://cat.jnsst.com.br"
+=======
+to = "https://jnsst.com.br/cat"
+>>>>>>> 1b072d99a7bb28cba61ed491771d1bcd060a9cd4
 status = 200
 force = true
