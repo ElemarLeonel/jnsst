@@ -32,7 +32,7 @@ export default function Contato() {
     function send(){
         const formData = new FormData();
         Object.keys(campos).forEach(key => formData.append(key, campos[key]));
-        axios.post("http://localhost:5000/email", formData, {
+        axios.post("http://localhost:4000/email", formData, {
             headers: {
                 'Content-Type': 'application/json'
             }
