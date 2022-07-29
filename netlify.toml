@@ -1,6 +1,6 @@
 [[redirects]]
 
 from = "/cat"
-to = "https://cat.jnsst.com.br"
+to = "cat.jnsst.com.br"
 status = 200
 force = true
