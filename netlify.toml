@@ -3,3 +3,8 @@
     to = "https://www.jnsst.com.br/cat"
     status = 301
     force = true
+
+    from = "/cat"
+    to = "https://cat.jnsst.com.br"
+    status = 200
+    force = true
