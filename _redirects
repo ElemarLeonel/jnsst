@@ -1,1 +1,2 @@
 /cat/* https://cat.jnsst.com.br/:splat 200
+https://cat.jnsst.com.br/* https://jnsst.com.br/cat/:splat 200!
