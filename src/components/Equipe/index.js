@@ -108,7 +108,7 @@ const equipe = [
 
 export default function Equipe() {
     return (
-    <Box className="team" component="section">
+    <Box className="team" component="section" id="team">
         <Typography className="title-team" variant="h4_title" component="h4">EQUIPE</Typography>
         <Box className="box-row">
         {equipe.map((item) => (
