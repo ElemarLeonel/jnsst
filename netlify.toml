@@ -1,4 +1,10 @@
 [[redirects]]
+  force = true
+  from = "https://cat.jnsst.com.br/*"
+  status = 301
+  to = "https://www.jnsst.com.br/cat/:splat"
 
-from = "cat.jnsst.com.br"
-to = "jnsst.com.br/cat"
+[[redirects]]
+  from = "/*"
+  status = 200
+  to = "/index"
