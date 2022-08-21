@@ -6,6 +6,6 @@
 
 
 [[redirects]]
-    from = "/cat"
+    from = "/*"
     to = "/cat"
     status = 200
