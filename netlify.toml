@@ -5,6 +5,12 @@
   to = "https://www.jnsst.com.br/cat/:splat"
 
 [[redirects]]
+  force = true
+  from = "https://requisicoes.jnsst.com.br/*"
+  status = 301
+  to = "https://www.jnsst.com.br/requisicoes/:splat"
+
+[[redirects]]
   from = "/*"
   status = 200
   to = "/index"
