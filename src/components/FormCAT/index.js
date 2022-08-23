@@ -41,6 +41,8 @@ import MedicalInformationIcon from '@mui/icons-material/MedicalInformation';
 import LocationCityIcon from '@mui/icons-material/LocationCity';
 import AddRoadIcon from '@mui/icons-material/AddRoad';
 import HomeIcon from '@mui/icons-material/Home';
+import EmojiPeopleIcon from '@mui/icons-material/EmojiPeople';
+import MultipleStopIcon from '@mui/icons-material/MultipleStop';
 
 // Importing Main Styles File
 import './index.css';
@@ -62,9 +64,9 @@ export default function FormCAT() {
 
     let setFormatCNPJMask = React.useState();
 
-    if(selectedTypeCNPJ === 1){
+    if (selectedTypeCNPJ === 1) {
         setFormatCNPJMask = "99.999.999/9999-99";
-    } else if (selectedTypeCNPJ === 2){
+    } else if (selectedTypeCNPJ === 2) {
         setFormatCNPJMask = "999.999.999/999-99";
     }
 
@@ -289,7 +291,7 @@ export default function FormCAT() {
 
                 <Box className="subtitle-cat">
                     <Typography variant="h6" component="h6" color="secondary">
-                        Dados do Médico
+                        Dados do Médico (Atestado Médico)
                     </Typography>
                 </Box>
 
@@ -548,6 +550,43 @@ export default function FormCAT() {
                                 </InputAdornment>
                             ),
                         }}
+                    />
+
+                    <TextField id="parteDoCorpoAtingidaAcidente"
+                        label="Parte do Corpo Atingida"
+                        variant="outlined" color="secondary" required={true}
+                        className="dados-acidente"
+                        name="parteDoCorpoAtingidaAcidente"
+                        helperText="Ex: Mão, braço, perna, etc."
+                        InputProps={{
+                            startAdornment: (
+                                <InputAdornment position="start">
+                                    <EmojiPeopleIcon />
+                                </InputAdornment>
+                            ),
+                        }}
+                    />
+
+                    <TextField id="lateralidadeDoCorpoAtingidaAcidente"
+                        label="Lateralidade"
+                        variant="outlined" color="secondary" required={true}
+                        className="dados-acidente"
+                        name="lateralidadeDoCorpoAtingidaAcidente"
+                        helperText="Direito, esquerdo, ambos, não aplicável"
+                        InputProps={{
+                            startAdornment: (
+                                <InputAdornment position="start">
+                                    <MultipleStopIcon />
+                                </InputAdornment>
+                            ),
+                        }}
+                    />
+                    <TextField id="descricaoBreveAcidente"
+                        color="secondary" required={true}
+                        className="dados-acidente"
+                        name="descricaoBreveAcidente"
+                        label="Descrição Breve" multiline
+                        rows={4} defaultValue="Digite uma descrição breve do acidente"
                     />
 
                 </Box>
