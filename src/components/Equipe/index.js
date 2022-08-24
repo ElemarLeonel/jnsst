@@ -12,11 +12,7 @@ import {
     from '@mui/material';
 import './index.css';
 
-import ImagemCleiso from '../../assets/team/cleiso.jpg';
-import ImagemDener from '../../assets/team/dener.jpg';
-import ImagemElemar from '../../assets/team/elemar.jpg';
-import ImagemOdair from '../../assets/team/odair.jpg';
-import ImagemFlavia from '../../assets/team/flavia.jpeg';
+
 import ImagemMember1 from '../../assets/team/member-1.png';
 import ImagemMember2 from '../../assets/team/member-2.png';
 
