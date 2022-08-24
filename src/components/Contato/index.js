@@ -87,7 +87,7 @@ export default function Contato() {
                     <TextField id="title" label="Título" variant="outlined"
                             fullWidth color="secondary" required onChange={handleInputChange}
                             name="title"/>
-                    <TextField id="outlined-multiline-static" label="Mensagem"
+                    <TextField id="message" label="Mensagem"
                         multiline maxRows={5} fullWidth color="secondary" required
                         onChange={handleInputChange} name="message"/>
                     <Button variant="contained" color="secondary" maxWidth="md"

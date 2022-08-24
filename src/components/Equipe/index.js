@@ -27,7 +27,7 @@ const equipe = [
     {
         nome: "Flávia Medeiros",
         descricao: "###",
-        imagem: ImagemFlavia,
+        imagem: ImagemMember1,
         alt_imagem: "###",
         instagram: "#",
         facebook: "#"
@@ -35,7 +35,7 @@ const equipe = [
     {
         nome: "Elemar Leonel",
         descricao: "###",
-        imagem: ImagemElemar,
+        imagem: ImagemMember2,
         alt_imagem: "###",
         instagram: "#",
         facebook: "#"
@@ -43,7 +43,7 @@ const equipe = [
     {
         nome: "Odair Calisto",
         descricao: "###",
-        imagem: ImagemOdair,
+        imagem: ImagemMember1,
         alt_imagem: "###",
         instagram: "#",
         facebook: "#"
@@ -51,7 +51,7 @@ const equipe = [
     {
         nome: "Dener de Assis",
         descricao: "###",
-        imagem: ImagemDener,
+        imagem: ImagemMember2,
         alt_imagem: "###",
         instagram: "#",
         facebook: "#"
@@ -59,7 +59,7 @@ const equipe = [
     {
         nome: "Cleiso Rafael",
         descricao: "###",
-        imagem: ImagemCleiso,
+        imagem: ImagemMember1,
         alt_imagem: "###",
         instagram: "#",
         facebook: "#"
