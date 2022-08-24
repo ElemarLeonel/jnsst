@@ -8,6 +8,7 @@ import {
     InputAdornment,
     Input,
     IconButton,
+    Button,
     FormControlLabel,
     Switch,
     FormControl,
@@ -144,6 +145,7 @@ export default function FormCAT() {
                         onChange={(e) => setSelectedCNPJ(e.target.value)}>
                         <TextField id="CNPJouCAEPF" label="CNPJ ou CAEPF"
                             variant="outlined" color="secondary" required={true}
+                            sx={{ width: '45%' }}
                             className="dados-empresa"
                             name="CNPJouCAEPF"
                             InputProps={{
@@ -158,6 +160,7 @@ export default function FormCAT() {
 
                     <TextField id="razaoSocial" label="Razão Social ou Nome Fazenda"
                         variant="outlined" color="secondary" required={true}
+                        sx={{ width: '45%' }}
                         className="dados-empresa"
                         name="razaoSocial"
                         InputProps={{
@@ -171,6 +174,7 @@ export default function FormCAT() {
 
                     <TextField id="nomeCompletoColaborador"
                         label="Nome Completo do Colaborador"
+                        sx={{ width: '45%' }}
                         variant="outlined" color="secondary" required={true}
                         className="dados-empresa"
                         name="nomeCompletoColaborador"
@@ -215,7 +219,7 @@ export default function FormCAT() {
                         id="dataAtestadoMedico"
                         renderInput={(props) =>
                             <TextField  {...props} color="secondary"
-                                required={true} />
+                                required={true} sx={{ width: '30%' }}/>
                         }
                         onChange={(newValue) => {
                             setSelectedDateMedicalCertificate(newValue)
@@ -224,6 +228,7 @@ export default function FormCAT() {
 
 
                     <TextField id="cidAtestadoMedico"
+                        sx={{ width: '30%' }}
                         label="CID"
                         variant="outlined" color="secondary" required={true}
                         className="dados-atestado-medico"
@@ -248,7 +253,7 @@ export default function FormCAT() {
                         }}
                         renderInput={(props) =>
                             <TextField {...props} color="secondary"
-                                required={true} />
+                                required={true} sx={{ width: '30%' }}/>
                         }>
                     </TimePicker>
 
@@ -335,7 +340,7 @@ export default function FormCAT() {
                         }}>
                         <TextField id="cpfMedico"
                             label="CPF do Médico"
-                            variant="outlined" color="secondary" required={true}
+                            variant="outlined" color="secondary" required={false}
                             className="dados-medico"
                             name="cpfMedico"
                             InputProps={{
@@ -495,7 +500,8 @@ export default function FormCAT() {
 
 
                     <TextField id="logradouroAcidente"
-                        label="Logradouro (Endereço)"
+                        sx={{ width: '75%' }}
+                        label="Logradouro"
                         variant="outlined" color="secondary" required={true}
                         className="dados-acidente"
                         name="logradouroAcidente"
@@ -510,6 +516,7 @@ export default function FormCAT() {
 
 
                     <TextField id="numeroRuaAcidente"
+                        sx={{ width: '30%' }}
                         label="Número"
                         variant="outlined" color="secondary" required={true}
                         className="dados-acidente"
@@ -525,6 +532,7 @@ export default function FormCAT() {
 
 
                     <TextField id="bairroAcidente"
+                        sx={{ width: '30%' }}
                         label="Bairro"
                         variant="outlined" color="secondary" required={true}
                         className="dados-acidente"
@@ -539,6 +547,7 @@ export default function FormCAT() {
                     />
 
                     <TextField id="cidadeAcidente"
+                        sx={{ width: '30%' }}
                         label="Cidade"
                         variant="outlined" color="secondary" required={true}
                         className="dados-acidente"
@@ -581,13 +590,17 @@ export default function FormCAT() {
                             ),
                         }}
                     />
-                    <TextField id="descricaoBreveAcidente"
+                    <TextField fullWidth id="descricaoBreveAcidente"
                         color="secondary" required={true}
                         className="dados-acidente"
                         name="descricaoBreveAcidente"
-                        label="Descrição Breve" multiline
+                        label="Descrição" multiline
                         rows={4} defaultValue="Digite uma descrição breve do acidente"
                     />
+
+                    <Button variant="contained" color="secondary" fullWidth
+                        size="large" type="submit">Enviar
+                    </Button>
 
                 </Box>
             </Box>
