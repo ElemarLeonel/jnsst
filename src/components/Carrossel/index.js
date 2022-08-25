@@ -1,7 +1,7 @@
 import { Carousel } from 'react-carousel-minimal';
-import Image1 from '../../assets/imgs-carousel/acao_abril_verde_castilho.jpg';
-import Image2 from '../../assets/imgs-carousel/curso_empilhadeira_cairu.jpeg';
-import Image3 from '../../assets/imgs-carousel/curso_primeirossocorros_piarara.jpg';
+import Image1 from '../../assets/imgs-carousel/acao_abril_verde_castilho.webp';
+import Image2 from '../../assets/imgs-carousel/curso_empilhadeira_cairu.webp';
+import Image3 from '../../assets/imgs-carousel/curso_primeirossocorros_piarara.webp';
 import './index.css';
 
 export default function Carrossel() {
@@ -36,10 +36,9 @@ export default function Carrossel() {
           <Carousel
             data={data}
             time={4000}
-            width="auto"
-            height="1000px"
+            width="100%"
+            height="500px"
             captionStyle={captionStyle}
-            radius="5px"
             slideNumber={false}
             slideNumberStyle={slideNumberStyle}
             captionPosition="bottom"
@@ -54,7 +53,7 @@ export default function Carrossel() {
             style={{
               // display: "flex",
               // justifyContent: "center",
-              marginTop: "60px",
+              marginTop: "70px",
             }}
           />
       </div>

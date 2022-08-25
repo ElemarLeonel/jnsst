@@ -44,11 +44,11 @@ export default function Contato() {
         <Box className="contact" component="section" id="contact">
             <Container maxWidth="lg" className="main-container">
                 <Box className="title-and-subtitle" component="section">
-                    <Typography variant="h4_title" component="h4"
+                    <Typography variant="h3_title" component="h3"
                         className="title-text-contact" color="secondary">
                         ENTRE EM CONTATO
                     </Typography>
-                    <Typography variant="h6" component="p"
+                    <Typography variant="p_subtitles" component="p"
                         className="subtitle-text-contact" color="secondary">
                         Para mais informações e tirar suas dúvidas, nos envie um email
                         sobre o seu questionamento e em breve entraremos em contato
@@ -58,20 +58,22 @@ export default function Contato() {
                 <Box className="contact-links">
                     <Typography variant="p_subtitles" component="p"
                         className="subtitle-text-contact" color="secondary">
-                        Telefone Fixo Recepção: (69) 3451-8182
+                        Telefone Fixo Recepção - (69) 3451-8182
                     </Typography>
                     <Typography variant="p_subtitles" component="p"
                         className="subtitle-text-contact" color="secondary">
                         <Link color="secondary"
+                            component="a"
                             href="https://api.whatsapp.com/send?phone=5569984008182&text=Oi.">
-                            WhatsApp Recepção: (69) 98400-8182
+                            WhatsApp Recepção - (69) 98400-8182
                         </Link>
                     </Typography>
                     <Typography variant="p_subtitles" component="p"
                         className="subtitle-text-contact" color="secondary">
                         <Link color="secondary"
+                            component="a"
                             href="https://api.whatsapp.com/send?phone=5569984008182&text=Oi.">
-                            WhatsApp eSocial: (69) 98485-8181
+                            WhatsApp eSocial - (69) 98485-8181
                         </Link>
                     </Typography>
                 </Box>
