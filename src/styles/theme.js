@@ -26,6 +26,11 @@ const Theme = createTheme({
             fontSize: 24,
             fontWeight: 700
         },
+        h5_title:{
+            lineHeight: 1.5,
+            fontSize: 20,
+            fontWeight: 700
+        },
         p_subtitles: {
             lineHeight: 1.5,
             fontSize: 16,

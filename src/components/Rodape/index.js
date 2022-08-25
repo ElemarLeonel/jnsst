@@ -36,11 +36,12 @@ export default function Rodape() {
 
             <Box className="address-and-links main-box">
                 <Box component="aside" className="address">
-                    <Typography variant="h5" component="h5" 
+                    <Typography variant="h5_title" component="h5" 
                     color="primary.main">
                         Quem Somos
                     </Typography>
-                    <Typography variant="p" component="p" paragraph={true}
+                    <Typography variant="p_description" component="p" 
+                    paragraph={true}
                     color="primary.main" noWrap={false}>
                         A JN foi criada no ano de 2013 para solucionar questões relacionadas
                         a Segurança do Trabalho e Saúde Ocupacional com propósito de
@@ -49,11 +50,12 @@ export default function Rodape() {
                         tenham interesse em melhorar seu gerenciamento neste segmento,
                         consequentemente promovendo o bem estar de todas as partes envolvidas.
                     </Typography>
-                    <Typography variant="h6" component="h6" paragraph={true}
+                    <Typography variant="h5_title" component="h5" paragraph={true}
                     color="primary.main">
                         Endereço
                     </Typography>
-                    <Typography variant="p" component="p" paragraph={true}
+                    <Typography variant="p_description" component="p" 
+                    paragraph={true}
                     color="primary.main" noWrap={false}>
                         Av. Presidente Dutra, nº 463, Sala 05, Bairro dos 
                         Pioneiros, Pimenta Bueno - RO.
@@ -61,21 +63,24 @@ export default function Rodape() {
                 </Box>
 
                 <Box component="section" className="links main-box">
-                    <Typography variant="h5" component="h5" color="primary">
+                    <Typography variant="h5_title" component="h5" 
+                    color="primary">
                         Downloads & Acessos
                     </Typography>
                     <ListItemButton component="a" href={FichaEPIComentada}
                     download={true}>
                         <ListItemText primary="Ficha de EPI Comentada"/>
                     </ListItemButton>
-                    <ListItemButton component="a" href="https://bit.ly/cat-s-2210">
+                    <ListItemButton component="a" 
+                    href="https://bit.ly/cat-s-2210">
                         <ListItemText primary="Formulário de Preenchimento da CAT (Cliente)"/>
                     </ListItemButton>
                 </Box>
             </Box>
 
             <Box className="credits main-box">
-                <Typography component="p" variant="p" paragraph={true}
+                <Typography component="p_description" variant="p" 
+                paragraph={true}
                 color="primary.main" fontWeight="bold">
                     Desenvolvido por Elemar Leonel © 2022.
                 </Typography>
