@@ -75,6 +75,10 @@ export default function Rodape() {
                     href="https://bit.ly/cat-s-2210">
                         <ListItemText primary="Formulário de Preenchimento da CAT (Cliente)"/>
                     </ListItemButton>
+                    <ListItemButton component="a" 
+                    href="#">
+                        <ListItemText primary="Formulário de Preenchimento das Requisições (Cliente)"/>
+                    </ListItemButton>
                 </Box>
             </Box>
 
