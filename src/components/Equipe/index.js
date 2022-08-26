@@ -22,7 +22,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 const equipe = [
     {
         nome: "Flávia Medeiros",
-        profissao: "###",
+        profissao: "Técnico(a) em Segurança do Trabalho",
         imagem: ImagemMember1,
         descricao: "###",
         instagram: "#",
@@ -30,7 +30,7 @@ const equipe = [
     },
     {
         nome: "Elemar Leonel",
-        profissao: "###",
+        profissao: "Técnico em Informática",
         imagem: ImagemMember2,
         descricao: "###",
         instagram: "#",
@@ -38,7 +38,7 @@ const equipe = [
     },
     {
         nome: "Odair Calisto",
-        profissao: "###",
+        profissao: "Técnico(a) em Segurança do Trabalho",
         imagem: ImagemMember1,
         descricao: "###",
         instagram: "#",
@@ -46,7 +46,7 @@ const equipe = [
     },
     {
         nome: "Dener de Assis",
-        profissao: "###",
+        profissao: "Técnico(a) em Segurança do Trabalho",
         imagem: ImagemMember2,
         descricao: "###",
         instagram: "#",
@@ -54,7 +54,7 @@ const equipe = [
     },
     {
         nome: "Cleiso Rafael",
-        profissao: "###",
+        profissao: "Técnico(a) em Segurança do Trabalho",
         imagem: ImagemMember1,
         descricao: "###",
         instagram: "#",
@@ -62,7 +62,7 @@ const equipe = [
     },
     {
         nome: "Sônia Lagácio",
-        profissao: "###",
+        profissao: "Técnico em Enfermagem",
         imagem: ImagemMember1,
         descricao: "###",
         instagram: "#",
@@ -70,7 +70,7 @@ const equipe = [
     },
     {
         nome: "Maria Márcia",
-        profissao: "###",
+        profissao: "Secretária",
         imagem: ImagemMember2,
         descricao: "###",
         instagram: "#",
@@ -78,7 +78,7 @@ const equipe = [
     },
     {
         nome: "Edileusa Lagácio",
-        profissao: "###",
+        profissao: "Psicólogo(a)",
         imagem: ImagemMember1,
         descricao: "###",
         instagram: "#",
@@ -86,7 +86,7 @@ const equipe = [
     },
     {
         nome: "Elaine Souza",
-        profissao: "###",
+        profissao: "Secretária",
         imagem: ImagemMember2,
         descricao: "###",
         instagram: "#",
@@ -94,7 +94,7 @@ const equipe = [
     },
     {
         nome: "Dr. Antônio Gomes",
-        profissao: "###",
+        profissao: "Fonoaudiólogo",
         imagem: ImagemMember2,
         descricao: "###",
         instagram: "#",

@@ -27,11 +27,6 @@
     padding-top: 50px;
 }
 
-.subtitle-text-contact{
-    padding-top: 25px;
-    text-align: justify;
-}
-
 .contact-links{
     display: flex;
     flex-direction: row;

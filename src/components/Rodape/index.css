@@ -54,12 +54,26 @@ footer{
     max-width: 50vw;
 }
 
+.contact-links{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.subtitle-text-contact{
+    padding-top: 10px;
+    text-align: justify;
+}
+
 .links{
     max-width: 50vw;
     color: var(--color-footer);
 }
 
 @media (max-width: 600px){
+    .contact-links{
+        flex-flow: column nowrap;
+    }
     .address-and-links{
         flex-direction: column;
         justify-content: center;

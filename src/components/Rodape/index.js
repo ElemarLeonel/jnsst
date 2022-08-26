@@ -1,9 +1,12 @@
 import * as React from 'react';
-import { Box, 
-        Typography, 
-        Button, 
-        ListItemButton, 
-        ListItemText } from '@mui/material';
+import {
+    Box,
+    Typography,
+    Button,
+    ListItemButton,
+    ListItemText,
+    Link
+} from '@mui/material';
 import './index.css';
 
 import FichaEPIComentada from '../../assets/downloads/ficha_epi_comentada.xlsx';
@@ -29,20 +32,20 @@ export default function Rodape() {
 
             <Box className="other-links main-box" component="section">
                 <Typography variant="h4_title" component="h4" color="primary.main"
-                fontWeight="bold">
+                    fontWeight="bold">
                     OUTROS LINKS
                 </Typography>
             </Box>
 
             <Box className="address-and-links main-box">
                 <Box component="aside" className="address">
-                    <Typography variant="h5_title" component="h5" 
-                    color="primary.main">
+                    <Typography variant="h5_title" component="h5"
+                        color="primary.main">
                         Quem Somos
                     </Typography>
-                    <Typography variant="p_description" component="p" 
-                    paragraph={true}
-                    color="primary.main" noWrap={false}>
+                    <Typography variant="p_description" component="p"
+                        paragraph={true}
+                        color="primary.main" noWrap={false}>
                         A JN foi criada no ano de 2013 para solucionar questões relacionadas
                         a Segurança do Trabalho e Saúde Ocupacional com propósito de
                         assessorar as empresas com dificuldade de atendimento aos requisitos
@@ -51,41 +54,67 @@ export default function Rodape() {
                         consequentemente promovendo o bem estar de todas as partes envolvidas.
                     </Typography>
                     <Typography variant="h5_title" component="h5" paragraph={true}
-                    color="primary.main">
+                        color="primary.main">
                         Endereço
                     </Typography>
-                    <Typography variant="p_description" component="p" 
-                    paragraph={true}
-                    color="primary.main" noWrap={false}>
-                        Av. Presidente Dutra, nº 463, Sala 05, Bairro dos 
+                    <Typography variant="p_description" component="p"
+                        paragraph={true}
+                        color="primary.main" noWrap={false}>
+                        Av. Presidente Dutra, nº 463, Sala 05, Bairro dos
                         Pioneiros, Pimenta Bueno - RO.
                     </Typography>
+                    <Typography variant="h5_title" component="h5"
+                        color="primary.main">
+                        Telefones
+                    </Typography>
+                    <Box className="contact-links">
+                        <Typography variant="p_subtitles" component="p"
+                            className="subtitle-text-contact" color="primary.main">
+                            <Link color="primary.main"
+                                component="a"
+                                href="https://api.whatsapp.com/send?phone=5569984008182&text=Oi.">
+                                WhatsApp eSocial
+                            </Link>
+                        </Typography>
+                        <Typography variant="p_subtitles" component="p"
+                            className="subtitle-text-contact" color="primary.main">
+                            <Link color="primary.main"
+                                component="a"
+                                href="https://api.whatsapp.com/send?phone=5569984008182&text=Oi.">
+                                WhatsApp Recepção
+                            </Link>
+                        </Typography>
+                        <Typography variant="p_subtitles" component="p"
+                            className="subtitle-text-contact" color="primary.main">
+                            Telefone Fixo - (69) 3451-8182
+                        </Typography>
+                    </Box>
                 </Box>
 
                 <Box component="section" className="links main-box">
-                    <Typography variant="h5_title" component="h5" 
-                    color="primary">
+                    <Typography variant="h5_title" component="h5"
+                        color="primary">
                         Downloads & Acessos
                     </Typography>
                     <ListItemButton component="a" href={FichaEPIComentada}
-                    download={true}>
-                        <ListItemText primary="Ficha de EPI Comentada"/>
+                        download={true}>
+                        <ListItemText primary="Ficha de EPI Comentada" />
                     </ListItemButton>
-                    <ListItemButton component="a" 
-                    href="https://bit.ly/cat-s-2210">
-                        <ListItemText primary="Formulário de Preenchimento da CAT (Cliente)"/>
+                    <ListItemButton component="a"
+                        href="https://bit.ly/cat-s-2210">
+                        <ListItemText primary="Formulário de Preenchimento da CAT (Cliente)" />
                     </ListItemButton>
-                    <ListItemButton component="a" 
-                    href="#">
-                        <ListItemText primary="Formulário de Preenchimento das Requisições (Cliente)"/>
+                    <ListItemButton component="a"
+                        href="#">
+                        <ListItemText primary="Formulário de Preenchimento das Requisições (Cliente)" />
                     </ListItemButton>
                 </Box>
             </Box>
 
             <Box className="credits main-box">
-                <Typography component="p_description" variant="p" 
-                paragraph={true}
-                color="primary.main" fontWeight="bold">
+                <Typography component="p_description" variant="p"
+                    paragraph={true}
+                    color="primary.main" fontWeight="bold">
                     Desenvolvido por Elemar Leonel © 2022.
                 </Typography>
             </Box>

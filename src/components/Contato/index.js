@@ -3,8 +3,7 @@ import {
     Container,
     TextField,
     Typography,
-    Button,
-    Link
+    Button
 } from '@mui/material';
 import * as React from 'react';
 import './index.css';
@@ -53,28 +52,6 @@ export default function Contato() {
                         Para mais informações e tirar suas dúvidas, nos envie um email
                         sobre o seu questionamento e em breve entraremos em contato
                         com você. Nossos canais de atendimento estão abaixo:
-                    </Typography>
-                </Box>
-                <Box className="contact-links">
-                    <Typography variant="p_subtitles" component="p"
-                        className="subtitle-text-contact" color="secondary">
-                        Telefone Fixo Recepção - (69) 3451-8182
-                    </Typography>
-                    <Typography variant="p_subtitles" component="p"
-                        className="subtitle-text-contact" color="secondary">
-                        <Link color="secondary"
-                            component="a"
-                            href="https://api.whatsapp.com/send?phone=5569984008182&text=Oi.">
-                            WhatsApp Recepção - (69) 98400-8182
-                        </Link>
-                    </Typography>
-                    <Typography variant="p_subtitles" component="p"
-                        className="subtitle-text-contact" color="secondary">
-                        <Link color="secondary"
-                            component="a"
-                            href="https://api.whatsapp.com/send?phone=5569984008182&text=Oi.">
-                            WhatsApp eSocial - (69) 98485-8181
-                        </Link>
                     </Typography>
                 </Box>
                 <Box component="form" className="main-contact" onSubmit={handleFormSubmit}>
