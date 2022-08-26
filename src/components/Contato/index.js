@@ -51,7 +51,7 @@ export default function Contato() {
                         className="subtitle-text-contact" color="secondary">
                         Para mais informações e tirar suas dúvidas, nos envie um email
                         sobre o seu questionamento e em breve entraremos em contato
-                        com você. Nossos canais de atendimento estão abaixo:
+                        com você.
                     </Typography>
                 </Box>
                 <Box component="form" className="main-contact" onSubmit={handleFormSubmit}>
