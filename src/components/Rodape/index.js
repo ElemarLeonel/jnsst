@@ -4,14 +4,14 @@ import {
     Typography,
     Button,
     ListItemButton,
-    ListItemText,
-    Link
+    ListItemText
 } from '@mui/material';
 import './index.css';
 
 import FichaEPIComentada from '../../assets/downloads/ficha_epi_comentada.xlsx';
 
 import InstagramIcon from '@mui/icons-material/Instagram';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 export default function Rodape() {
     return (
@@ -63,31 +63,30 @@ export default function Rodape() {
                         Av. Presidente Dutra, nº 463, Sala 05, Bairro dos
                         Pioneiros, Pimenta Bueno - RO.
                     </Typography>
+                    <Typography variant="p_description" component="p"
+                        paragraph={true}
+                        color="primary.main" noWrap={false}>
+                        Telefone Fixo - (69) 3451-8182
+                    </Typography>
                     <Typography variant="h5_title" component="h5"
                         color="primary.main">
-                        Telefones
+                        WhatsApp
                     </Typography>
                     <Box className="contact-links">
-                        <Typography variant="p_subtitles" component="p"
-                            className="subtitle-text-contact" color="primary.main">
-                            <Link color="primary.main"
-                                component="a"
-                                href="https://api.whatsapp.com/send?phone=5569984008182&text=Oi.">
-                                WhatsApp eSocial
-                            </Link>
-                        </Typography>
-                        <Typography variant="p_subtitles" component="p"
-                            className="subtitle-text-contact" color="primary.main">
-                            <Link color="primary.main"
-                                component="a"
-                                href="https://api.whatsapp.com/send?phone=5569984008182&text=Oi.">
-                                WhatsApp Recepção
-                            </Link>
-                        </Typography>
-                        <Typography variant="p_subtitles" component="p"
-                            className="subtitle-text-contact" color="primary.main">
-                            Telefone Fixo - (69) 3451-8182
-                        </Typography>
+                        <ListItemButton component="a" className="links-whatsapp"
+                            href="https://api.whatsapp.com/send?phone=5569984858181&text=Oi.">
+                            <WhatsAppIcon color="primary" size="medium" 
+                            className="icon-whatsapp"/>
+                            <ListItemText primary="WhatsApp e-Social" 
+                            sx={{ color: "primary.main" }}/>
+                        </ListItemButton>
+                        <ListItemButton component="a" className="links-whatsapp"
+                            href="https://api.whatsapp.com/send?phone=5569984008182&text=Oi.">
+                            <WhatsAppIcon color="primary" size="medium" 
+                            className="icon-whatsapp"/>
+                            <ListItemText primary="WhatsApp Recepção"
+                            sx={{ color: "primary.main" }}/>
+                        </ListItemButton>
                     </Box>
                 </Box>
 
