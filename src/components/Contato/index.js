@@ -3,12 +3,12 @@ import {
     Container,
     TextField,
     Typography,
-    Button
+    Button,
+    Alert
 } from '@mui/material';
 import * as React from 'react';
 import './index.css';
 import axios from 'axios';
-
 
 export default function Contato() {
     const [campos, setCampos] = React.useState({
@@ -25,19 +25,20 @@ export default function Contato() {
 
     function handleFormSubmit(event){
         event.preventDefault();
-        console.log(campos);
         send();
     }
 
     function send(){
+        const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY
         const formData = new FormData();
         Object.keys(campos).forEach(key => formData.append(key, campos[key]));
         axios.post("http://localhost:5000/email", formData, {
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + SENDGRID_API_KEY
             }
         })
-        .then(response => alert(response.data));
+        .then(response => <><Alert severity="success">${response}</Alert></>);
     }
 
     return (

@@ -15,66 +15,68 @@ import './index.css';
 
 import ImagemMember1 from '../../assets/team/member-1.webp';
 import ImagemMember2 from '../../assets/team/member-2.webp';
+import ImagemFlavia from '../../assets/team/flavia.webp';
+import ImagemElemar from '../../assets/team/elemar.webp';
+import ImagemJonathan from '../../assets/team/jonathan.webp';
 
 import InstagramIcon from '@mui/icons-material/Instagram';
-import FacebookIcon from '@mui/icons-material/Facebook';
 
 const equipe = [
     {
         nome: "Flávia Medeiros",
         profissao: "Técnico(a) em Segurança do Trabalho",
-        imagem: ImagemMember1,
-        descricao: "###",
-        instagram: "#",
-        facebook: "#"
+        imagem: ImagemFlavia,
+        descricao: "Membro da equipe da JN Saúde e Segurança do Trabalho - Flávia Medeiros",
+        instagram: "https://www.instagram.com/flavia.medeiros.505/"
     },
     {
         nome: "Elemar Leonel",
         profissao: "Técnico em Informática",
-        imagem: ImagemMember2,
-        descricao: "###",
-        instagram: "#",
-        facebook: "#"
+        imagem: ImagemElemar,
+        descricao: "Membro da equipe da JN Saúde e Segurança do Trabalho - Elemar Leonel",
+        instagram: "https://www.instagram.com/dev.elemarleonel/"
+    },
+    {
+        nome: "Jonathan Alves",
+        profissao: "Eng. de Segurança do Trabalho",
+        imagem: ImagemJonathan,
+        descricao: "Membro da equipe da JN Saúde e Segurança do Trabalho - Jonathan Alves",
+        instagram: "https://www.instagram.com/jonathan_alvespb/"
     },
     {
         nome: "Odair Calisto",
         profissao: "Técnico(a) em Segurança do Trabalho",
         imagem: ImagemMember1,
         descricao: "###",
-        instagram: "#",
-        facebook: "#"
+        instagram: "#"
     },
     {
         nome: "Dener de Assis",
         profissao: "Técnico(a) em Segurança do Trabalho",
         imagem: ImagemMember2,
         descricao: "###",
-        instagram: "#",
-        facebook: "#"
+        instagram: "#"
     },
     {
         nome: "Cleiso Rafael",
         profissao: "Técnico(a) em Segurança do Trabalho",
         imagem: ImagemMember1,
         descricao: "###",
-        instagram: "#",
-        facebook: "#"
+        instagram: "#"
     },
     {
         nome: "Sônia Lagácio",
         profissao: "Técnico em Enfermagem",
         imagem: ImagemMember1,
         descricao: "###",
-        instagram: "#",
-        facebook: "#"
+        instagram: "#"
     },
     {
         nome: "Maria Márcia",
         profissao: "Secretária",
         imagem: ImagemMember2,
         descricao: "###",
-        instagram: "#",
-        facebook: "#"
+        instagram: "#"
     },
     {
         nome: "Edileusa Lagácio",
@@ -82,23 +84,20 @@ const equipe = [
         imagem: ImagemMember1,
         descricao: "###",
         instagram: "#",
-        facebook: "#"
     },
     {
         nome: "Elaine Souza",
         profissao: "Secretária",
         imagem: ImagemMember2,
         descricao: "###",
-        instagram: "#",
-        facebook: "#"
+        instagram: "#"
     },
     {
         nome: "Dr. Antônio Gomes",
         profissao: "Fonoaudiólogo",
         imagem: ImagemMember2,
         descricao: "###",
-        instagram: "#",
-        facebook: "#"
+        instagram: "#"
     }
 ]
 
@@ -112,8 +111,8 @@ export default function Equipe() {
             sx={{ boxShadow: 2 }}>
             <CardMedia
                 component="img"
-                width="300"
-                height="300"
+                width="400"
+                height="400"
                 image={item.imagem}
                 alt={item.descricao}
             />
@@ -132,13 +131,6 @@ export default function Equipe() {
                 color="secondary" 
                 startIcon={<InstagramIcon />}>
                     Instagram
-                </Button>
-                <Button size="medium" 
-                href={item.facebook} 
-                variant="outlined" 
-                color="secondary" 
-                startIcon={<FacebookIcon />}>
-                    Facebook
                 </Button>
             </CardActions>
         </Card>
