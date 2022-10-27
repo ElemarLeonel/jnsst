@@ -1,23 +1,33 @@
 import { Carousel } from 'react-carousel-minimal';
-import Image1 from '../../assets/imgs-carousel/acao_abril_verde_castilho.webp';
-import Image2 from '../../assets/imgs-carousel/curso_empilhadeira_cairu.webp';
-import Image3 from '../../assets/imgs-carousel/curso_primeirossocorros_piarara.webp';
+import ImagemAbrilVerdeCastilho from '../../assets/imgs-carousel/acao_abril_verde_castilho.webp';
+import ImagemCursoEmpilhadeiraCairu from '../../assets/imgs-carousel/curso_empilhadeira_cairu.webp';
+import ImagemCursoPrimeirosSocorrosPiarara from '../../assets/imgs-carousel/curso_primeirossocorros_piarara.webp';
+import ImagemOutubroRosaEletrogoes from '../../assets/imgs-carousel/outubro-rosa-eletrogoes.webp';
+import ImagemNovembroAzulEletrogoes from '../../assets/imgs-carousel/novembro-azul-eletrogoes.webp';
 import './index.css';
 
 export default function Carrossel() {
  const data = [
     {
-      image: Image1,
+      image: ImagemAbrilVerdeCastilho,
       caption: "Ação Abril Verde Castilho"
     },
     {
-      image: Image2,
+      image: ImagemCursoEmpilhadeiraCairu,
       caption: "Treinamento de Empilhadeira Cairu Bicicletas"
     },
     {
-      image: Image3,
+      image: ImagemCursoPrimeirosSocorrosPiarara,
       caption: "Treinamento de Primeiros Socorros Piarara Alimentos"
     },
+    {
+      image: ImagemOutubroRosaEletrogoes,
+      caption: "Ação Sobre Outubro Rosa na Eletrogoes"
+    },
+    {
+      image: ImagemNovembroAzulEletrogoes,
+      caption: "Ação Sobre Novembro Azul na Eletrogoes"
+    }
   ];
 
   const captionStyle = {
