@@ -121,6 +121,7 @@ export default function Equipe() {
         {equipe.map((item) => (
         <Card variant="outlined" className="cards">
             <CardMedia
+                className="card-media-image"
                 component="img"
                 width="400"
                 height="400"

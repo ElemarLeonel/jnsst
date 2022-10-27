@@ -36,6 +36,10 @@
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
+.card-media-image{
+    min-width: 400px;
+}
+
 .bio-description{
     max-width: 400px;
     text-align: justify;
