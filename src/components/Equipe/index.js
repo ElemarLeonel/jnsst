@@ -12,8 +12,6 @@ import {
     from '@mui/material';
 import './index.css';
 
-
-import ImagemMember1 from '../../assets/team/member-1.webp';
 import ImagemFlavia from '../../assets/team/flavia.webp';
 import ImagemElemar from '../../assets/team/elemar.webp';
 import ImagemJonathan from '../../assets/team/jonathan.webp';
