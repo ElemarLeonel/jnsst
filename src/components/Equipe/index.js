@@ -23,6 +23,9 @@ import ImagemEdileusa from '../../assets/team/edileusa.webp';
 import ImagemElaine from '../../assets/team/elaine.webp';
 import ImagemDener from '../../assets/team/dener.webp';
 import ImagemOdair from '../../assets/team/odair.webp';
+import ImagemDrAna from '../../assets/team/ana_claudia.webp';
+import ImagemDrFabricio from '../../assets/team/fabricio.webp';
+import ImagemDrThaina from '../../assets/team/thaina.webp';
 
 import InstagramIcon from '@mui/icons-material/Instagram';
 
@@ -112,6 +115,30 @@ const equipe = [
         profissao: "Secretária",
         imagem: ImagemElaine,
         alt: "Membro da equipe da JN Saúde e Segurança do Trabalho - Elaine Souza",
+        bio: "###",
+        instagram: "#"
+    },
+    {
+        nome: "Drª. Ana Cláudia",
+        profissao: "Médico(a)",
+        imagem: ImagemDrAna,
+        alt: "Membro da equipe médica da JN Saúde e Segurança do Trabalho - Ana Cláudia Tribulato da Cunha Castro",
+        bio: "###",
+        instagram: "#"
+    },
+    {
+        nome: "Dr. Fabrício Reis",
+        profissao: "Médico(a)",
+        imagem: ImagemDrFabricio,
+        alt: "Membro da equipe médica da JN Saúde e Segurança do Trabalho - Fabrício Reis do Nascimento",
+        bio: "###",
+        instagram: "#"
+    },
+    {
+        nome: "Drª. Thainá Fuzari",
+        profissao: "Médico(a)",
+        imagem: ImagemDrThaina,
+        alt: "Membro da equipe médica da JN Saúde e Segurança do Trabalho - Thainá Fuzari Borges Castro",
         bio: "###",
         instagram: "#"
     }
