@@ -14,11 +14,17 @@ import './index.css';
 
 
 import ImagemMember1 from '../../assets/team/member-1.webp';
-import ImagemMember2 from '../../assets/team/member-2.webp';
 import ImagemFlavia from '../../assets/team/flavia.webp';
 import ImagemElemar from '../../assets/team/elemar.webp';
 import ImagemJonathan from '../../assets/team/jonathan.webp';
 import ImagemCleiso from '../../assets/team/cleiso.webp';
+import ImagemJardel from '../../assets/team/jardel.webp';
+import ImagemSonia from '../../assets/team/sonia.webp';
+import ImagemMarcia from '../../assets/team/marcia.webp';
+import ImagemEdileusa from '../../assets/team/edileusa.webp';
+import ImagemElaine from '../../assets/team/elaine.webp';
+import ImagemDener from '../../assets/team/dener.webp';
+import ImagemOdair from '../../assets/team/odair.webp';
 
 import InstagramIcon from '@mui/icons-material/Instagram';
 
@@ -50,7 +56,7 @@ const equipe = [
     {
         nome: "Odair Calisto",
         profissao: "Técnico(a) em Segurança do Trabalho",
-        imagem: ImagemMember1,
+        imagem: ImagemOdair,
         alt: "Membro da equipe da JN Saúde e Segurança do Trabalho - Odair Calisto",
         bio: "###",
         instagram: "#"
@@ -58,23 +64,31 @@ const equipe = [
     {
         nome: "Dener de Assis",
         profissao: "Técnico(a) em Segurança do Trabalho",
-        imagem: ImagemMember2,
+        imagem: ImagemDener,
         alt: "Membro da equipe da JN Saúde e Segurança do Trabalho - Dener de Assis",
         bio: "###",
         instagram: "#"
     },
     {
         nome: "Cleiso Rafael",
-        profissao: "Técnico(a) em Segurança do Trabalho",
+        profissao: "Eng. de Segurança do Trabalho",
         imagem: ImagemCleiso,
         alt: "Membro da equipe da JN Saúde e Segurança do Trabalho - Cleiso Rafael",
         bio: "###",
         instagram: "https://www.instagram.com/engcleisorafael/"
     },
     {
+        nome: "Jardel Gomes Ferreira",
+        profissao: "Técnico(a) em Segurança do Trabalho",
+        imagem: ImagemJardel,
+        alt: "Membro da equipe da JN Saúde e Segurança do Trabalho - Jardel Gomes Ferreira",
+        bio: "###",
+        instagram: "#"
+    },
+    {
         nome: "Sônia Lagácio",
         profissao: "Psicólogo(a)",
-        imagem: ImagemMember1,
+        imagem: ImagemSonia,
         alt: "Membro da equipe da JN Saúde e Segurança do Trabalho - Sônia Lagácio",
         bio: "###",
         instagram: "#"
@@ -82,7 +96,7 @@ const equipe = [
     {
         nome: "Maria Márcia",
         profissao: "Secretária",
-        imagem: ImagemMember2,
+        imagem: ImagemMarcia,
         alt: "Membro da equipe da JN Saúde e Segurança do Trabalho - Maria Márcia",
         bio: "###",
         instagram: "#"
@@ -90,7 +104,7 @@ const equipe = [
     {
         nome: "Edileusa Lagácio",
         profissao: "Psicólogo(a)",
-        imagem: ImagemMember1,
+        imagem: ImagemEdileusa,
         alt: "Membro da equipe da JN Saúde e Segurança do Trabalho - Edileusa Lagácio",
         bio: "###",
         instagram: "#",
@@ -98,16 +112,8 @@ const equipe = [
     {
         nome: "Elaine Souza",
         profissao: "Secretária",
-        imagem: ImagemMember2,
+        imagem: ImagemElaine,
         alt: "Membro da equipe da JN Saúde e Segurança do Trabalho - Elaine Souza",
-        bio: "###",
-        instagram: "#"
-    },
-    {
-        nome: "Dr. Antônio Gomes",
-        profissao: "Fonoaudiólogo",
-        imagem: ImagemMember2,
-        alt: "Membro da equipe da JN Saúde e Segurança do Trabalho - Antônio Gomes",
         bio: "###",
         instagram: "#"
     }
