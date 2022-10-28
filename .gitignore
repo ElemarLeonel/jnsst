@@ -5,10 +5,6 @@
 /.pnp
 .pnp.js
 
-#images
-/src/assets/imgs-carousel
-/src/assets/team
-
 # testing
 /coverage
 
