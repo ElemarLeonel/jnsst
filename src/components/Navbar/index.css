@@ -2,9 +2,51 @@
  margin: 0; 
  padding: 0; 
  box-sizing: border-box;
- font-family: 'Roboto', sans-serif; 
+ font-family: 'Poppins', sans-serif; 
+}
+
+.logo{
+    margin-right: 16px;
+}
+
+.logo-mobile, .box-nav, .box-nav-mobile{
+    flex-grow: 1;
+}
+
+.box-nav-mobile{
+    justify-content: flex-end;
 }
 
 a{
     text-decoration: none;
+}
+
+.link-button{
+    font-weight: bold;
+}
+
+.button-instagram{
+    margin: 16px 0;
+    display: block;
+}
+
+@media only screen and (max-width: 600px){
+    .logo, .box-nav-mobile{
+        display: none;
+    }
+    .logo-mobile, .box-nav{
+        display: flex;
+    }
+    .menu-appbar{
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .logo, .box-nav-mobile{
+        display: flex;
+    }
+    .logo-mobile, .box-nav, .menu-appbar{
+        display: none;
+    }
 }

@@ -13,11 +13,11 @@ import {
   MenuItem
 }
   from '@mui/material';
+import './index.css';
 
 // import AnchorLink from "react-anchor-link-smooth-scroll";
 import { HashLink as Link } from 'react-router-hash-link';
 
-import './index.css';
 
 import Logo from '../../assets/logotipojn.png';
 
@@ -57,12 +57,11 @@ export default function Navbar() {
     <AppBar color="primary" component="nav" id="navbar">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Typography variant="h6" noWrap component="div"
-            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}>
+          <Typography variant="h6" noWrap component="h6" className="logo">
             <Avatar src={Logo} width="48" height="48" />
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box className="box-nav">
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -73,8 +72,8 @@ export default function Navbar() {
             >
               <MenuIcon />
             </IconButton>
-            <Menu
-              id="menu-appbar"
+
+            <Menu id="menu-appbar" className="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
                 vertical: 'bottom',
@@ -87,39 +86,39 @@ export default function Navbar() {
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}>
+              >
               {pages.map((item) => (
                 <Link component="a" to={item.id} smooth>
                   <MenuItem key={item.name} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center" color="secondary">{item.name}</Typography>
+                    <Typography textAlign="center" color="secondary">
+                      {item.name}
+                    </Typography>
                   </MenuItem>
                 </Link>
               ))}
             </Menu>
+
           </Box>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+
+          <Typography className="logo-mobile" noWrap variant="h6"
+            component="h6">
             <Avatar src={Logo} width="48" height="48" />
           </Typography>
-          <Box sx={{
-            flexGrow: 1, display: { xs: 'none', md: 'flex' },
-            justifyContent: "flex-end"
-          }}>
+
+          <Box className="box-nav-mobile">
             {pages.map((item) => (
-              <Link component="a" to={item.id} smooth>
+              <Link component="a" to={item.id} smooth className="link-button">
                 <Button key={item.name} onClick={handleCloseNavMenu}
-                  sx={{ my: 2, display: 'block', fontWeight: 700 }}
-                  color="secondary">
+                  className="button-instagram"
+                  color="secondary"
+                  sx={{ fontWeight: 600 }}
+                  >
                   {item.name}
                 </Button>
               </Link>
             ))}
           </Box>
+
         </Toolbar>
       </Container>
     </AppBar>

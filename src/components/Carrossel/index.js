@@ -32,17 +32,15 @@ export default function Carrossel() {
 
   const captionStyle = {
     fontSize: '2em',
-    fontWeight: 'bold',
+    fontWeight: 600,
   }
   const slideNumberStyle = {
     fontSize: '20px',
-    fontWeight: 'bold',
+    fontWeight: 600,
   }
   return (
     <section className="carousel">
       <div className="carousel-subitem" style={{ textAlign: "center" }}>
-        {/* <h2>React Carousel Minimal</h2>
-        <p>Easy to use, responsive and customizable carousel component for React Projects.</p> */}
           <Carousel
             data={data}
             time={4000}
