@@ -4,7 +4,7 @@ import {
     TextField,
     Typography,
     Button,
-    Alert
+    // Alert
 } from '@mui/material';
 import * as React from 'react';
 import './index.css';
@@ -29,16 +29,15 @@ export default function Contato() {
     }
 
     function send(){
-        const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY
         const formData = new FormData();
         Object.keys(campos).forEach(key => formData.append(key, campos[key]));
-        axios.post("http://localhost:5000/email", formData, {
+        axios.post("https://api.jnsst.com.br/email", formData, {
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + SENDGRID_API_KEY
             }
         })
-        .then(response => <><Alert severity="success">${response}</Alert></>);
+        .then(response => response.data)
+        .catch(error => error.message);
     }
 
     return (
