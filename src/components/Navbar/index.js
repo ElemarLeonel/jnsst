@@ -29,7 +29,7 @@ const pages = [
     id: '/'
   },
   {
-    name: 'Recursos',
+    name: 'Serviços',
     id: '/#features'
   },
   {

@@ -16,6 +16,10 @@ const Theme = createTheme({
         }
     },
     typography: {
+        fontFamily: [
+            'Poppins',
+            'sans-serif',
+        ].join(','),
         h3_title:{
             lineHeight: 1.5,
             fontSize: 28,
