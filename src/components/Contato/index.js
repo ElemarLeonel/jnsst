@@ -3,9 +3,9 @@ import {
     Container,
     TextField,
     Typography,
-    Button,
-    // Alert
+    Button
 } from '@mui/material';
+import { toast } from 'react-toastify';
 import * as React from 'react';
 import './index.css';
 import axios from 'axios';
@@ -28,16 +28,24 @@ export default function Contato() {
         send();
     }
 
-    function send(){
-        const formData = new FormData();
-        Object.keys(campos).forEach(key => formData.append(key, campos[key]));
-        axios.post("https://api.jnsst.com.br/email", formData, {
+    async function send(){
+        await axios.post("https://api.jnsst.com.br/email", campos, {
             headers: {
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/json' 
             }
         })
-        .then(response => response.data)
-        .catch(error => error.message);
+        .then((response) => {
+            toast("Mensagem enviada com sucesso", {
+                type: 'success',
+            })
+            return response.data
+        })
+        .catch((error) => {
+            toast("Erro ao enviar a mensagem", {
+                type: 'error',
+            })
+            return error.message
+        });
     }
 
     return (
