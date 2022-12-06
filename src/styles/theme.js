@@ -17,7 +17,7 @@ const Theme = createTheme({
     },
     typography: {
         fontFamily: [
-            'Poppins',
+            'Open Sauce One',
             'sans-serif',
         ].join(','),
         h3_title:{

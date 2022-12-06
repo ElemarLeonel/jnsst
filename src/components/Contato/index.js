@@ -26,6 +26,12 @@ export default function Contato() {
     function handleFormSubmit(event){
         event.preventDefault();
         send();
+        setCampos({
+            fullname: '',
+            email: '',
+            title: '',
+            message: ''
+        })
     }
 
     async function send(){
@@ -46,6 +52,7 @@ export default function Contato() {
             })
             return error.message
         });
+
     }
 
     return (
