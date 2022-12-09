@@ -35,7 +35,7 @@ export default function Contato() {
     }
 
     async function send(){
-        await axios.post("https://api.jnsst.com.br/email", campos, {
+        await axios.post("https://api.jnsst.com.br/send/email", campos, {
             headers: {
                 'Content-Type': 'application/json' 
             }
