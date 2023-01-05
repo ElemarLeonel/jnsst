@@ -228,6 +228,11 @@ export default function FormCAT() {
 
 
                     <label htmlFor="icon-button-file" className="dados-empresa">
+                        <p>
+                            <Typography className="p-2" component="p_description" color="secondary">
+                            Upload da ficha de registro
+                            </Typography>
+                        </p>
                         <Input accept="image/*" id="icon-button-file" type="file"
                             color="secondary" name="uploadFichaRegistro"/>
                         <IconButton color="secondary"
@@ -323,7 +328,12 @@ export default function FormCAT() {
                     </FormControlLabel>
 
 
-                    <label htmlFor="icon-button-file" className="dados-empresa">
+                    <label htmlFor="uploadAtestadoMedico" className="dados-empresa">
+                        <p>
+                            <Typography className="p-2" component="p_description" color="secondary">
+                            Upload do atestado médico
+                            </Typography>
+                        </p>
                         <Input accept="image/*" id="uploadAtestadoMedico" type="file"
                             color="secondary" name="uploadAtestadoMedico" />
                         <IconButton color="secondary"
@@ -672,7 +682,7 @@ export default function FormCAT() {
                         className="dados-acidente"
                         name="descriptionAccident"
                         label="Descrição" multiline
-                        rows={4} defaultValue="Digite uma descrição breve do acidente"
+                        rows={4} placeholder="Digite uma descrição breve do acidente"
                     />
 
 
