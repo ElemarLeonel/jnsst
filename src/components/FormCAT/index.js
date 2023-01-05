@@ -92,8 +92,8 @@ export default function FormCAT() {
         const form = document.getElementById("form");
         const formData = new FormData(form);
         formData.append("medicalCertificateDate", selectedDateMedicalCertificate.toLocaleDateString());
-        formData.append("dateOfAccident", selectedDateOfAccident.toLocaleDateString());
-        formData.append("timeOfAccident", selectedTimeOfAccident.toLocaleTimeString('pt-BR'));
+        formData.append("accidentDate", selectedDateOfAccident.toLocaleDateString());
+        formData.append("accidentTime", selectedTimeOfAccident.toLocaleTimeString('pt-BR'));
         formData.append("serviceTime", selectedServiceTime.toLocaleTimeString('pt-BR'));
 
         await axios.post("https://api.jnsst.com.br/send/cat", formData, {
