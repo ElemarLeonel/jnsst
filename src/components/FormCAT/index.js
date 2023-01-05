@@ -56,11 +56,11 @@ export default function FormCAT() {
     const [selectedTypeCNPJ, setSelectedTypeCNPJ] = React.useState();
     const [selectedCPF, setSelectedCPF] = React.useState();
     const [selectedDateMedicalCertificate, setSelectedDateMedicalCertificate] =
-        React.useState();
-    const [selectedServiceTime, setSelectedServiceTime] = React.useState();
+        React.useState(new Date());
+    const [selectedServiceTime, setSelectedServiceTime] = React.useState(new Date());
     const [selectedDateOfAccident, setSelectedDateOfAccident] =
-        React.useState();
-    const [selectedTimeOfAccident, setSelectedTimeOfAccident] = React.useState();
+        React.useState(new Date());
+    const [selectedTimeOfAccident, setSelectedTimeOfAccident] = React.useState(new Date());
     const [selectedTimeBeforeOfAccident, setSelectedTimeBeforeOfAccident] =
         React.useState();
     const [selectedCEP, setSelectedCEP] = React.useState();
@@ -70,6 +70,7 @@ export default function FormCAT() {
     let setFormatCNPJMask = React.useState();
 
     function policeCommunicatedVerified(event){
+    console.log(event)
     if(event.target.value === 'on'){
         setSelectedPoliceCommunicated('Sim');
     } else{
@@ -90,7 +91,11 @@ export default function FormCAT() {
     async function send() {
         const form = document.getElementById("form");
         const formData = new FormData(form);
-        console.log(formData)
+        formData.append("medicalCertificateDate", selectedDateMedicalCertificate.toLocaleDateString());
+        formData.append("dateOfAccident", selectedDateOfAccident.toLocaleDateString());
+        formData.append("timeOfAccident", selectedTimeOfAccident.toLocaleTimeString('pt-BR'));
+        formData.append("serviceTime", selectedServiceTime.toLocaleTimeString('pt-BR'));
+
         await axios.post("https://api.jnsst.com.br/send/cat", formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
@@ -99,7 +104,7 @@ export default function FormCAT() {
             toast("Mensagem enviada com sucesso", {
                 type: 'success',
             })
-            console.log(response);
+            console.log(response.data);
             return response.data
         }).catch((error) => {
             toast("Erro ao enviar a mensagem", {
@@ -256,7 +261,6 @@ export default function FormCAT() {
 
                     <DatePicker
                         label="Data do Atestado Médico"
-                        mask="dd/mm/yyyy"
                         inputFormat="dd/MM/yyyy"
                         value={selectedDateMedicalCertificate}
                         className="dados-atestado-medico"
@@ -267,7 +271,7 @@ export default function FormCAT() {
                                 required={true} sx={{ width: { xs: '100%', sm: '30%' } }} />
                         }
                         onChange={(newValue) => {
-                            setSelectedDateMedicalCertificate(newValue)
+                            setSelectedDateMedicalCertificate(new Date(newValue))
                         }}>
                     </DatePicker>
 
@@ -449,7 +453,6 @@ export default function FormCAT() {
                     <DatePicker
                         id="dataAcidente"
                         value={selectedDateOfAccident}
-                        mask="dd/MM/yyyy"
                         inputFormat="dd/MM/yyyy"
                         label="Data do Acidente"
                         className="dados-acidente"
@@ -459,7 +462,7 @@ export default function FormCAT() {
                                 required={true} sx={{ width: { xs: '100%', sm: '45%' } }} />
                         }
                         onChange={(newValue) => {
-                            setSelectedDateOfAccident(newValue)
+                            setSelectedDateOfAccident(new Date(newValue))
                         }}>
                     </DatePicker>
 
