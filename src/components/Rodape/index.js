@@ -100,7 +100,7 @@ export default function Rodape() {
                         <ListItemText primary="Ficha de EPI Comentada" />
                     </ListItemButton>
                     <ListItemButton component="a"
-                        href="https://bit.ly/cat-s-2210">
+                        href="/cat">
                         <ListItemText primary="Formulário de Preenchimento da CAT (Cliente)" />
                     </ListItemButton>
                     <ListItemButton component="a"
