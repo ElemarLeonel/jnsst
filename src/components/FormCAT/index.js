@@ -64,18 +64,44 @@ export default function FormCAT() {
     const [selectedTimeBeforeOfAccident, setSelectedTimeBeforeOfAccident] =
         React.useState();
     const [selectedCEP, setSelectedCEP] = React.useState();
-    const [selectedPoliceCommunicated, setSelectedPoliceCommunicated] = React.useState();
+    const [selectedPoliceCommunicated, setSelectedPoliceCommunicated] = React.useState("Não");
+    const [selectedDeath, setSelectedDeath] = React.useState("Não");
+    const [selectedHosptalization, setSelectedHospitalization] = React.useState("Não")
 
 
     let setFormatCNPJMask = React.useState();
 
-    function policeCommunicatedVerified(event){
-    console.log(event)
-    if(event.target.value === 'on'){
-        setSelectedPoliceCommunicated('Sim');
-    } else{
-        setSelectedPoliceCommunicated('Não');
-    }}
+    function verifySwitchVerified(event){
+        if(event.target.checked === true){
+        switch(event.target.name){
+        case "policeCommunicated":
+        setSelectedPoliceCommunicated("Sim");
+        break
+        case "death":
+        setSelectedDeath("Sim")
+        break
+        case "hospitalization":
+        setSelectedHospitalization("Sim")
+        break
+        default:
+        return
+        }
+    } else {
+        switch(event.target.name){
+            case "policeCommunicated":
+            setSelectedPoliceCommunicated("Não");
+            break
+            case "death":
+            setSelectedDeath("Não")
+            break
+            case "hospitalization":
+            setSelectedHospitalization("Não")
+            break
+            default:
+            return
+            }
+        }
+    }
 
     if (selectedTypeCNPJ === 1) {
         setFormatCNPJMask = "99.999.999/9999-99";
@@ -95,6 +121,16 @@ export default function FormCAT() {
         formData.append("accidentDate", selectedDateOfAccident.toLocaleDateString());
         formData.append("accidentTime", selectedTimeOfAccident.toLocaleTimeString('pt-BR'));
         formData.append("serviceTime", selectedServiceTime.toLocaleTimeString('pt-BR'));
+        
+        if(!formData.has("policeCommunicated")) {
+            formData.append("policeCommunicated", selectedPoliceCommunicated)
+        }
+        if(!formData.has("death")) {
+            formData.append("death", selectedDeath)
+        }
+        if(!formData.has("hospitalization")) {
+            formData.append("hospitalization", selectedHosptalization)
+        }
 
         await axios.post("https://api.jnsst.com.br/send/cat", formData, {
             headers: {
@@ -104,7 +140,6 @@ export default function FormCAT() {
             toast("Mensagem enviada com sucesso", {
                 type: 'success',
             })
-            console.log(response.data);
             return response.data
         }).catch((error) => {
             toast("Erro ao enviar a mensagem", {
@@ -325,7 +360,9 @@ export default function FormCAT() {
                     <FormControlLabel
                         control={
                             <Switch color="secondary" name="hospitalization"
-                                id="houveInternacao" />
+                                value={selectedHosptalization}
+                                id="houveInternacao"
+                                onChange={(newValue) => verifySwitchVerified(newValue)} />
                         }
                         label="Houve internação?" color="secondary"
                         className="dados-atestado-medico">
@@ -513,7 +550,7 @@ export default function FormCAT() {
                             <Switch color="secondary" id="policiaComunicada"
                                 value={selectedPoliceCommunicated}
                                 name="policeCommunicated" 
-                                onChange={(newValue) => policeCommunicatedVerified(newValue)}/>
+                                onChange={(newValue) => verifySwitchVerified(newValue)}/>
                         }
                         label="A polícia foi comunicada?" color="secondary"
                         className="dados-acidente">
@@ -523,7 +560,9 @@ export default function FormCAT() {
                     <FormControlLabel
                         control={
                             <Switch color="secondary" id="houveObito"
-                                name="death" />
+                                value={selectedDeath}
+                                name="death"
+                                onChange={(newValue) => verifySwitchVerified(newValue)} />
                         }
                         label="Houve óbito?" color="secondary"
                         className="dados-acidente">
