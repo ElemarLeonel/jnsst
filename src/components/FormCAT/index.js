@@ -49,6 +49,7 @@ import MultipleStopIcon from '@mui/icons-material/MultipleStop';
 
 // Importing Main Styles File
 import './index.css';
+import { useState } from 'react';
 
 export default function FormCAT() {
     const [selectedPhone, setSelectedPhone] = React.useState();
@@ -66,10 +67,24 @@ export default function FormCAT() {
     const [selectedCEP, setSelectedCEP] = React.useState();
     const [selectedPoliceCommunicated, setSelectedPoliceCommunicated] = React.useState("Não");
     const [selectedDeath, setSelectedDeath] = React.useState("Não");
-    const [selectedHosptalization, setSelectedHospitalization] = React.useState("Não")
-
+    const [selectedHosptalization, setSelectedHospitalization] = React.useState("Não");
+    const [selectedCity, setSelectedCity] = useState();
+    const [selectedAddress, setSelectedAddress] = useState();
+    const [selectedDistrict, setSelectedDistrict] = useState();
 
     let setFormatCNPJMask = React.useState();
+
+    async function getAddress(cep) {
+        const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`)
+            .then((res) => res.data)
+            .catch((err) => err)
+        
+        setSelectedCity(`${response.localidade}/${response.uf}`);
+        setSelectedAddress(response.logradouro);
+        setSelectedDistrict(response.bairro);
+
+        return response;
+    }
 
     function verifySwitchVerified(event){
         if(event.target.checked === true){
@@ -610,7 +625,11 @@ export default function FormCAT() {
                         disabled={false}
                         maskChar=" "
                         onChange={(newValue) => {
-                            setSelectedCEP(newValue.target.value)
+                            setSelectedCEP(newValue.target.value);
+                        }}
+                        onBlur={async (newValue) => {
+                            await getAddress(newValue.target.value);
+                            setSelectedCEP(newValue.target.value);
                         }}>
                         <TextField id="cepCidade"
                             label="CEP"
@@ -630,10 +649,14 @@ export default function FormCAT() {
 
                     <TextField id="logradouroAcidente"
                         sx={{ width: { xs: '100%', sm: '75%' } }}
+                        value={selectedAddress}
                         label="Logradouro"
                         variant="outlined" color="secondary" required={true}
                         className="dados-acidente"
                         name="address"
+                        onChange={(newValue) => {
+                            setSelectedAddress(newValue.target.value);
+                        }}
                         InputProps={{
                             startAdornment: (
                                 <InputAdornment position="start">
@@ -662,10 +685,14 @@ export default function FormCAT() {
 
                     <TextField id="bairroAcidente"
                         sx={{ width: { xs: '100%', sm: '30%' } }}
+                        value={selectedDistrict}
                         label="Bairro"
                         variant="outlined" color="secondary" required={true}
                         className="dados-acidente"
                         name="district"
+                        onChange={(newValue) => {
+                            setSelectedDistrict(newValue.target.value);
+                        }}
                         InputProps={{
                             startAdornment: (
                                 <InputAdornment position="start">
@@ -677,6 +704,7 @@ export default function FormCAT() {
 
                     <TextField id="cidadeAcidente"
                         sx={{ width: { xs: '100%', sm: '30%' } }}
+                        value={selectedCity}
                         label="Cidade"
                         variant="outlined" color="secondary" required={true}
                         className="dados-acidente"
