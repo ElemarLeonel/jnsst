@@ -68,9 +68,9 @@ export default function FormCAT() {
     const [selectedPoliceCommunicated, setSelectedPoliceCommunicated] = React.useState("Não");
     const [selectedDeath, setSelectedDeath] = React.useState("Não");
     const [selectedHosptalization, setSelectedHospitalization] = React.useState("Não");
-    const [selectedCity, setSelectedCity] = useState();
-    const [selectedAddress, setSelectedAddress] = useState();
-    const [selectedDistrict, setSelectedDistrict] = useState();
+    const [selectedCity, setSelectedCity] = useState("");
+    const [selectedAddress, setSelectedAddress] = useState("");
+    const [selectedDistrict, setSelectedDistrict] = useState("");
 
     let setFormatCNPJMask = React.useState();
 
@@ -78,11 +78,11 @@ export default function FormCAT() {
         const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`)
             .then((res) => res.data)
             .catch((err) => err)
-        
-        setSelectedCity(`${response.localidade}/${response.uf}`);
-        setSelectedAddress(response.logradouro);
-        setSelectedDistrict(response.bairro);
-
+        if(response.localidade){
+            setSelectedCity(`${response.localidade}/${response.uf}`);
+            setSelectedAddress(response.logradouro);
+            setSelectedDistrict(response.bairro);
+        }
         return response;
     }
 
@@ -709,6 +709,9 @@ export default function FormCAT() {
                         variant="outlined" color="secondary" required={true}
                         className="dados-acidente"
                         name="city"
+                        onChange={(newValue) => {
+                            setSelectedCity(newValue.target.value);
+                        }}
                         InputProps={{
                             startAdornment: (
                                 <InputAdornment position="start">
