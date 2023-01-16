@@ -57,7 +57,7 @@ export default function Contato() {
 
     return (
         <Box className="contact" component="section" id="contact">
-            <Container maxWidth="lg" className="main-container">
+            <Container maxWidth="md" className="main-container">
                 <Box className="title-and-subtitle" component="section">
                     <Typography variant="h3_title" component="h3"
                         className="title-text-contact" color="secondary">

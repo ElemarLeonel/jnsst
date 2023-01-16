@@ -114,7 +114,7 @@ export default function Rodape() {
                 <Typography component="p_description" variant="p"
                     paragraph={true}
                     color="primary.main" fontWeight="bold">
-                    Desenvolvido por Elemar Leonel © 2022.
+                    Desenvolvido por Elemar Leonel & Magno Júnior © 2022.
                 </Typography>
             </Box>
         </Box>

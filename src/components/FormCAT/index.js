@@ -241,7 +241,7 @@ export default function FormCAT() {
                         onChange={(e) => setSelectedCNPJ(e.target.value)}>
                         <TextField id="CNPJouCAEPF" label="CNPJ ou CAEPF"
                             variant="outlined" color="secondary" required={true}
-                            sx={{ width: '45%' }}
+                            sx={{ width: { xs: '100%', sm: '45%' } }}
                             className="dados-empresa"
                             name="cnpjOrCaepf"
                             InputProps={{
@@ -256,7 +256,7 @@ export default function FormCAT() {
 
                     <TextField id="razaoSocial" label="Razão Social ou Nome Fazenda"
                         variant="outlined" color="secondary" required={true}
-                        sx={{ width: '45%' }}
+                        sx={{ width: { xs: '100%', sm: '45%' } }}
                         className="dados-empresa"
                         name="corporateName"
                         InputProps={{
@@ -270,7 +270,7 @@ export default function FormCAT() {
 
                     <TextField id="nomeCompletoColaborador"
                         label="Nome Completo do Colaborador"
-                        sx={{ width: '45%' }}
+                        sx={{ width: { xs: '100%', sm: '45%' } }}
                         variant="outlined" color="secondary" required={true}
                         className="dados-empresa"
                         name="contributorName"
