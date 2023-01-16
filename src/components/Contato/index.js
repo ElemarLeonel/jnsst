@@ -5,12 +5,12 @@ import {
     Typography,
     Button
 } from '@mui/material';
-import { toast } from 'react-toastify';
 import * as React from 'react';
 import './index.css';
-import axios from 'axios';
+import sendEmail from '../../services/email';
 
 export default function Contato() {
+
     const [campos, setCampos] = React.useState({
         fullname: '',
         email: '',
@@ -25,34 +25,13 @@ export default function Contato() {
 
     function handleFormSubmit(event) {
         event.preventDefault();
-        send();
+        sendEmail(campos);
         setCampos({
             fullname: '',
             email: '',
             title: '',
             message: ''
         })
-    }
-
-    async function send() {
-        await axios.post("https://api.jnsst.com.br/send/email", campos, {
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-            .then((response) => {
-                toast("Mensagem enviada com sucesso", {
-                    type: 'success',
-                })
-                return response.data
-            })
-            .catch((error) => {
-                toast("Erro ao enviar a mensagem", {
-                    type: 'error',
-                })
-                return error.message
-            });
-
     }
 
     return (
