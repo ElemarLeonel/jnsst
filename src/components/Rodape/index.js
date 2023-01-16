@@ -12,6 +12,8 @@ import FichaEPIComentada from '../../assets/downloads/ficha_epi_comentada.xlsx';
 
 import InstagramIcon from '@mui/icons-material/Instagram';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import FileDownload from '@mui/icons-material/FileDownload';
+import InputIcon from '@mui/icons-material/Input';
 
 export default function Rodape() {
     return (
@@ -75,17 +77,17 @@ export default function Rodape() {
                     <Box className="contact-links">
                         <ListItemButton component="a" className="links-whatsapp"
                             href="https://api.whatsapp.com/send?phone=5569984858181&text=Oi.">
-                            <WhatsAppIcon color="primary" size="medium" 
-                            className="icon-whatsapp"/>
-                            <ListItemText primary="WhatsApp e-Social" 
-                            sx={{ color: "primary.main" }}/>
+                            <WhatsAppIcon color="primary" size="medium"
+                                className="icons" />
+                            <ListItemText primary="WhatsApp e-Social"
+                                sx={{ color: "primary.main" }} />
                         </ListItemButton>
                         <ListItemButton component="a" className="links-whatsapp"
                             href="https://api.whatsapp.com/send?phone=5569984008182&text=Oi.">
-                            <WhatsAppIcon color="primary" size="medium" 
-                            className="icon-whatsapp"/>
+                            <WhatsAppIcon color="primary" size="medium"
+                                className="icons" />
                             <ListItemText primary="WhatsApp Recepção"
-                            sx={{ color: "primary.main" }}/>
+                                sx={{ color: "primary.main" }} />
                         </ListItemButton>
                     </Box>
                 </Box>
@@ -97,14 +99,20 @@ export default function Rodape() {
                     </Typography>
                     <ListItemButton component="a" href={FichaEPIComentada}
                         download={true}>
+                        <FileDownload color="primary" size="medium"
+                            className="icons" />
                         <ListItemText primary="Ficha de EPI Comentada" />
                     </ListItemButton>
                     <ListItemButton component="a"
                         href="/cat">
+                        <InputIcon color="primary" size="medium"
+                            className="icons" />
                         <ListItemText primary="Formulário de Preenchimento da CAT (Cliente)" />
                     </ListItemButton>
                     <ListItemButton component="a"
                         href="#">
+                        <InputIcon color="primary" size="medium"
+                            className="icons" />
                         <ListItemText primary="Formulário de Preenchimento das Requisições (Cliente)" />
                     </ListItemButton>
                 </Box>
