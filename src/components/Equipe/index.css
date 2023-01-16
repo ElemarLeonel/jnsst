@@ -31,12 +31,19 @@
 }
 
 .cards{
-    min-width: 300px;
+    min-width: 200px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .card-media-image{
-    min-width: 400px;
+    min-width: 100%;
+    border: 0.3rem solid var(--cor-fundo);
+}
+
+.img-responsive{
+    max-width: 100%;
+    height: 400px;    
+    display: inline-block;;
 }
 
 .bio-description{

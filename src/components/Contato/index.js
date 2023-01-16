@@ -17,13 +17,13 @@ export default function Contato() {
         title: '',
         message: ''
     });
-    
-    function handleInputChange(event){
+
+    function handleInputChange(event) {
         campos[event.target.name] = event.target.value;
         setCampos(campos);
     }
 
-    function handleFormSubmit(event){
+    function handleFormSubmit(event) {
         event.preventDefault();
         send();
         setCampos({
@@ -34,24 +34,24 @@ export default function Contato() {
         })
     }
 
-    async function send(){
+    async function send() {
         await axios.post("https://api.jnsst.com.br/send/email", campos, {
             headers: {
-                'Content-Type': 'application/json' 
+                'Content-Type': 'application/json'
             }
         })
-        .then((response) => {
-            toast("Mensagem enviada com sucesso", {
-                type: 'success',
+            .then((response) => {
+                toast("Mensagem enviada com sucesso", {
+                    type: 'success',
+                })
+                return response.data
             })
-            return response.data
-        })
-        .catch((error) => {
-            toast("Erro ao enviar a mensagem", {
-                type: 'error',
-            })
-            return error.message
-        });
+            .catch((error) => {
+                toast("Erro ao enviar a mensagem", {
+                    type: 'error',
+                })
+                return error.message
+            });
 
     }
 
@@ -74,19 +74,23 @@ export default function Contato() {
                     <Box component="section" className="name-and-email">
                         <TextField id="fullname" label="Nome completo" variant="outlined"
                             fullWidth color="secondary" required onChange={handleInputChange}
-                            name="fullname"/>
+                            name="fullname" />
                         <TextField id="email" label="Email" variant="outlined"
                             fullWidth color="secondary" required onChange={handleInputChange}
-                            name="email"/>
+                            name="email" />
                     </Box>
                     <TextField id="title" label="Título" variant="outlined"
-                            fullWidth color="secondary" required onChange={handleInputChange}
-                            name="title"/>
+                        fullWidth color="secondary" required onChange={handleInputChange}
+                        name="title" />
                     <TextField id="message" label="Mensagem"
                         multiline maxRows={5} fullWidth color="secondary" required
-                        onChange={handleInputChange} name="message"/>
-                    <Button variant="contained" color="secondary" maxWidth="md"
-                        size="large" type="submit">Enviar</Button>
+                        onChange={handleInputChange} name="message" />
+
+                    <Box className="submit-button">
+                        <Button variant="contained" color="secondary" className="submit-button"
+                            fullWidth size="large" type="submit">Enviar</Button>
+                    </Box>
+
                 </Box>
             </Container>
         </Box>

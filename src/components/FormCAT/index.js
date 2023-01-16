@@ -50,6 +50,7 @@ import MultipleStopIcon from '@mui/icons-material/MultipleStop';
 // Importing Main Styles File
 import './index.css';
 import { useState } from 'react';
+import Rodape from '../Rodape';
 
 export default function FormCAT() {
     const [selectedPhone, setSelectedPhone] = React.useState();
@@ -78,7 +79,7 @@ export default function FormCAT() {
         const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`)
             .then((res) => res.data)
             .catch((err) => err)
-        if(response.localidade){
+        if (response.localidade) {
             setSelectedCity(`${response.localidade}/${response.uf}`);
             setSelectedAddress(response.logradouro);
             setSelectedDistrict(response.bairro);
@@ -86,34 +87,34 @@ export default function FormCAT() {
         return response;
     }
 
-    function verifySwitchVerified(event){
-        if(event.target.checked === true){
-        switch(event.target.name){
-        case "policeCommunicated":
-        setSelectedPoliceCommunicated("Sim");
-        break
-        case "death":
-        setSelectedDeath("Sim")
-        break
-        case "hospitalization":
-        setSelectedHospitalization("Sim")
-        break
-        default:
-        return
-        }
-    } else {
-        switch(event.target.name){
-            case "policeCommunicated":
-            setSelectedPoliceCommunicated("Não");
-            break
-            case "death":
-            setSelectedDeath("Não")
-            break
-            case "hospitalization":
-            setSelectedHospitalization("Não")
-            break
-            default:
-            return
+    function verifySwitchVerified(event) {
+        if (event.target.checked === true) {
+            switch (event.target.name) {
+                case "policeCommunicated":
+                    setSelectedPoliceCommunicated("Sim");
+                    break
+                case "death":
+                    setSelectedDeath("Sim")
+                    break
+                case "hospitalization":
+                    setSelectedHospitalization("Sim")
+                    break
+                default:
+                    return
+            }
+        } else {
+            switch (event.target.name) {
+                case "policeCommunicated":
+                    setSelectedPoliceCommunicated("Não");
+                    break
+                case "death":
+                    setSelectedDeath("Não")
+                    break
+                case "hospitalization":
+                    setSelectedHospitalization("Não")
+                    break
+                default:
+                    return
             }
         }
     }
@@ -136,14 +137,14 @@ export default function FormCAT() {
         formData.append("accidentDate", selectedDateOfAccident.toLocaleDateString());
         formData.append("accidentTime", selectedTimeOfAccident.toLocaleTimeString('pt-BR'));
         formData.append("serviceTime", selectedServiceTime.toLocaleTimeString('pt-BR'));
-        
-        if(!formData.has("policeCommunicated")) {
+
+        if (!formData.has("policeCommunicated")) {
             formData.append("policeCommunicated", selectedPoliceCommunicated)
         }
-        if(!formData.has("death")) {
+        if (!formData.has("death")) {
             formData.append("death", selectedDeath)
         }
-        if(!formData.has("hospitalization")) {
+        if (!formData.has("hospitalization")) {
             formData.append("hospitalization", selectedHosptalization)
         }
 
@@ -168,7 +169,7 @@ export default function FormCAT() {
     return (
         <LocalizationProvider dateAdapter={AdapterDateFns}>
             <Box className="box-form-cat" component="form" encType='multipart/form-data'
-            id="form">
+                id="form">
 
                 <Box className="title-cat">
                     <Typography variant="h5" component="h5" color="secondary"
@@ -285,11 +286,11 @@ export default function FormCAT() {
                     <label htmlFor="icon-button-file" className="dados-empresa">
                         <p>
                             <Typography className="p-2" component="p_description" color="secondary">
-                            Upload da ficha de registro
+                                Upload da ficha de registro
                             </Typography>
                         </p>
                         <Input accept="image/*" id="icon-button-file" type="file"
-                            color="secondary" name="uploadFichaRegistro"/>
+                            color="secondary" name="uploadFichaRegistro" />
                         <IconButton color="secondary"
                             aria-label="upload picture"
                             component="span">
@@ -387,7 +388,7 @@ export default function FormCAT() {
                     <label htmlFor="uploadAtestadoMedico" className="dados-empresa">
                         <p>
                             <Typography className="p-2" component="p_description" color="secondary">
-                            Upload do atestado médico
+                                Upload do atestado médico
                             </Typography>
                         </p>
                         <Input accept="image/*" id="uploadAtestadoMedico" type="file"
@@ -564,8 +565,8 @@ export default function FormCAT() {
                         control={
                             <Switch color="secondary" id="policiaComunicada"
                                 value={selectedPoliceCommunicated}
-                                name="policeCommunicated" 
-                                onChange={(newValue) => verifySwitchVerified(newValue)}/>
+                                name="policeCommunicated"
+                                onChange={(newValue) => verifySwitchVerified(newValue)} />
                         }
                         label="A polícia foi comunicada?" color="secondary"
                         className="dados-acidente">
@@ -758,12 +759,14 @@ export default function FormCAT() {
                         rows={4} placeholder="Digite uma descrição breve do acidente"
                     />
 
-
+                </Box>
+                <Box className="submit-button">
+                    <Button variant="contained" color="secondary" fullWidth
+                        size="large" type="submit" onClick={handleFormSubmit}>Enviar
+                    </Button>
                 </Box>
             </Box>
-            <Button variant="contained" color="secondary" fullWidth
-                size="large" type="submit" onClick={handleFormSubmit}>Enviar
-            </Button>
+            <Rodape />
         </LocalizationProvider>
     )
 }
