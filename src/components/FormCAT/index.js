@@ -16,7 +16,6 @@ import {
     Select,
     MenuItem
 } from '@mui/material';
-import { toast } from 'react-toastify';
 import axios from 'axios';
 
 // Importing Date Pickers and Time Pickers
@@ -50,6 +49,7 @@ import MultipleStopIcon from '@mui/icons-material/MultipleStop';
 // Importing Main Styles File
 import './index.css';
 import { useState } from 'react';
+import sendCat from '../../services/cat';
 import Rodape from '../Rodape';
 
 export default function FormCAT() {
@@ -127,10 +127,6 @@ export default function FormCAT() {
 
     function handleFormSubmit(event) {
         event.preventDefault();
-        send();
-    }
-
-    async function send() {
         const form = document.getElementById("form");
         const formData = new FormData(form);
         formData.append("medicalCertificateDate", selectedDateMedicalCertificate.toLocaleDateString());
@@ -148,23 +144,9 @@ export default function FormCAT() {
             formData.append("hospitalization", selectedHosptalization)
         }
 
-        await axios.post("https://api.jnsst.com.br/send/cat", formData, {
-            headers: {
-                'Content-Type': 'multipart/form-data'
-            }
-        }).then((response) => {
-            toast("Mensagem enviada com sucesso", {
-                type: 'success',
-            })
-            return response.data
-        }).catch((error) => {
-            toast("Erro ao enviar a mensagem", {
-                type: 'error',
-            })
-            console.log(error);
-            return error.message
-        })
+        sendCat(formData);
     }
+
 
     return (
         <LocalizationProvider dateAdapter={AdapterDateFns}>
