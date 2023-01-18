@@ -143,7 +143,6 @@ export default function FormCAT() {
         if (!formData.has("hospitalization")) {
             formData.append("hospitalization", selectedHosptalization)
         }
-
         sendCat(formData);
     }
 
@@ -576,12 +575,24 @@ export default function FormCAT() {
                             label="Tipo do Ambiente"
                             name="environment"
                         >
-                            <MenuItem value={1}>Estabelecimento do Empregador</MenuItem>
-                            <MenuItem value={2}>Estabelecimento de Terceiros</MenuItem>
-                            <MenuItem value={3}>Via Pública</MenuItem>
-                            <MenuItem value={4}>Área Rural</MenuItem>
-                            <MenuItem value={5}>Embarcação</MenuItem>
-                            <MenuItem value={6}>Outros</MenuItem>
+                            <MenuItem value="Estabelecimento do Empregador">
+                                Estabelecimento do Empregador
+                            </MenuItem>
+                            <MenuItem value="Estabelecimento de Terceiros">
+                                Estabelecimento de Terceiros
+                            </MenuItem>
+                            <MenuItem value="Via Pública">
+                                Via Pública
+                            </MenuItem>
+                            <MenuItem value="Área Rural">
+                                Área Rural
+                            </MenuItem>
+                            <MenuItem value="Embarcação">
+                                Embarcação
+                            </MenuItem>
+                            <MenuItem value="Outros">
+                                Outros
+                            </MenuItem>
                         </Select>
                     </FormControl>
 
