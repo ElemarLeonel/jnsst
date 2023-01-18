@@ -16,6 +16,7 @@ import {
     Select,
     MenuItem
 } from '@mui/material';
+import axios from 'axios';
 
 // Importing Date Pickers and Time Pickers
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
@@ -47,6 +48,9 @@ import MultipleStopIcon from '@mui/icons-material/MultipleStop';
 
 // Importing Main Styles File
 import './index.css';
+import { useState } from 'react';
+import sendCat from '../../services/cat';
+import Rodape from '../Rodape';
 
 export default function FormCAT() {
     const [selectedPhone, setSelectedPhone] = React.useState();
@@ -54,16 +58,66 @@ export default function FormCAT() {
     const [selectedTypeCNPJ, setSelectedTypeCNPJ] = React.useState();
     const [selectedCPF, setSelectedCPF] = React.useState();
     const [selectedDateMedicalCertificate, setSelectedDateMedicalCertificate] =
-        React.useState();
-    const [selectedServiceTime, setSelectedServiceTime] = React.useState();
+        React.useState(new Date());
+    const [selectedServiceTime, setSelectedServiceTime] = React.useState(new Date());
     const [selectedDateOfAccident, setSelectedDateOfAccident] =
-        React.useState();
-    const [selectedTimeOfAccident, setSelectedTimeOfAccident] = React.useState();
+        React.useState(new Date());
+    const [selectedTimeOfAccident, setSelectedTimeOfAccident] = React.useState(new Date());
     const [selectedTimeBeforeOfAccident, setSelectedTimeBeforeOfAccident] =
         React.useState();
     const [selectedCEP, setSelectedCEP] = React.useState();
+    const [selectedPoliceCommunicated, setSelectedPoliceCommunicated] = React.useState("Não");
+    const [selectedDeath, setSelectedDeath] = React.useState("Não");
+    const [selectedHosptalization, setSelectedHospitalization] = React.useState("Não");
+    const [selectedCity, setSelectedCity] = useState("");
+    const [selectedAddress, setSelectedAddress] = useState("");
+    const [selectedDistrict, setSelectedDistrict] = useState("");
 
     let setFormatCNPJMask = React.useState();
+
+    async function getAddress(cep) {
+        const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`)
+            .then((res) => res.data)
+            .catch((err) => err)
+        if (response.localidade) {
+            setSelectedCity(`${response.localidade}/${response.uf}`);
+            setSelectedAddress(response.logradouro);
+            setSelectedDistrict(response.bairro);
+        }
+        return response;
+    }
+
+    function verifySwitchVerified(event) {
+        if (event.target.checked === true) {
+            switch (event.target.name) {
+                case "policeCommunicated":
+                    setSelectedPoliceCommunicated("Sim");
+                    break
+                case "death":
+                    setSelectedDeath("Sim")
+                    break
+                case "hospitalization":
+                    setSelectedHospitalization("Sim")
+                    break
+                default:
+                    return
+            }
+        } else {
+            switch (event.target.name) {
+                case "policeCommunicated":
+                    setSelectedPoliceCommunicated("Não");
+                    break
+                case "death":
+                    setSelectedDeath("Não")
+                    break
+                case "hospitalization":
+                    setSelectedHospitalization("Não")
+                    break
+                default:
+                    return
+            }
+        }
+    }
 
     if (selectedTypeCNPJ === 1) {
         setFormatCNPJMask = "99.999.999/9999-99";
@@ -71,9 +125,33 @@ export default function FormCAT() {
         setFormatCNPJMask = "999.999.999/999-99";
     }
 
+    function handleFormSubmit(event) {
+        event.preventDefault();
+        const form = document.getElementById("form");
+        const formData = new FormData(form);
+        formData.append("medicalCertificateDate", selectedDateMedicalCertificate.toLocaleDateString());
+        formData.append("accidentDate", selectedDateOfAccident.toLocaleDateString());
+        formData.append("accidentTime", selectedTimeOfAccident.toLocaleTimeString('pt-BR'));
+        formData.append("serviceTime", selectedServiceTime.toLocaleTimeString('pt-BR'));
+
+        if (!formData.has("policeCommunicated")) {
+            formData.append("policeCommunicated", selectedPoliceCommunicated)
+        }
+        if (!formData.has("death")) {
+            formData.append("death", selectedDeath)
+        }
+        if (!formData.has("hospitalization")) {
+            formData.append("hospitalization", selectedHosptalization)
+        }
+
+        sendCat(formData);
+    }
+
+
     return (
         <LocalizationProvider dateAdapter={AdapterDateFns}>
-            <Box className="box-form-cat" component="form">
+            <Box className="box-form-cat" component="form" encType='multipart/form-data'
+                id="form">
 
                 <Box className="title-cat">
                     <Typography variant="h5" component="h5" color="secondary"
@@ -92,7 +170,7 @@ export default function FormCAT() {
                     <TextField id="emailEmpresa" label="Email"
                         variant="outlined" color="secondary" required={true}
                         className="dados-empresa"
-                        name="emailEmpresa"
+                        name="email"
                         InputProps={{
                             startAdornment: (
                                 <InputAdornment position="start">
@@ -111,7 +189,7 @@ export default function FormCAT() {
                         <TextField id="telefoneEmpresa" label="Telefone"
                             variant="outlined" color="secondary" required={true}
                             className="dados-empresa"
-                            name="telefoneEmpresa"
+                            name="phone"
                             InputProps={{
                                 startAdornment: (
                                     <InputAdornment position="start">
@@ -145,9 +223,9 @@ export default function FormCAT() {
                         onChange={(e) => setSelectedCNPJ(e.target.value)}>
                         <TextField id="CNPJouCAEPF" label="CNPJ ou CAEPF"
                             variant="outlined" color="secondary" required={true}
-                            sx={{ width: '45%' }}
+                            sx={{ width: { xs: '100%', sm: '45%' } }}
                             className="dados-empresa"
-                            name="CNPJouCAEPF"
+                            name="cnpjOrCaepf"
                             InputProps={{
                                 startAdornment: (
                                     <InputAdornment position="start">
@@ -160,9 +238,9 @@ export default function FormCAT() {
 
                     <TextField id="razaoSocial" label="Razão Social ou Nome Fazenda"
                         variant="outlined" color="secondary" required={true}
-                        sx={{ width: '45%' }}
+                        sx={{ width: { xs: '100%', sm: '45%' } }}
                         className="dados-empresa"
-                        name="razaoSocial"
+                        name="corporateName"
                         InputProps={{
                             startAdornment: (
                                 <InputAdornment position="start">
@@ -174,10 +252,10 @@ export default function FormCAT() {
 
                     <TextField id="nomeCompletoColaborador"
                         label="Nome Completo do Colaborador"
-                        sx={{ width: '45%' }}
+                        sx={{ width: { xs: '100%', sm: '45%' } }}
                         variant="outlined" color="secondary" required={true}
                         className="dados-empresa"
-                        name="nomeCompletoColaborador"
+                        name="contributorName"
                         InputProps={{
                             startAdornment: (
                                 <InputAdornment position="start">
@@ -188,6 +266,11 @@ export default function FormCAT() {
 
 
                     <label htmlFor="icon-button-file" className="dados-empresa">
+                        <p>
+                            <Typography className="p-2" component="p_description" color="secondary">
+                                Upload da ficha de registro
+                            </Typography>
+                        </p>
                         <Input accept="image/*" id="icon-button-file" type="file"
                             color="secondary" name="uploadFichaRegistro" />
                         <IconButton color="secondary"
@@ -211,28 +294,27 @@ export default function FormCAT() {
 
                     <DatePicker
                         label="Data do Atestado Médico"
-                        mask="dd/mm/yyyy"
                         inputFormat="dd/MM/yyyy"
                         value={selectedDateMedicalCertificate}
                         className="dados-atestado-medico"
-                        name="dataAtestadoMedico"
+                        name="medicalCertificateDate"
                         id="dataAtestadoMedico"
                         renderInput={(props) =>
                             <TextField  {...props} color="secondary"
-                                required={true} sx={{ width: {xs: '100%', sm: '30%'} }}/>
+                                required={true} sx={{ width: { xs: '100%', sm: '30%' } }} />
                         }
                         onChange={(newValue) => {
-                            setSelectedDateMedicalCertificate(newValue)
+                            setSelectedDateMedicalCertificate(new Date(newValue))
                         }}>
                     </DatePicker>
 
 
                     <TextField id="cidAtestadoMedico"
-                        sx={{ width: {xs: '100%', sm: '30%'} }}
+                        sx={{ width: { xs: '100%', sm: '30%' } }}
                         label="CID"
                         variant="outlined" color="secondary" required={true}
                         className="dados-atestado-medico"
-                        name="cidAtestadoMedico"
+                        name="cid"
                         InputProps={{
                             startAdornment: (
                                 <InputAdornment position="start">
@@ -246,24 +328,24 @@ export default function FormCAT() {
                         mask="99:99"
                         value={selectedServiceTime}
                         className="dados-atestado-medico"
-                        name="horaAtendimentoMedico"
+                        name="serviceTime"
                         id="horaAtendimentoMedico"
                         onChange={(newValue) => {
                             setSelectedServiceTime(newValue)
                         }}
                         renderInput={(props) =>
                             <TextField {...props} color="secondary"
-                                required={true} sx={{ width: {xs: '100%', sm: '30%'} }}/>
+                                required={true} sx={{ width: { xs: '100%', sm: '30%' } }} />
                         }>
                     </TimePicker>
 
 
                     <TextField id="quantidadeDiasAtestadoMedico"
-                        sx={{ width: {xs: '100%', sm: '30%'} }}
+                        sx={{ width: { xs: '100%', sm: '30%' } }}
                         label="Quant. de Dias de Afastamento"
                         variant="outlined" color="secondary" required={true}
                         className="dados-atestado-medico"
-                        name="quantidadeDiasAtestadoMedico"
+                        name="daysOff"
                         InputProps={{
                             startAdornment: (
                                 <InputAdornment position="start">
@@ -275,15 +357,22 @@ export default function FormCAT() {
 
                     <FormControlLabel
                         control={
-                            <Switch color="secondary" name="houveInternacao"
-                                id="houveInternacao" />
+                            <Switch color="secondary" name="hospitalization"
+                                value={selectedHosptalization}
+                                id="houveInternacao"
+                                onChange={(newValue) => verifySwitchVerified(newValue)} />
                         }
                         label="Houve internação?" color="secondary"
                         className="dados-atestado-medico">
                     </FormControlLabel>
 
 
-                    <label htmlFor="icon-button-file" className="dados-empresa">
+                    <label htmlFor="uploadAtestadoMedico" className="dados-empresa">
+                        <p>
+                            <Typography className="p-2" component="p_description" color="secondary">
+                                Upload do atestado médico
+                            </Typography>
+                        </p>
                         <Input accept="image/*" id="uploadAtestadoMedico" type="file"
                             color="secondary" name="uploadAtestadoMedico" />
                         <IconButton color="secondary"
@@ -308,7 +397,7 @@ export default function FormCAT() {
                         label="Nome do Médico"
                         variant="outlined" color="secondary" required={true}
                         className="dados-atestado-medico"
-                        name="nomeMedico"
+                        name="doctorName"
                         InputProps={{
                             startAdornment: (
                                 <InputAdornment position="start">
@@ -322,7 +411,7 @@ export default function FormCAT() {
                         label="CRM do Médico"
                         variant="outlined" color="secondary" required={true}
                         className="dados-medico"
-                        name="crmMedico"
+                        name="crm"
                         InputProps={{
                             startAdornment: (
                                 <InputAdornment position="start">
@@ -343,7 +432,7 @@ export default function FormCAT() {
                             label="CPF do Médico"
                             variant="outlined" color="secondary" required={false}
                             className="dados-medico"
-                            name="cpfMedico"
+                            name="doctorCpf"
                             InputProps={{
                                 startAdornment: (
                                     <InputAdornment position="start">
@@ -363,21 +452,52 @@ export default function FormCAT() {
 
                 <Box className="form-cat">
 
+                    <FormControl fullWidth color="secondary" required={true}>
+                        <InputLabel id="tipoAcidente"
+                            color="secondary">Tipo do Acidente</InputLabel>
+                        <Select
+                            labelId="TipoAcidente"
+                            id="tipoAcidente"
+                            color="secondary"
+                            label="Tipo do Acidente"
+                            name="accidentType"
+                        >
+                            <MenuItem
+                                value="Típico - ocorre durante o exercício da 
+                                função profissional."
+                            >
+                                Típico - ocorre durante o exercício da
+                                função profissional.
+                            </MenuItem>
+                            <MenuItem
+                                value="Trajeto - deslocamento da residência 
+                                do colaborador até ao trabalho."
+                            >
+                                Trajeto - deslocamento da residência
+                                do colaborador até ao trabalho.
+                            </MenuItem>
+                            <MenuItem
+                                value="Doença Ocupacional - Doença desencadeada em
+                                função do exercício profissional.">
+                                Doença Ocupacional - Doença desencadeada em
+                                função do exercício profissional.
+                            </MenuItem>
+                        </Select>
+                    </FormControl>
 
                     <DatePicker
                         id="dataAcidente"
                         value={selectedDateOfAccident}
-                        mask="dd/MM/yyyy"
                         inputFormat="dd/MM/yyyy"
                         label="Data do Acidente"
                         className="dados-acidente"
-                        name="dataAcidente"
+                        name="accidentDate"
                         renderInput={(props) =>
                             <TextField  {...props} color="secondary"
-                                required={true} sx={{ width: {xs: '100%', sm: '45%'} }}/>
+                                required={true} sx={{ width: { xs: '100%', sm: '45%' } }} />
                         }
                         onChange={(newValue) => {
-                            setSelectedDateOfAccident(newValue)
+                            setSelectedDateOfAccident(new Date(newValue))
                         }}>
                     </DatePicker>
 
@@ -388,11 +508,11 @@ export default function FormCAT() {
                         value={selectedTimeOfAccident}
                         mask="99:99"
                         className="dados-acidente"
-                        name="horaAcidente"
+                        name="accidentTime"
                         renderInput={(props) =>
                             <TextField {...props}
-                                color="secondary" required={true} 
-                                sx={{ width: {xs: '100%', sm: '45%'} }}/>
+                                color="secondary" required={true}
+                                sx={{ width: { xs: '100%', sm: '45%' } }} />
                         }
                         onChange={(newValue) => {
                             setSelectedTimeOfAccident(newValue)
@@ -412,7 +532,7 @@ export default function FormCAT() {
                             label="Quant. de Horas Trab. Antes do Acidente"
                             color="secondary" required={true}
                             className="dados-acidente"
-                            name="quantidadeHorasTrabalhadasAcidente"
+                            name="hoursWorkedBeforeAccident"
                             InputProps={{
                                 startAdornment: (
                                     <InputAdornment position="start">
@@ -426,7 +546,9 @@ export default function FormCAT() {
                     <FormControlLabel
                         control={
                             <Switch color="secondary" id="policiaComunicada"
-                                name="policiaComunicada" />
+                                value={selectedPoliceCommunicated}
+                                name="policeCommunicated"
+                                onChange={(newValue) => verifySwitchVerified(newValue)} />
                         }
                         label="A polícia foi comunicada?" color="secondary"
                         className="dados-acidente">
@@ -436,7 +558,9 @@ export default function FormCAT() {
                     <FormControlLabel
                         control={
                             <Switch color="secondary" id="houveObito"
-                                name="houveObito" />
+                                value={selectedDeath}
+                                name="death"
+                                onChange={(newValue) => verifySwitchVerified(newValue)} />
                         }
                         label="Houve óbito?" color="secondary"
                         className="dados-acidente">
@@ -450,6 +574,7 @@ export default function FormCAT() {
                             id="tipoAmbiente"
                             color="secondary"
                             label="Tipo do Ambiente"
+                            name="environment"
                         >
                             <MenuItem value={1}>Estabelecimento do Empregador</MenuItem>
                             <MenuItem value={2}>Estabelecimento de Terceiros</MenuItem>
@@ -466,7 +591,7 @@ export default function FormCAT() {
                         label="Local do Acidente"
                         variant="outlined" color="secondary" required={true}
                         className="dados-acidente"
-                        name="localAcidente"
+                        name="localAccident"
                         InputProps={{
                             startAdornment: (
                                 <InputAdornment position="start">
@@ -483,13 +608,17 @@ export default function FormCAT() {
                         disabled={false}
                         maskChar=" "
                         onChange={(newValue) => {
-                            setSelectedCEP(newValue.target.value)
+                            setSelectedCEP(newValue.target.value);
+                        }}
+                        onBlur={async (newValue) => {
+                            await getAddress(newValue.target.value);
+                            setSelectedCEP(newValue.target.value);
                         }}>
                         <TextField id="cepCidade"
                             label="CEP"
                             color="secondary" required={true}
                             className="dados-acidente"
-                            name="cepCidade"
+                            name="cep"
                             InputProps={{
                                 startAdornment: (
                                     <InputAdornment position="start">
@@ -502,11 +631,15 @@ export default function FormCAT() {
 
 
                     <TextField id="logradouroAcidente"
-                        sx={{ width: {xs: '100%', sm: '75%'} }}
+                        sx={{ width: { xs: '100%', sm: '75%' } }}
+                        value={selectedAddress}
                         label="Logradouro"
                         variant="outlined" color="secondary" required={true}
                         className="dados-acidente"
-                        name="logradouroAcidente"
+                        name="address"
+                        onChange={(newValue) => {
+                            setSelectedAddress(newValue.target.value);
+                        }}
                         InputProps={{
                             startAdornment: (
                                 <InputAdornment position="start">
@@ -518,11 +651,11 @@ export default function FormCAT() {
 
 
                     <TextField id="numeroRuaAcidente"
-                        sx={{ width: {xs: '100%', sm: '30%'} }}
+                        sx={{ width: { xs: '100%', sm: '30%' } }}
                         label="Número"
                         variant="outlined" color="secondary" required={true}
                         className="dados-acidente"
-                        name="numeroRuaAcidente"
+                        name="numberaddress"
                         InputProps={{
                             startAdornment: (
                                 <InputAdornment position="start">
@@ -534,11 +667,15 @@ export default function FormCAT() {
 
 
                     <TextField id="bairroAcidente"
-                        sx={{ width: {xs: '100%', sm: '30%'} }}
+                        sx={{ width: { xs: '100%', sm: '30%' } }}
+                        value={selectedDistrict}
                         label="Bairro"
                         variant="outlined" color="secondary" required={true}
                         className="dados-acidente"
-                        name="bairroAcidente"
+                        name="district"
+                        onChange={(newValue) => {
+                            setSelectedDistrict(newValue.target.value);
+                        }}
                         InputProps={{
                             startAdornment: (
                                 <InputAdornment position="start">
@@ -549,11 +686,15 @@ export default function FormCAT() {
                     />
 
                     <TextField id="cidadeAcidente"
-                        sx={{ width: {xs: '100%', sm: '30%'} }}
+                        sx={{ width: { xs: '100%', sm: '30%' } }}
+                        value={selectedCity}
                         label="Cidade"
                         variant="outlined" color="secondary" required={true}
                         className="dados-acidente"
-                        name="cidadeAcidente"
+                        name="city"
+                        onChange={(newValue) => {
+                            setSelectedCity(newValue.target.value);
+                        }}
                         InputProps={{
                             startAdornment: (
                                 <InputAdornment position="start">
@@ -567,7 +708,7 @@ export default function FormCAT() {
                         label="Parte do Corpo Atingida"
                         variant="outlined" color="secondary" required={true}
                         className="dados-acidente"
-                        name="parteDoCorpoAtingidaAcidente"
+                        name="bodyPartHit"
                         helperText="Ex: Mão, braço, perna, etc."
                         InputProps={{
                             startAdornment: (
@@ -582,7 +723,7 @@ export default function FormCAT() {
                         label="Lateralidade"
                         variant="outlined" color="secondary" required={true}
                         className="dados-acidente"
-                        name="lateralidadeDoCorpoAtingidaAcidente"
+                        name="handedness"
                         helperText="Direito, esquerdo, ambos, não aplicável"
                         InputProps={{
                             startAdornment: (
@@ -595,17 +736,19 @@ export default function FormCAT() {
                     <TextField fullWidth id="descricaoBreveAcidente"
                         color="secondary" required={true}
                         className="dados-acidente"
-                        name="descricaoBreveAcidente"
+                        name="descriptionAccident"
                         label="Descrição" multiline
-                        rows={4} defaultValue="Digite uma descrição breve do acidente"
+                        rows={4} placeholder="Digite uma descrição breve do acidente"
                     />
 
+                </Box>
+                <Box className="submit-button">
                     <Button variant="contained" color="secondary" fullWidth
-                        size="large" type="submit">Enviar
+                        size="large" type="submit" onClick={handleFormSubmit}>Enviar
                     </Button>
-
                 </Box>
             </Box>
+            <Rodape />
         </LocalizationProvider>
     )
 }

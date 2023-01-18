@@ -23,10 +23,10 @@ export default function Equipe() {
         {Team.map((item) => (
         <Card variant="outlined" className="cards">
             <CardMedia
-                className="card-media-image"
+                className="card-media-image img-responsive"
                 component="img"
-                width="400"
-                height="400"
+                width="300"
+                height="300"
                 image={item.imagem}
                 alt={item.alt}
             />

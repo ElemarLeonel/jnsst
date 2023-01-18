@@ -30,6 +30,16 @@
     gap: 50px;
 }
 
+.box-form-cat {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.submit-button {
+    width: 40%;
+    margin: 0 auto;
+}
+
 .dados-empresa, 
 .dados-atestado-medico,
 .dados-medico,
