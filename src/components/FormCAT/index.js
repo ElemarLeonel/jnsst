@@ -19,14 +19,13 @@ import {
 import axios from 'axios';
 
 // Importing Date Pickers and Time Pickers
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import AdapterDateFns from "@mui/lab/AdapterDateFns";
-import DatePicker from '@mui/lab/DatePicker';
-import { TimePicker } from '@mui/lab';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { TimePicker } from '@mui/x-date-pickers';
 
 // Import with Mask Objects
-import InputMask from "react-input-mask";
-
+import InputMask from "react-input-mask"
 // Import Icons
 import EmailIcon from '@mui/icons-material/Email';
 import CallIcon from '@mui/icons-material/Call';
@@ -143,7 +142,6 @@ export default function FormCAT() {
         if (!formData.has("hospitalization")) {
             formData.append("hospitalization", selectedHosptalization)
         }
-
         sendCat(formData);
     }
 
@@ -323,9 +321,8 @@ export default function FormCAT() {
                             ),
                         }} />
 
-
+                        
                     <TimePicker label="Hora do Atendimento"
-                        mask="99:99"
                         value={selectedServiceTime}
                         className="dados-atestado-medico"
                         name="serviceTime"
@@ -334,8 +331,8 @@ export default function FormCAT() {
                             setSelectedServiceTime(newValue)
                         }}
                         renderInput={(props) =>
-                            <TextField {...props} color="secondary"
-                                required={true} sx={{ width: { xs: '100%', sm: '30%' } }} />
+                             <TextField {...props} color="secondary"
+                                required={true} sx={{ width: { xs: '100%', sm: '30%' } }}  />
                         }>
                     </TimePicker>
 
@@ -506,7 +503,6 @@ export default function FormCAT() {
                         id="horaAcidente"
                         label="Hora do Acidente"
                         value={selectedTimeOfAccident}
-                        mask="99:99"
                         className="dados-acidente"
                         name="accidentTime"
                         renderInput={(props) =>
@@ -576,12 +572,24 @@ export default function FormCAT() {
                             label="Tipo do Ambiente"
                             name="environment"
                         >
-                            <MenuItem value={1}>Estabelecimento do Empregador</MenuItem>
-                            <MenuItem value={2}>Estabelecimento de Terceiros</MenuItem>
-                            <MenuItem value={3}>Via Pública</MenuItem>
-                            <MenuItem value={4}>Área Rural</MenuItem>
-                            <MenuItem value={5}>Embarcação</MenuItem>
-                            <MenuItem value={6}>Outros</MenuItem>
+                            <MenuItem value="Estabelecimento do Empregador">
+                                Estabelecimento do Empregador
+                            </MenuItem>
+                            <MenuItem value="Estabelecimento de Terceiros">
+                                Estabelecimento de Terceiros
+                            </MenuItem>
+                            <MenuItem value="Via Pública">
+                                Via Pública
+                            </MenuItem>
+                            <MenuItem value="Área Rural">
+                                Área Rural
+                            </MenuItem>
+                            <MenuItem value="Embarcação">
+                                Embarcação
+                            </MenuItem>
+                            <MenuItem value="Outros">
+                                Outros
+                            </MenuItem>
                         </Select>
                     </FormControl>
 
