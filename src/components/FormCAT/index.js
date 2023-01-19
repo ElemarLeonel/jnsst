@@ -19,14 +19,13 @@ import {
 import axios from 'axios';
 
 // Importing Date Pickers and Time Pickers
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import AdapterDateFns from "@mui/lab/AdapterDateFns";
-import DatePicker from '@mui/lab/DatePicker';
-import { TimePicker } from '@mui/lab';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { TimePicker } from '@mui/x-date-pickers';
 
 // Import with Mask Objects
-import InputMask from "react-input-mask";
-
+import InputMask from "react-input-mask"
 // Import Icons
 import EmailIcon from '@mui/icons-material/Email';
 import CallIcon from '@mui/icons-material/Call';
@@ -322,9 +321,8 @@ export default function FormCAT() {
                             ),
                         }} />
 
-
+                        
                     <TimePicker label="Hora do Atendimento"
-                        mask="99:99"
                         value={selectedServiceTime}
                         className="dados-atestado-medico"
                         name="serviceTime"
@@ -333,8 +331,8 @@ export default function FormCAT() {
                             setSelectedServiceTime(newValue)
                         }}
                         renderInput={(props) =>
-                            <TextField {...props} color="secondary"
-                                required={true} sx={{ width: { xs: '100%', sm: '30%' } }} />
+                             <TextField {...props} color="secondary"
+                                required={true} sx={{ width: { xs: '100%', sm: '30%' } }}  />
                         }>
                     </TimePicker>
 
@@ -505,7 +503,6 @@ export default function FormCAT() {
                         id="horaAcidente"
                         label="Hora do Acidente"
                         value={selectedTimeOfAccident}
-                        mask="99:99"
                         className="dados-acidente"
                         name="accidentTime"
                         renderInput={(props) =>
