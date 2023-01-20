@@ -34,7 +34,7 @@ export default function Equipe() {
                 <Typography gutterBottom variant="h4_title" component="h4" color="secondary">
                     {item.nome}
                 </Typography>
-                <Typography variant="h5_title" component="h5" color="secondary">
+                <Typography variant="p_subtitles" component="h5" color="secondary">
                     {item.profissao}
                 </Typography>
                 {/* <Typography variant="p_description" component="p" color="secondary"
