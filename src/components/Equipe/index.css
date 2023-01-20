@@ -11,10 +11,10 @@
 
 .team{
     background-color: var(--cor-texto);
-    padding-bottom: 2rem;
     text-align: center;
 }
 .box-row{
+    padding: 5rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -24,7 +24,11 @@
     margin-left: 10px;
     margin-right: 10px;
 }
-
+ @media(max-width: 600px) {
+    .box-row {
+        padding: 2rem;
+    }
+ }
 .title-team{
     padding-top: 50px;
     color: var(--cor-fundo);
