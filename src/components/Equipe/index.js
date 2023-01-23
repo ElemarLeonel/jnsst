@@ -12,11 +12,28 @@ import {
     from '@mui/material';
 import './index.css';
 import { team as Team } from './team';
+import ShowMore from 'react-show-more-button/dist';
 
 import InstagramIcon from '@mui/icons-material/Instagram';
 
 export default function Equipe() {
+    const [showMore, setShowMore] = React.useState(false);
+    
+    let buttonText = ""
+    showMore ? buttonText = "Mostrar Menos" : buttonText = "Mostrar Mais";
+    
+    function handleShowMore() {
+        showMore ? setShowMore(false) : setShowMore(true);
+    }
+ 
     return (
+    <ShowMore onChange={handleShowMore} button={
+    <Button
+    variant="outlined" 
+    color="secondary">
+        {buttonText}
+    </Button>
+    } anchor="#team" maxHeight={500}>    
     <Box className="team" component="section" id="team">
         <Typography className="title-team" variant="h3_title" component="h3">EQUIPE</Typography>
         <Box className="box-row">
@@ -56,5 +73,6 @@ export default function Equipe() {
         ))}
         </Box>
     </Box>
+    </ShowMore>
     );
 }
