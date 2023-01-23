@@ -36,7 +36,7 @@ export const clients = [
     logo: logoEletrogoes
   },
   {
-    nome: "Frabrilar",
+    nome: "Fabrilar",
     logo: logoFabrilar
   },
   {
@@ -52,7 +52,7 @@ export const clients = [
     logo: logoIdealMoveis
   },
   {
-    nome: "Inviolável",
+    nome: "Grupo Inviolável",
     logo: logoInviolavel
   },
   {
@@ -64,7 +64,7 @@ export const clients = [
     logo: logoNBS
   },
   {
-    nome: "Grupo Ollá Telecom",
+    nome: "Ollá Telecom",
     logo: logoOlla
   },
   {

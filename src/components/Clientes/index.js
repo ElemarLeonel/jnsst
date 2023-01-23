@@ -24,11 +24,13 @@ export default function Clientes() {
                   clients.map((client) => (
                    <Card className="card-client">
                     <CardContent>
-                      <CardMedia
-                        className="card-image"
-                        component="img"
-                        image={client.logo}
-                      />
+                      <Box className="img-box">
+                        <CardMedia
+                          className="card-image"
+                          component="img"
+                          image={client.logo}
+                        />
+                      </Box>
                       <Typography className="title-client" variant="h6" component="h6" sx={{ marginBottom: '10px' }}
                           textAlign="center" color="secondary">
                             {client.nome}

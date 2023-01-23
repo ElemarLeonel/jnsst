@@ -22,14 +22,14 @@ export default function Equipe() {
         <Box className="box-row">
         {Team.map((item) => (
         <Card variant="outlined" className="cards">
+            <Box className="box-team-img">
             <CardMedia
                 className="card-media-image img-responsive"
                 component="img"
-                width="300"
-                height="300"
                 image={item.imagem}
                 alt={item.alt}
             />
+            </Box>
             <CardContent>
                 <Typography gutterBottom variant="h4_title" component="h4" color="secondary">
                     {item.nome}
