@@ -82,6 +82,9 @@ footer{
         max-width: 90vw;
         margin-left: 1rem;
     }
+    .credits p_description {
+        font-size: 12px;
+    }
 }
 
 .credits{

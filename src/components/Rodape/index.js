@@ -119,7 +119,7 @@ export default function Rodape() {
             </Box>
 
             <Box className="credits main-box">
-                <Typography component="p_description" variant="p"
+                <Typography className="credits-title" component="p_description" variant="p"
                     paragraph={true}
                     color="primary.main" fontWeight="bold">
                     Desenvolvido por Elemar Leonel & Magno Júnior © 2022.
