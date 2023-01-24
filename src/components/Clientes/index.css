@@ -39,3 +39,23 @@
 .title-client {
   padding-top: 4px;
 }
+
+@media(max-width: 600px) {
+  .card-client {
+    width: 150px;
+    height: 150px;
+  }
+  .card-client h6 {
+    font-size: 0.9rem;
+  }
+}
+
+@media(max-width: 360px) {
+  .card-client {
+    width: 130px;
+    height: 130px;
+  }
+  .card-client h6 {
+    font-size: 0.8rem;
+  }
+}

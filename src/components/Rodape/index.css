@@ -85,6 +85,12 @@ footer{
     .credits p_description {
         font-size: 12px;
     }
+    .social-media h6 {
+        font-size: 1rem;
+    }
+    .links a > svg{
+        padding: 0.2rem;
+    }
 }
 
 .credits{
