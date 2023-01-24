@@ -37,6 +37,10 @@ const pages = [
     id: '/#team'
   },
   {
+    name: 'Clientes',
+    id: '/#clients'
+  },
+  {
     name: 'Contato',
     id: '/#contact'
   }

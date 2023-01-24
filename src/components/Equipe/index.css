@@ -39,9 +39,12 @@
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-.card-media-image{
-    min-width: 100%;
+.box-team-img {
     border: 0.3rem solid var(--cor-fundo);
+}
+
+.card-media-image{
+    width: 100%;
 }
 
 .img-responsive{

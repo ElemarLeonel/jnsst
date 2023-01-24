@@ -1,0 +1,41 @@
+*{
+  margin:0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.clients {
+  background-color: #F5F5F5;
+  padding-bottom: 2.5rem;
+}
+
+.clients-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.card-client {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+}
+
+.img-box {
+  margin: 0 auto;
+  width: 80%;
+  padding: 10px;
+}
+
+.card-image {
+  width: 100%;
+}
+
+.title-client {
+  padding-top: 4px;
+}

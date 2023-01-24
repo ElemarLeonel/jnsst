@@ -5,6 +5,7 @@ import Carrossel from '../../components/Carrossel';
 import Recursos from '../../components/Recursos';
 import Equipe from '../../components/Equipe';
 import Contato from '../../components/Contato';
+import Clientes from "../../components/Clientes";
 import Rodape from '../../components/Rodape';
 
 import { ThemeProvider } from '@mui/material';
@@ -18,6 +19,7 @@ const Home = () =>{
             <Carrossel />
             <Recursos/>
             <Equipe />
+            <Clientes />
             <Contato />
             <Rodape/>
         </ThemeProvider>
