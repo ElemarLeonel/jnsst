@@ -62,7 +62,7 @@ export default function Navbar() {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography variant="h6" noWrap component="h6" className="logo">
-            <Avatar src={Logo} width="48" height="48" />
+            <Avatar src={Logo} width="48" height="48" alt="Logo da JN Saúde e Segurança do Trabalho"/>
           </Typography>
 
           <Box className="box-nav">
@@ -106,7 +106,7 @@ export default function Navbar() {
 
           <Typography className="logo-mobile" noWrap variant="h6"
             component="h6">
-            <Avatar src={Logo} width="48" height="48" />
+            <Avatar src={Logo} width="48" height="48" alt="Logo da JN Saúde e Segurança do Trabalho"/>
           </Typography>
 
           <Box className="box-nav-mobile">
