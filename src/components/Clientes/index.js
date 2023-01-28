@@ -29,6 +29,7 @@ export default function Clientes() {
                           className="card-image"
                           component="img"
                           image={client.logo}
+                          alt={client.alt}
                         />
                       </Box>
                       <Typography className="title-client" variant="h6" component="h6" sx={{ marginBottom: '10px' }}
