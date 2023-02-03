@@ -20,7 +20,7 @@ export default function Rodape() {
         <Box component="footer">
 
             <Box className="social-media" color="secondary">
-                <Typography variant="h6" component="h6" color="secondary">
+                <Typography variant="p" component="p_subtitles" color="secondary">
                     Acompanhe nossas redes sociais
                 </Typography>
                 <Box className="social-icons">
