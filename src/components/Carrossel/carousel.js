@@ -1,4 +1,4 @@
-import ImagemNovoExpediente from '../../assets/imgs-carousel/novo_horario_expediente.jpg';
+// import ImagemNovoExpediente from '../../assets/imgs-carousel/novo_horario_expediente.jpg';
 import ImagemAbrilVerdeCastilho from '../../assets/imgs-carousel/acao_abril_verde_castilho.webp';
 import ImagemCursoEmpilhadeiraCairu from '../../assets/imgs-carousel/curso_empilhadeira_cairu.webp';
 import ImagemCursoPrimeirosSocorrosPiarara from '../../assets/imgs-carousel/curso_primeirossocorros_piarara.webp';
@@ -6,10 +6,10 @@ import ImagemOutubroRosaEletrogoes from '../../assets/imgs-carousel/outubro-rosa
 import ImagemNovembroAzulEletrogoes from '../../assets/imgs-carousel/novembro-azul-eletrogoes.webp';
 
 export const imgsCarousel = [
-    {
-        image: ImagemNovoExpediente,
-        caption: 'Novo Horário de Expediente'
-    },
+    // {
+    //     image: ImagemNovoExpediente,
+    //     caption: 'Novo Horário de Expediente'
+    // },
     {
       image: ImagemAbrilVerdeCastilho,
       caption: "Ação Abril Verde Castilho"
