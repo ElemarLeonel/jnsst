@@ -1,6 +1,5 @@
 import ImagemFlavia from '../../assets/team/flavia.webp';
 import ImagemElemar from '../../assets/team/elemar.webp';
-import ImagemJonathan from '../../assets/team/jonathan.webp';
 import ImagemCleiso from '../../assets/team/cleiso.webp';
 import ImagemJardel from '../../assets/team/jardel.webp';
 import ImagemSonia from '../../assets/team/sonia.webp';
@@ -21,7 +20,9 @@ export const team = [
         imagem: ImagemFlavia,
         alt: "Membro da equipe da JN Saúde e Segurança do Trabalho - Flávia Medeiros",
         bio: "###",
-        instagram: "https://www.instagram.com/flavia.medeiros.505/"
+        instagram: "https://www.instagram.com/flavia.medeiros.505/",
+        width: "2775",
+        height: "3609"
     },
     {
         nome: "Elemar Leonel",
@@ -29,15 +30,9 @@ export const team = [
         imagem: ImagemElemar,
         alt: "Membro da equipe da JN Saúde e Segurança do Trabalho - Elemar Leonel",
         bio: "Graduado em Sistemas de Informação pela UNESC, atuando no Núcleo de Transmissão ao eSocial, realizando os envios dos eventos e prestando suporte técnico na área de informática.",
-        instagram: "https://www.instagram.com/dev.elemarleonel/"
-    },
-    {
-        nome: "Jonathan Alves",
-        profissao: "Eng. de Segurança do Trabalho",
-        imagem: ImagemJonathan,
-        alt: "Membro da equipe da JN Saúde e Segurança do Trabalho - Jonathan Alves",
-        bio: "###",
-        instagram: "https://www.instagram.com/jonathan_alvespb/"
+        instagram: "https://www.instagram.com/dev.elemarleonel/",
+        width: "853",
+        height: "1280"
     },
     {
         nome: "Odair Calisto",
@@ -45,7 +40,9 @@ export const team = [
         imagem: ImagemOdair,
         alt: "Membro da equipe da JN Saúde e Segurança do Trabalho - Odair Calisto",
         bio: "###",
-        instagram: "#"
+        instagram: "#",
+        width: "2784",
+        height: "4176"
     },
     {
         nome: "Dener de Assis",
@@ -53,7 +50,9 @@ export const team = [
         imagem: ImagemDener,
         alt: "Membro da equipe da JN Saúde e Segurança do Trabalho - Dener de Assis",
         bio: "###",
-        instagram: "#"
+        instagram: "#",
+        width: "2783",
+        height: "3273"
     },
     {
         nome: "Cleiso Rafael",
@@ -61,7 +60,9 @@ export const team = [
         imagem: ImagemCleiso,
         alt: "Membro da equipe da JN Saúde e Segurança do Trabalho - Cleiso Rafael",
         bio: "###",
-        instagram: "https://www.instagram.com/engcleisorafael/"
+        instagram: "https://www.instagram.com/engcleisorafael/",
+        width: "852",
+        height: "1041"
     },
     {
         nome: "Jardel Gomes Ferreira",
@@ -69,7 +70,9 @@ export const team = [
         imagem: ImagemJardel,
         alt: "Membro da equipe da JN Saúde e Segurança do Trabalho - Jardel Gomes Ferreira",
         bio: "###",
-        instagram: "#"
+        instagram: "#",
+        width: "2783",
+        height: "3657"
     },
     {
         nome: "Sônia Lagácio",
@@ -77,7 +80,9 @@ export const team = [
         imagem: ImagemSonia,
         alt: "Membro da equipe da JN Saúde e Segurança do Trabalho - Sônia Lagácio",
         bio: "###",
-        instagram: "#"
+        instagram: "#",
+        width: "1772",
+        height: "2171"
     },
     {
         nome: "Maria Márcia",
@@ -85,7 +90,9 @@ export const team = [
         imagem: ImagemMarcia,
         alt: "Membro da equipe da JN Saúde e Segurança do Trabalho - Maria Márcia",
         bio: "###",
-        instagram: "#"
+        instagram: "#",
+        width: "3011",
+        height: "3065"
     },
     {
         nome: "Edileusa Lagácio",
@@ -94,6 +101,8 @@ export const team = [
         alt: "Membro da equipe da JN Saúde e Segurança do Trabalho - Edileusa Lagácio",
         bio: "###",
         instagram: "#",
+        width: "2775",
+        height: "3041"
     },
     {
         nome: "Elaine Souza",
@@ -101,7 +110,9 @@ export const team = [
         imagem: ImagemElaine,
         alt: "Membro da equipe da JN Saúde e Segurança do Trabalho - Elaine Souza",
         bio: "###",
-        instagram: "#"
+        instagram: "#",
+        width: "2783",
+        height: "3065"
     },
     {
         nome: "Drª Ana Cláudia",
@@ -109,7 +120,9 @@ export const team = [
         imagem: ImagemDrAna,
         alt: "Membro da equipe médica da JN Saúde e Segurança do Trabalho - Ana Cláudia Tribulato da Cunha Castro",
         bio: "###",
-        instagram: "#"
+        instagram: "#",
+        width: "1767",
+        height: "2173",
     },
     {
         nome: "Drº Fabrício Reis",
@@ -117,7 +130,9 @@ export const team = [
         imagem: ImagemDrFabricio,
         alt: "Membro da equipe médica da JN Saúde e Segurança do Trabalho - Fabrício Reis do Nascimento",
         bio: "###",
-        instagram: "#"
+        instagram: "#",
+        width: "3592",
+        height: "3881"
     },
     {
         nome: "Drª Thainá Fuzari",
@@ -125,7 +140,9 @@ export const team = [
         imagem: ImagemDrThaina,
         alt: "Membro da equipe médica da JN Saúde e Segurança do Trabalho - Thainá Fuzari Borges Castro",
         bio: "###",
-        instagram: "#"
+        instagram: "#",
+        width: "2783",
+        height: "3097"
     },
     {
         nome: "Drª Vanessa Moreira",
@@ -133,6 +150,8 @@ export const team = [
         imagem: ImagemDrVanessa,
         alt: "Membro da equipe médica da JN Saúde e Segurança do Trabalho - Vanessa Moreira",
         bio: "###",
-        instagram: "#"
+        instagram: "#",
+        width: "680",
+        height: "783"
     }
 ]

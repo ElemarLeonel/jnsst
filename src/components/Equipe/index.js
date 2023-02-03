@@ -47,6 +47,8 @@ export default function Equipe() {
                 component="img"
                 image={item.imagem}
                 alt={item.alt}
+                width={item.width}
+                height={item.height}
             />
             </Box>
             <CardContent>
