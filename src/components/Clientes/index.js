@@ -30,6 +30,8 @@ export default function Clientes() {
                           component="img"
                           image={client.logo}
                           alt={client.alt}
+                          width={client.width}
+                          height={client.height}
                         />
                       </Box>
                       <Typography className="title-client" variant="h5_title" 

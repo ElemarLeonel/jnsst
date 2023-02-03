@@ -23,101 +23,141 @@ export const clients = [
   {
     nome: "Auto Posto São Roque",
     logo: logoPostoSaoRoque,
-    alt: "Logo do Auto Posto São Roque"
+    alt: "Logo do Auto Posto São Roque",
+    width: "90%",
+    height: "90%"
   },
   {
     nome: "Grupo Castilho",
     logo: logoCastilho,
-    alt: "Logo da Castilho"
+    alt: "Logo da Castilho",
+    width: "90%",
+    height: "90%"
   },
   {
     nome: "Grupo Concreaço",
     logo: logoConcreaco,
-    alt: "Logo da Concreaço"
+    alt: "Logo da Concreaço",
+    width: "90%",
+    height: "90%"
   },
   {
     nome: "Cone Sul",
     logo: logoConeSul,
-    alt: "Logo da Cone Sul"
+    alt: "Logo da Cone Sul",
+    width: "90%",
+    height: "90%"
   },
   {
     nome: "Eletrogoes",
     logo: logoEletrogoes,
-    alt: "Logo da Eletrogoes"
+    alt: "Logo da Eletrogoes",
+    width: "90%",
+    height: "90%"
   },
   {
     nome: "Fabrilar",
     logo: logoFabrilar,
-    alt: "Logo da Fabrilar"
+    alt: "Logo da Fabrilar",
+    width: "90%",
+    height: "90%"
   },
   {
     nome: "Frigorífico Krause",
     logo: logoKrause,
-    alt: "Logo do Frigokrause"
+    alt: "Logo do Frigokrause",
+    width: "90%",
+    height: "90%"
   },
   {
     nome: "Grupo Cairu",
     logo: logoCairu,
-    alt: "Logo do Grupo Cairu"
+    alt: "Logo do Grupo Cairu",
+    width: "90%",
+    height: "90%"
   },
   {
     nome: "Grupo GVQ",
     logo: logoGVQ,
-    alt: "Logo do Grupo GVQ"
+    alt: "Logo do Grupo GVQ",
+    width: "90%",
+    height: "90%"
   },
   {
     nome: "Grupo Mazzutti",
     logo: logoMazzutti,
-    alt: "Logo do Grupo Mazzutti"
+    alt: "Logo do Grupo Mazzutti",
+    width: "90%",
+    height: "90%"
   },
   {
     nome: "Grupo Terra de Bacuri",
     logo: logoTerraBacuri,
-    alt: "Logo do Grupo Terra de Bacuri"
+    alt: "Logo do Grupo Terra de Bacuri",
+    width: "90%",
+    height: "90%"
   },
   {
     nome: "Hypólyti",
     logo: logoHypolyti,
-    alt: "Logo da Hypólyti"
+    alt: "Logo da Hypólyti",
+    width: "90%",
+    height: "90%"
   },
   {
     nome: "Ideal Móveis",
     logo: logoIdealMoveis,
-    alt: "Logo da Ideal Móveis"
+    alt: "Logo da Ideal Móveis",
+    width: "90%",
+    height: "90%"
   },
   {
     nome: "Grupo Inviolável",
     logo: logoInviolavel,
-    alt: "Logo do Grupo Inviolável"
+    alt: "Logo do Grupo Inviolável",
+    width: "90%",
+    height: "90%"
   },
   {
     nome: "Grupo Lind'água",
     logo: logoLindagua,
-    alt: "Logo do Grupo Lind'Agua"
+    alt: "Logo do Grupo Lind'Agua",
+    width: "90%",
+    height: "90%"
   },
   {
     nome: "Grupo NBS",
     logo: logoNBS,
-    alt: "Logo do Grupo NBS"
+    alt: "Logo do Grupo NBS",
+    width: "90%",
+    height: "90%"
   },
   {
     nome: "Ollá Telecom",
     logo: logoOlla,
-    alt: "Logo da Olla Telecom"
+    alt: "Logo da Olla Telecom",
+    width: "90%",
+    height: "90%"
   },
   {
     nome: "Grupo Piemon",
     logo: logoPiemon,
-    alt: "Logo do Grupo Piemon"
+    alt: "Logo do Grupo Piemon",
+    width: "90%",
+    height: "90%"
   },
   {
     nome: "Supermercado Cristal",
     logo: logoSupermercadoCristal,
-    alt: "Logo do Supermercado Cristal"
+    alt: "Logo do Supermercado Cristal",
+    width: "90%",
+    height: "90%"
   },
   {
     nome: "Grupo Verde Brasil",
     logo: logoVerdeBrasil,
-    alt: "Logo do Grupo Verde Brasil"
+    alt: "Logo do Grupo Verde Brasil",
+    width: "90%",
+    height: "90%"
   },
 ]
