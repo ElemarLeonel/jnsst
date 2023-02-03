@@ -9,6 +9,12 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'Open Sauce One';
+    font-display: auto;
+    src: url(https://fonts.cdnfonts.com/css/open-sauce-one.woff) format('woff');
+  }  
+
 footer{
     margin-top: 5rem;
     background-color: var(--color-footer);
