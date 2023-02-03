@@ -32,7 +32,8 @@ export default function Clientes() {
                           alt={client.alt}
                         />
                       </Box>
-                      <Typography className="title-client" variant="h6" component="h6" sx={{ marginBottom: '10px' }}
+                      <Typography className="title-client" variant="h5_title" 
+                      component="h5" sx={{ marginBottom: '10px' }}
                           textAlign="center" color="secondary">
                             {client.nome}
                       </Typography>
