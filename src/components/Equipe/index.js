@@ -35,7 +35,9 @@ export default function Equipe() {
     </Button>
     } anchor="#team" maxHeight={500}>    
     <Box className="team" component="section" id="team">
-        <Typography className="title-team" variant="h3_title" component="h3">EQUIPE</Typography>
+        <Typography className="title-team" variant="h3_title" component="h3">
+            EQUIPE
+        </Typography>
         <Box className="box-row">
         {Team.map((item) => (
         <Card variant="outlined" className="cards">
