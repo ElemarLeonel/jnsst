@@ -40,7 +40,8 @@
   margin: 0 auto;
 }
 
-.dados-empresa {
+.dados-empresa,
+.dados-colaborador {
     flex: 1 1 auto;
     margin-top: 2vh;
 }

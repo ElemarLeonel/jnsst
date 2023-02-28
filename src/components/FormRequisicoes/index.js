@@ -4,15 +4,11 @@ import {
   Typography,
   TextField,
   InputAdornment,
-  Input,
-  IconButton,
-  Button,
-  FormControlLabel,
-  Switch,
   FormControl,
   InputLabel,
   Select,
-  MenuItem
+  MenuItem,
+  Button
 } from '@mui/material';
 
 import { LocalizationProvider } from '@mui/x-date-pickers';
@@ -21,38 +17,71 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 import InputMask from "react-input-mask"
 
-import EmailIcon from '@mui/icons-material/Email';
-import CallIcon from '@mui/icons-material/Call';
 import NumbersIcon from '@mui/icons-material/Numbers';
 import BusinessIcon from '@mui/icons-material/Business';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import ArticleIcon from '@mui/icons-material/Article';
-import DescriptionIcon from '@mui/icons-material/Description';import DateRangeIcon from '@mui/icons-material/DateRange';
+import DescriptionIcon from '@mui/icons-material/Description';
+import Chip from '@mui/material/Chip';
 import BadgeIcon from '@mui/icons-material/Badge';
-import MedicalInformationIcon from '@mui/icons-material/MedicalInformation';
-import LocationCityIcon from '@mui/icons-material/LocationCity';
-import AddRoadIcon from '@mui/icons-material/AddRoad';
-import HomeIcon from '@mui/icons-material/Home';
-import WcIcon from '@mui/icons-material/Wc';
-import MultipleStopIcon from '@mui/icons-material/MultipleStop';
+import MapIcon from '@mui/icons-material/Map';
+import WorkIcon from '@mui/icons-material/Work';
 
 import Rodape from "../Rodape";
 
-import { useState } from 'react';
 import "./index.css";
+import sendEmail from "../../services/email";
+import sendRequisition from "../../services/requisicao";
 
 export default function FormRequisicao() {
+  const exams = [
+    "Glicemia",
+    "Hemograma",
+    "Audiometria",
+    "Eletrocardiograma",
+    "Eletroencefalograma",
+    "Teste de Romberg",
+    "Avaliação Psicossocial",
+    "Espirometria"
+  ]
 
   const [selectedCNPJ, setSelectedCNPJ] = React.useState();
   const [selectedTypeCNPJ, setSelectedTypeCNPJ] = React.useState();
   const [selectedGenre, setSelectedGenre] = React.useState();
-  
+  const [selectedExam, setSelectedExam] = React.useState();
+  const [selectedComplementaryExams, setSelectedComplementaryExams] = React.useState([]);
+  const [selectedBirthDate, setSelectedBirthDate] = React.useState(new Date());
+
   let setFormatCNPJMask = React.useState();
 
   if (selectedTypeCNPJ === 1) {
     setFormatCNPJMask = "99.999.999/9999-99";
   } else if (selectedTypeCNPJ === 2) {
     setFormatCNPJMask = "999.999.999/999-99";
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    const form = document.getElementById("form");
+    const formData = new FormData(form);
+
+    formData.append("birthDate", selectedBirthDate);
+
+    sendRequisition(formData)
+  }  
+
+  function handleSetExam(event) {
+    const {
+      target: { value },
+    } = event;
+    setSelectedComplementaryExams(
+      typeof value === 'string' ? value.split(',') : value,
+    );
+  };
+
+  function handleDeleteExam(deletedExam) {
+    const updatedExams = selectedComplementaryExams.filter(exam => exam !== deletedExam);
+    setSelectedComplementaryExams((updatedExams));
   }
 
   return (
@@ -124,7 +153,7 @@ export default function FormRequisicao() {
 
          </Box>
           
-        <Box className="subtitle-cat">
+        <Box className="subtitle-requisition">
               <Typography variant="h6" component="h6" color="secondary">
                    Dados do Colaborador
               </Typography>
@@ -135,7 +164,7 @@ export default function FormRequisicao() {
                       label="Nome Completo do Colaborador"
                       sx={{ width: { xs: '100%', sm: '45%' } }}
                       variant="outlined" color="secondary" required={true}
-                      className="dados-empresa"
+                      className="dados-colaborador"
                       name="contributorName"
                       InputProps={{
                       startAdornment: (
@@ -148,17 +177,51 @@ export default function FormRequisicao() {
             <DatePicker
                      label="Data de Nascimento"
                      inputFormat="dd/MM/yyyy"
-                     className="dados-empresa"
+                     className="dados-colaborador"
                      name="birthDate"
-                     id="dataAtestadoMedico"
+                     id="dataNascimentoColaborador"
+                     value={selectedBirthDate}
+                     onChange={ newValue => setSelectedBirthDate(new Date(newValue))}
                      renderInput={(props) =>
                         <TextField  {...props} color="secondary"
                          required={true} sx={{ width: { xs: '100%', sm: '30%' } }} />
                       }>
             </DatePicker>
+
+            <InputMask
+                mask="999.999.999-99"
+                maskChar=" ">
+                <TextField id="cpf" label="CPF"
+                    sx={{ width: { xs: '100%', sm: '45%' } }}
+                    variant="outlined" color="secondary" required={true}
+                    name="cpf"
+                    InputProps={{
+                        startAdornment: (
+                            <InputAdornment position="start">
+                                <NumbersIcon />
+                            </InputAdornment>
+                        )
+                    }} />
+            </InputMask>  
             
-            <FormControl fullWidth color="secondary" required={true}>
-                    
+            <InputMask
+                mask="9999999-9"
+                maskChar=" ">
+                <TextField id="rg" label="RG"
+                    sx={{ width: { xs: '100%', sm: '45%' } }}
+                    variant="outlined" color="secondary" required={true}
+                    name="rg"
+                    InputProps={{
+                        startAdornment: (
+                            <InputAdornment position="start">
+                                <NumbersIcon />
+                            </InputAdornment>
+                        )
+                    }} />
+            </InputMask>  
+                 
+            <FormControl fullWidth color="secondary" required={true}
+             sx={{ width: { xs: '100%', sm: '45%' } }}>
                     <InputLabel id="tipoPessoa" color="secondary">
                          Sexo
                     </InputLabel>
@@ -168,17 +231,135 @@ export default function FormRequisicao() {
                             id="tipoPessoa"
                             color="secondary"
                             label="Sexo"
+                            name="genre"
                             onChange={(e) => setSelectedGenre(e.target.value)}
                     >
-                         <MenuItem value={1}>Masculino</MenuItem>
-                         <MenuItem value={2}>Feminino</MenuItem>
+                         <MenuItem value={"Masculino"}>Masculino</MenuItem>
+                         <MenuItem value={"Feminino"}>Feminino</MenuItem>
                     </Select>
-                    </FormControl>
-
+            </FormControl>
             
+            <TextField id="naturalidade"
+                      label="Naturalidade"
+                      sx={{ width: { xs: '100%', sm: '45%' } }}
+                      variant="outlined" color="secondary" required={true}
+                      className="dados-colaborador"
+                      name="naturalness"
+                      InputProps={{
+                      startAdornment: (
+                        <InputAdornment position="start">
+                            <MapIcon />
+                        </InputAdornment>
+                    ),
+            }} />
+
+            <TextField id="cbo"
+                      label="CBO"
+                      sx={{ width: { xs: '100%', sm: '45%' } }}
+                      variant="outlined" color="secondary" required={true}
+                      className="dados-colaborador"
+                      name="cbo"
+                      InputProps={{
+                      startAdornment: (
+                <InputAdornment position="start">
+                    <DescriptionIcon />
+                </InputAdornment>
+                ),
+             }} />
+
+            <TextField id="setor"
+                      label="Setor"
+                      sx={{ width: { xs: '100%', sm: '45%' } }}
+                      variant="outlined" color="secondary" required={true}
+                      className="dados-colaborador"
+                      name="sector"
+                      InputProps={{
+                      startAdornment: (
+                <InputAdornment position="start">
+                    <WorkIcon />
+                </InputAdornment>
+                ),
+            }} />
+
+            <TextField id="cargo"
+                      label="Cargo"
+                      sx={{ width: { xs: '100%', sm: '45%' } }}
+                      variant="outlined" color="secondary" required={true}
+                      className="dados-colaborador"
+                      name="office"
+                      InputProps={{
+                      startAdornment: (
+                <InputAdornment position="start">
+                    <BadgeIcon />
+                </InputAdornment>
+                ),
+            }} />
+
        </Box>
 
-      </Box>
+       <Box className="subtitle-requisition">
+              <Typography variant="h6" component="h6" color="secondary">
+                   Informações do ASO
+              </Typography>
+        </Box>     
+        
+        <Box className="form-requisition">
+            <FormControl fullWidth color="secondary" required={true}>
+                        <InputLabel id="naturezaExame"
+                            color="secondary">Tipo de Exame</InputLabel>
+                        <Select
+                            value={selectedExam}
+                            labelId="tipoExame"
+                            id="tipoExame"
+                            color="secondary"
+                            label="Tipo de Exame"
+                            name="examType"
+                            onChange={(e) => setSelectedExam(e.target.value)}
+                        >
+                            <MenuItem value={"Admissional"}>Admissional</MenuItem>
+                            <MenuItem value={"Demissional"}>Demissional</MenuItem>
+                            <MenuItem value={"Mudança de Cargo/Função"}>Mudança de Cargo/Função</MenuItem>
+                            <MenuItem value={"Periódico"}>Periódico</MenuItem>
+                            <MenuItem value={"Retorno ao Trabalho"}>Retorno ao Trabalho</MenuItem>
+                        </Select>
+                </FormControl>
+
+                <FormControl fullWidth color="secondary" required={true}>
+                        <InputLabel id="exames"
+                            color="secondary">Exames Complementares</InputLabel>
+                        <Select
+                            multiple
+                            value={selectedComplementaryExams}
+                            labelId="examesComplementares"
+                            id="examesComplementares"
+                            color="secondary"
+                            label="Exames Complementares"
+                            name="examsList"
+                            onChange={handleSetExam}
+                        >
+                            {exams.map((exam) => (
+                                <MenuItem key={exam} value={exam}>{exam}</MenuItem>
+                            )
+                            )}
+                        </Select>
+                        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5, padding: 1 }}>
+                                  {selectedComplementaryExams.map((value) => (
+                                    <Chip 
+                                        color="secondary"
+                                        key={value} label={value}
+                                        value={value}
+                                        onDelete={() => handleDeleteExam(value)}
+                                    />
+                                  ))}
+                        </Box>
+                </FormControl>
+        </Box>         
+        <Box className="submit-button">
+                    <Button variant="contained" color="secondary" fullWidth
+                        size="large" type="submit" onClick={handleSubmit}>Enviar
+                    </Button>
+        </Box>
+    </Box>
       <Rodape />
     </LocalizationProvider>
   )
