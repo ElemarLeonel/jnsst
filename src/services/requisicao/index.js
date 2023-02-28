@@ -2,7 +2,7 @@ import api from "../../api/api";
 import { toast } from "react-toastify";
 
 export default async function sendRequisition(requistion) {
-    await api.post("/send/email", requistion, {
+    await api.post("/send/requisition", requistion, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }
