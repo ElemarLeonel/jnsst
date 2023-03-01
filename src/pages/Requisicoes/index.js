@@ -8,8 +8,8 @@ import FormRequisicao from "../../components/FormRequisicoes";
 const Requisicoes = () =>{
     return (
         <ThemeProvider theme={theme}>
-            <Navbar />
-            <FormRequisicao />
+            <Navbar isPrintable={false} />
+            <FormRequisicao isPrintable={true} />
         </ThemeProvider>
     )
 }

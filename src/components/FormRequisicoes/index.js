@@ -29,8 +29,8 @@ import WorkIcon from '@mui/icons-material/Work';
 import Rodape from "../Rodape";
 
 import "./index.css";
-import sendEmail from "../../services/email";
 import sendRequisition from "../../services/requisicao";
+import sendEmail from "../../services/email";
 
 export default function FormRequisicao() {
   const exams = [
@@ -49,7 +49,8 @@ export default function FormRequisicao() {
   const [selectedGenre, setSelectedGenre] = React.useState();
   const [selectedExam, setSelectedExam] = React.useState();
   const [selectedComplementaryExams, setSelectedComplementaryExams] = React.useState([]);
-  const [selectedBirthDate, setSelectedBirthDate] = React.useState(new Date());
+  const [selectedBornDate, setSelectedBornDate] = React.useState(new Date());
+  const [selectOpen, setSelectOpen] = React.useState(false)
 
   let setFormatCNPJMask = React.useState();
 
@@ -65,9 +66,9 @@ export default function FormRequisicao() {
     const form = document.getElementById("form");
     const formData = new FormData(form);
 
-    formData.append("birthDate", selectedBirthDate);
+    formData.append("bornDate", selectedBornDate);
 
-    sendRequisition(formData)
+    sendEmail(formData);
   }  
 
   function handleSetExam(event) {
@@ -77,6 +78,7 @@ export default function FormRequisicao() {
     setSelectedComplementaryExams(
       typeof value === 'string' ? value.split(',') : value,
     );
+    setSelectOpen(false);
   };
 
   function handleDeleteExam(deletedExam) {
@@ -178,10 +180,10 @@ export default function FormRequisicao() {
                      label="Data de Nascimento"
                      inputFormat="dd/MM/yyyy"
                      className="dados-colaborador"
-                     name="birthDate"
+                     name="bornDate"
                      id="dataNascimentoColaborador"
-                     value={selectedBirthDate}
-                     onChange={ newValue => setSelectedBirthDate(new Date(newValue))}
+                     value={selectedBornDate}
+                     onChange={ newValue => setSelectedBornDate(new Date(newValue))}
                      renderInput={(props) =>
                         <TextField  {...props} color="secondary"
                          required={true} sx={{ width: { xs: '100%', sm: '30%' } }} />
@@ -336,6 +338,8 @@ export default function FormRequisicao() {
                             label="Exames Complementares"
                             name="examsList"
                             onChange={handleSetExam}
+                            open={selectOpen}
+                            onOpen={() => setSelectOpen(true)}
                         >
                             {exams.map((exam) => (
                                 <MenuItem key={exam} value={exam}>{exam}</MenuItem>
@@ -360,7 +364,7 @@ export default function FormRequisicao() {
                     </Button>
         </Box>
     </Box>
-      <Rodape />
+      <Rodape isPrintable={false} />
     </LocalizationProvider>
   )
 }
