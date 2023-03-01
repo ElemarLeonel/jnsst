@@ -110,7 +110,7 @@ export default function Rodape() {
                         <ListItemText primary="Formulário de Preenchimento da CAT (Cliente)" />
                     </ListItemButton>
                     <ListItemButton component="a"
-                        href="#">
+                        href="/requisicoes">
                         <InputIcon color="primary" size="medium"
                             className="icons" />
                         <ListItemText primary="Formulário de Preenchimento das Requisições (Cliente)" />
