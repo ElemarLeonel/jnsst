@@ -30,7 +30,6 @@ import Rodape from "../Rodape";
 
 import "./index.css";
 import sendRequisition from "../../services/requisicao";
-import sendEmail from "../../services/email";
 
 export default function FormRequisicao() {
   const exams = [
@@ -68,7 +67,7 @@ export default function FormRequisicao() {
 
     formData.append("bornDate", selectedBornDate);
 
-    sendEmail(formData);
+    sendRequisition(formData);
   }  
 
   function handleSetExam(event) {
