@@ -2,7 +2,6 @@ import api from "../../api/api";
 import { toast } from "react-toastify";
 
 export default async function sendEmail(campos) {
-    console.log(campos);
     await api.post("/send/email", campos, {
       headers: {
           'Content-Type': 'application/json'
