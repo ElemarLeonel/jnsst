@@ -33,14 +33,32 @@ import sendRequisition from "../../services/requisicao";
 
 export default function FormRequisicao() {
   const exams = [
-    "Glicemia",
-    "Hemograma",
-    "Audiometria",
-    "Eletrocardiograma",
-    "Eletroencefalograma",
-    "Teste de Romberg",
-    "Avaliação Psicossocial",
-    "Espirometria"
+    "Audiometria", 
+    "Avaliação Psicossocial", 
+    "Avaliação de Acuidade Visual", 
+    "Brucelose Teste Rápido", 
+    "Chumbo Urinário", 
+    "Coprocultura de Fezes", 
+    "Coproparasitológico de Fezes", 
+    "Creatina", 
+    "Eletrocardiograma (ECG)", 
+    "Eletroencefalograma (EEG)", 
+    "Espirometria", 
+    "Gama GT", 
+    "Glicemia", 
+    "Hemograma Completo", 
+    "Raio - X Coluna Lombo-Sacra", 
+    "Raio - X Tórax Padrão OIT", 
+    "Reticulócitos", 
+    "Sorologia para Brucelose", 
+    "Sumário de Urina (EAS)", 
+    "Sífilis (VDRL)", 
+    "TGO", 
+    "TGP", 
+    "Teste de Romberg", 
+    "Tipagem Sanguínea", 
+    "Triglicerídeos", 
+    "Uréia"
   ]
 
   const [selectedCNPJ, setSelectedCNPJ] = React.useState();
