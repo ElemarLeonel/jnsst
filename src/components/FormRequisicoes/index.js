@@ -226,23 +226,19 @@ export default function FormRequisicao() {
                         )
                     }} />
             </InputMask>  
-            
-            <InputMask
-                mask="9999999-9"
-                onChange={handleChange}
-                maskChar=" ">
-                <TextField id="rg" label="RG"
+        
+            <TextField id="rg" label="RG"
                     sx={{ width: { xs: '100%', sm: '45%' } }}
                     variant="outlined" color="secondary" required={true}
                     name="rg"
+                    onChange={handleChange}
                     InputProps={{
                         startAdornment: (
                             <InputAdornment position="start">
                                 <NumbersIcon />
                             </InputAdornment>
                         )
-                    }} />
-            </InputMask>  
+             }} />
                  
             <FormControl fullWidth color="secondary" required={true}
              sx={{ width: { xs: '100%', sm: '45%' } }}>
