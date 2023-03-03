@@ -31,44 +31,31 @@ import Rodape from "../Rodape";
 
 import "./index.css";
 import sendRequisition from "../../services/requisicao";
+import exams from "./exams";
 
 export default function FormRequisicao() {
-  const exams = [
-    "Audiometria", 
-    "Avaliação Psicossocial", 
-    "Avaliação de Acuidade Visual", 
-    "Brucelose Teste Rápido", 
-    "Chumbo Urinário", 
-    "Coprocultura de Fezes", 
-    "Coproparasitológico de Fezes", 
-    "Creatina", 
-    "Eletrocardiograma (ECG)", 
-    "Eletroencefalograma (EEG)", 
-    "Espirometria", 
-    "Gama GT", 
-    "Glicemia", 
-    "Hemograma Completo", 
-    "Raio - X Coluna Lombo-Sacra", 
-    "Raio - X Tórax Padrão OIT", 
-    "Reticulócitos", 
-    "Sorologia para Brucelose", 
-    "Sumário de Urina (EAS)", 
-    "Sífilis (VDRL)", 
-    "TGO", 
-    "TGP", 
-    "Teste de Romberg", 
-    "Tipagem Sanguínea", 
-    "Triglicerídeos", 
-    "Uréia"
-  ]
 
-  const [selectedCNPJ, setSelectedCNPJ] = React.useState();
   const [selectedTypeCNPJ, setSelectedTypeCNPJ] = React.useState();
-  const [selectedGenre, setSelectedGenre] = React.useState();
-  const [selectedExam, setSelectedExam] = React.useState();
   const [selectedComplementaryExams, setSelectedComplementaryExams] = React.useState([]);
+  const [selectOpen, setSelectOpen] = React.useState(false);
   const [selectedBornDate, setSelectedBornDate] = React.useState(new Date());
-  const [selectOpen, setSelectOpen] = React.useState(false)
+
+  const [requisition, setRequisition] =React.useState({
+    email: "",
+    cnpjOrCaepf: "",
+    corporateName: "",
+    contributorName: "",
+    cpf: "",
+    rg: "",
+    genre: "",
+    naturalness: "",
+    cbo: "",
+    sector: "",
+    office: "",
+    examType: "",
+    bornDate: new Date(),
+    examsList: selectedComplementaryExams
+  })
 
   let setFormatCNPJMask = React.useState();
 
@@ -80,18 +67,15 @@ export default function FormRequisicao() {
 
   function handleSubmit(event) {
     event.preventDefault();
-
-    const form = document.getElementById("form");
-    const formData = new FormData(form);
-
-    formData.append("bornDate", selectedBornDate);
-
-    selectedComplementaryExams.forEach((exam) => {
-        formData.append("examsList[]", exam);
-    })
-
-    sendRequisition(formData);
+    requisition.examsList = selectedComplementaryExams;
+    requisition.bornDate = selectedBornDate;
+    sendRequisition(requisition);
   }  
+
+  function handleChange(event) {
+        requisition[event.target.name] = event.target.value;
+        setRequisition(requisition);
+  }
 
   function handleSetExam(event) {
     const {
@@ -145,10 +129,9 @@ export default function FormRequisicao() {
 
                     <InputMask
                         mask={setFormatCNPJMask}
-                        value={selectedCNPJ}
                         disabled={false}
                         maskChar=" "
-                        onChange={(e) => setSelectedCNPJ(e.target.value)}>
+                        onChange={handleChange}>
                         <TextField id="CNPJouCAEPF" label="CNPJ ou CAEPF"
                             variant="outlined" color="secondary" required={true}
                             sx={{ width: { xs: '100%', sm: '45%' } }}
@@ -167,6 +150,7 @@ export default function FormRequisicao() {
                             sx={{ width: { xs: '100%', sm: '45%' } }}
                             className="dados-empresa"
                             name="corporateName"
+                            onChange={handleChange}
                             InputProps={{
                                 startAdornment: (
                                     <InputAdornment position="start">
@@ -179,6 +163,7 @@ export default function FormRequisicao() {
                         variant="outlined" color="secondary" required={true}
                         className="dados-empresa"
                         name="email"
+                        onChange={handleChange}
                         InputProps={{
                             startAdornment: (
                                 <InputAdornment position="start">
@@ -202,6 +187,7 @@ export default function FormRequisicao() {
                       variant="outlined" color="secondary" required={true}
                       className="dados-colaborador"
                       name="contributorName"
+                      onChange={handleChange}
                       InputProps={{
                       startAdornment: (
                 <InputAdornment position="start">
@@ -226,7 +212,8 @@ export default function FormRequisicao() {
 
             <InputMask
                 mask="999.999.999-99"
-                maskChar=" ">
+                maskChar=" "
+                onChange={handleChange}>
                 <TextField id="cpf" label="CPF"
                     sx={{ width: { xs: '100%', sm: '45%' } }}
                     variant="outlined" color="secondary" required={true}
@@ -242,6 +229,7 @@ export default function FormRequisicao() {
             
             <InputMask
                 mask="9999999-9"
+                onChange={handleChange}
                 maskChar=" ">
                 <TextField id="rg" label="RG"
                     sx={{ width: { xs: '100%', sm: '45%' } }}
@@ -262,13 +250,12 @@ export default function FormRequisicao() {
                          Sexo
                     </InputLabel>
                     <Select
-                            value={selectedGenre}
                             labelId="tipoPessoa"
                             id="tipoPessoa"
                             color="secondary"
                             label="Sexo"
                             name="genre"
-                            onChange={(e) => setSelectedGenre(e.target.value)}
+                            onChange={handleChange}
                     >
                          <MenuItem value={"Masculino"}>Masculino</MenuItem>
                          <MenuItem value={"Feminino"}>Feminino</MenuItem>
@@ -281,6 +268,7 @@ export default function FormRequisicao() {
                       variant="outlined" color="secondary" required={true}
                       className="dados-colaborador"
                       name="naturalness"
+                      onChange={handleChange}
                       InputProps={{
                       startAdornment: (
                         <InputAdornment position="start">
@@ -295,6 +283,7 @@ export default function FormRequisicao() {
                       variant="outlined" color="secondary" required={true}
                       className="dados-colaborador"
                       name="cbo"
+                      onChange={handleChange}
                       InputProps={{
                       startAdornment: (
                 <InputAdornment position="start">
@@ -309,6 +298,7 @@ export default function FormRequisicao() {
                       variant="outlined" color="secondary" required={true}
                       className="dados-colaborador"
                       name="sector"
+                      onChange={handleChange}
                       InputProps={{
                       startAdornment: (
                 <InputAdornment position="start">
@@ -323,6 +313,7 @@ export default function FormRequisicao() {
                       variant="outlined" color="secondary" required={true}
                       className="dados-colaborador"
                       name="office"
+                      onChange={handleChange}
                       InputProps={{
                       startAdornment: (
                 <InputAdornment position="start">
@@ -341,16 +332,16 @@ export default function FormRequisicao() {
         
         <Box className="form-requisition">
             <FormControl fullWidth color="secondary" required={true}>
-                        <InputLabel id="naturezaExame"
+                        <InputLabel 
+                            id="naturezaExame"
                             color="secondary">Tipo de Exame</InputLabel>
                         <Select
-                            value={selectedExam}
                             labelId="tipoExame"
                             id="tipoExame"
                             color="secondary"
                             label="Tipo de Exame"
                             name="examType"
-                            onChange={(e) => setSelectedExam(e.target.value)}
+                            onChange={handleChange}
                         >
                             <MenuItem value={"Admissional"}>Admissional</MenuItem>
                             <MenuItem value={"Demissional"}>Demissional</MenuItem>
@@ -392,9 +383,9 @@ export default function FormRequisicao() {
                 </FormControl>
         </Box>         
         <Box className="submit-button">
-                    <Button variant="contained" color="secondary" fullWidth
-                        size="large" type="submit" onClick={handleSubmit}>Enviar
-                    </Button>
+                <Button variant="contained" color="secondary" fullWidth
+                    size="large" type="submit" onClick={handleSubmit}>Enviar
+                </Button>
         </Box>
     </Box>
       <Rodape />
