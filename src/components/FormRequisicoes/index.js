@@ -85,6 +85,10 @@ export default function FormRequisicao() {
 
     formData.append("bornDate", selectedBornDate);
 
+    selectedComplementaryExams.forEach((exam) => {
+        formData.append("examsList[]", exam);
+    })
+
     sendRequisition(formData);
   }  
 
@@ -353,7 +357,6 @@ export default function FormRequisicao() {
                             id="examesComplementares"
                             color="secondary"
                             label="Exames Complementares"
-                            name="examsList"
                             onChange={handleSetExam}
                             open={selectOpen}
                             onOpen={() => setSelectOpen(true)}
@@ -381,7 +384,7 @@ export default function FormRequisicao() {
                     </Button>
         </Box>
     </Box>
-      <Rodape isPrintable={false} />
+      <Rodape />
     </LocalizationProvider>
   )
 }
