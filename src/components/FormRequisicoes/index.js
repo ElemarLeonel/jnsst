@@ -25,6 +25,7 @@ import Chip from '@mui/material/Chip';
 import BadgeIcon from '@mui/icons-material/Badge';
 import MapIcon from '@mui/icons-material/Map';
 import WorkIcon from '@mui/icons-material/Work';
+import EmailIcon from '@mui/icons-material/Email';
 
 import Rodape from "../Rodape";
 
@@ -173,6 +174,18 @@ export default function FormRequisicao() {
                                     </InputAdornment>
                                 ),
                      }} />
+
+                    <TextField id="emailEmpresa" label="Email"
+                        variant="outlined" color="secondary" required={true}
+                        className="dados-empresa"
+                        name="email"
+                        InputProps={{
+                            startAdornment: (
+                                <InputAdornment position="start">
+                                    <EmailIcon />
+                                </InputAdornment>
+                            ),
+                    }} />
 
          </Box>
           
