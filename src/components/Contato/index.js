@@ -10,7 +10,7 @@ import './index.css';
 import sendEmail from '../../services/email';
 
 export default function Contato() {
-
+    const [isDisabled, setDisabled] = React.useState(false);
     const [campos, setCampos] = React.useState({
         fullname: '',
         email: '',
@@ -23,15 +23,17 @@ export default function Contato() {
         setCampos(campos);
     }
 
-    function handleFormSubmit(event) {
+    async function handleFormSubmit(event) {
         event.preventDefault();
-        sendEmail(campos);
+        setDisabled(true);
+        await sendEmail(campos);
         setCampos({
             fullname: '',
             email: '',
             title: '',
             message: ''
-        })
+        });
+        setDisabled(false);
     }
 
     return (
@@ -67,7 +69,7 @@ export default function Contato() {
 
                     <Box className="submit-button">
                         <Button variant="contained" color="secondary" className="submit-button"
-                            fullWidth size="large" type="submit">Enviar</Button>
+                            fullWidth size="large" type="submit" disabled={isDisabled}>Enviar</Button>
                     </Box>
 
                 </Box>

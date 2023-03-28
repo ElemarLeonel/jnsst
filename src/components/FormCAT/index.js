@@ -71,6 +71,7 @@ export default function FormCAT() {
     const [selectedCity, setSelectedCity] = useState("");
     const [selectedAddress, setSelectedAddress] = useState("");
     const [selectedDistrict, setSelectedDistrict] = useState("");
+    const [isDisabled, setDisabled] = React.useState(false);
 
     let setFormatCNPJMask = React.useState();
 
@@ -124,8 +125,10 @@ export default function FormCAT() {
         setFormatCNPJMask = "999.999.999/999-99";
     }
 
-    function handleFormSubmit(event) {
+    async function handleFormSubmit(event) {
         event.preventDefault();
+        setDisabled(true);
+
         const form = document.getElementById("form");
         const formData = new FormData(form);
         formData.append("medicalCertificateDate", selectedDateMedicalCertificate.toLocaleDateString());
@@ -142,7 +145,8 @@ export default function FormCAT() {
         if (!formData.has("hospitalization")) {
             formData.append("hospitalization", selectedHosptalization)
         }
-        sendCat(formData);
+        await sendCat(formData);
+        setDisabled(false);
     }
 
 
@@ -752,7 +756,8 @@ export default function FormCAT() {
                 </Box>
                 <Box className="submit-button">
                     <Button variant="contained" color="secondary" fullWidth
-                        size="large" type="submit" onClick={handleFormSubmit}>Enviar
+                        size="large" type="submit" onClick={handleFormSubmit} disabled={isDisabled}>
+                            Enviar
                     </Button>
                 </Box>
             </Box>

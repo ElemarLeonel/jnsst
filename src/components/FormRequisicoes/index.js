@@ -39,6 +39,7 @@ export default function FormRequisicao() {
   const [selectedComplementaryExams, setSelectedComplementaryExams] = React.useState([]);
   const [selectOpen, setSelectOpen] = React.useState(false);
   const [selectedBornDate, setSelectedBornDate] = React.useState(new Date());
+  const [isDisabled, setDisabled] = React.useState(false);
 
   const [requisition, setRequisition] =React.useState({
     email: "",
@@ -65,11 +66,15 @@ export default function FormRequisicao() {
     setFormatCNPJMask = "999.999.999/999-99";
   }
 
-  function handleSubmit(event) {
+    async function handleSubmit(event) {
     event.preventDefault();
+    setDisabled(true); 
+    
     requisition.examsList = selectedComplementaryExams;
     requisition.bornDate = selectedBornDate;
-    sendRequisition(requisition);
+
+    await sendRequisition(requisition);
+    setDisabled(false);
   }  
 
   function handleChange(event) {
@@ -380,7 +385,8 @@ export default function FormRequisicao() {
         </Box>         
         <Box className="submit-button">
                 <Button variant="contained" color="secondary" fullWidth
-                    size="large" type="submit" onClick={handleSubmit}>Enviar
+                    size="large" type="submit" onClick={handleSubmit} disabled={isDisabled}>
+                        Enviar
                 </Button>
         </Box>
     </Box>
