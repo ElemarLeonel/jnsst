@@ -1,9 +1,6 @@
 import ImagemFlavia from '../../assets/team/flavia.webp';
-import ImagemElemar from '../../assets/team/elemar.webp';
 import ImagemCleiso from '../../assets/team/cleiso.webp';
 import ImagemJardel from '../../assets/team/jardel.webp';
-import ImagemSonia from '../../assets/team/sonia.webp';
-import ImagemMarcia from '../../assets/team/marcia.webp';
 import ImagemEdileusa from '../../assets/team/edileusa.webp';
 import ImagemElaine from '../../assets/team/elaine.webp';
 import ImagemDener from '../../assets/team/dener.webp';
@@ -23,16 +20,6 @@ export const team = [
         instagram: "https://www.instagram.com/flavia.medeiros.505/",
         width: "2775",
         height: "3609"
-    },
-    {
-        nome: "Elemar Leonel",
-        profissao: "Téc. em Informática",
-        imagem: ImagemElemar,
-        alt: "Membro da equipe da JN Saúde e Segurança do Trabalho - Elemar Leonel",
-        bio: "Graduado em Sistemas de Informação pela UNESC, atuando no Núcleo de Transmissão ao eSocial, realizando os envios dos eventos e prestando suporte técnico na área de informática.",
-        instagram: "https://www.instagram.com/dev.elemarleonel/",
-        width: "853",
-        height: "1280"
     },
     {
         nome: "Odair Calisto",
@@ -73,26 +60,6 @@ export const team = [
         instagram: "#",
         width: "2783",
         height: "3657"
-    },
-    {
-        nome: "Sônia Lagácio",
-        profissao: "Psicólogo(a)",
-        imagem: ImagemSonia,
-        alt: "Membro da equipe da JN Saúde e Segurança do Trabalho - Sônia Lagácio",
-        bio: "###",
-        instagram: "#",
-        width: "1772",
-        height: "2171"
-    },
-    {
-        nome: "Maria Márcia",
-        profissao: "Secretária",
-        imagem: ImagemMarcia,
-        alt: "Membro da equipe da JN Saúde e Segurança do Trabalho - Maria Márcia",
-        bio: "###",
-        instagram: "#",
-        width: "3011",
-        height: "3065"
     },
     {
         nome: "Edileusa Lagácio",
