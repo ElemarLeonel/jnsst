@@ -6,6 +6,7 @@ import {
   InputAdornment,
   Button
 } from '@mui/material';
+import { setCookie } from "nookies";
 
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Password from "@mui/icons-material/Password";
@@ -31,6 +32,12 @@ export default function FormLogin() {
     setDisabled(true);
     const user = await login(loginData);
     console.log(user);
+    setCookie(undefined, "jnsst.user", user.data, {
+      expires: 60 * 60 * 24
+    });
+    setCookie(undefined, "jnsstUser.token", user.token, {
+      expires: 60 * 60 * 24
+    });
     setDisabled(false);
   }
 
