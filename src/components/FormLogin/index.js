@@ -32,13 +32,13 @@ export default function FormLogin() {
     setDisabled(true);
     const user = await login(loginData);
     console.log(user);
+    setDisabled(false);
     setCookie(undefined, "jnsst.user", user.data, {
       expires: 60 * 60 * 24
     });
     setCookie(undefined, "jnsstUser.token", user.token, {
       expires: 60 * 60 * 24
     });
-    setDisabled(false);
   }
 
   return (
